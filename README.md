@@ -1,4 +1,4 @@
-# PCP
+# PCP wheelchair
 
 Prototyping Connected Products
 
