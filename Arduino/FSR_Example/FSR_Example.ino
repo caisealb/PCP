@@ -48,13 +48,15 @@ void loop() {
   voltageValue = double((sensorValue*5))/1023; //convert to voltage
   newtonValue = convertToNewtons(voltageValue); //actual force value
 
-  Serial.print("Pressure: ");
-  Serial.print(sensorValue);
-  Serial.print(" (0-1023) steps, ");
-  Serial.print(voltageValue);
-  Serial.print(" (v), ");
-  Serial.print(newtonValue);
-  Serial.println(" N.");
+  Serial.print("Pressure, ");
+  Serial.println(sensorValue);
+  //Serial.print(" (0-1023) steps, ");
+  //Serial.print(", ");
+  //Serial.print(voltageValue);
+  //Serial.print(" (v), ");
+  //Serial.print(", ");
+ //Serial.println(newtonValue);
+  //Serial.println(" N.");
 
   prevSensorValue = sensorValue;
  

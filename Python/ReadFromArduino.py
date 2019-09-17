@@ -13,6 +13,9 @@ THING_TOKEN = os.environ['THING_TOKEN']
 my_thing = Thing(thing_id=THING_ID, token=THING_TOKEN)
 my_thing.read()
 
+
+#Create random properties
+my_property = my_thing.find_or_create_property("pressure", PropertyType.ONE_DIMENSION)
 #Read serial port
 ser = serial.Serial(
     port = os.environ['SERIAL'],
@@ -20,7 +23,7 @@ ser = serial.Serial(
     timeout = 2)
 
 #Read next line from serial port and update property values
-def serial_to_property_values();
+def serial_to_property_values():
     #Read one line
     line_bytes = ser.readline()
     #If line is not empty
@@ -29,12 +32,12 @@ def serial_to_property_values();
         line = line_bytes.decode('utf-8')
         #Split string using commas as separator
         values = line.split(',')
-        #Use first element of list of strings as propert ID
-        property_id = values.pop(0)
-        #Get property from thing and update if found
-        prop = my_thing.properties[property_id]
-        if prop is not None:
-            prop.update_values([float(x) for x in values])
+        #Use first element of list of strings as property ID
+        values.pop(0)
+        print(values)
+
+        if my_property is not None:
+            my_property.update_values([float(x) for x in values])
         else:
             print('Warning: unknown property' + property_id)
 
