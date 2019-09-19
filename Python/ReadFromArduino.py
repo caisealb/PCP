@@ -32,7 +32,7 @@ def serial_to_property_values():
         line = line_bytes.decode('utf-8')
         #Split string using commas as separator
         values = line.split(',')
-        #Use first element of list of strings as property ID
+        #Remove first element of list and print the rest
         values.pop(0)
         print(values)
 
