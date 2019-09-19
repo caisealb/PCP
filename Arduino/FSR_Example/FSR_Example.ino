@@ -10,7 +10,7 @@ double newtonValue;
 
 void setup() {
  Serial.begin(9600);
- pinMode(sensorValue, INPUT);
+ pinMode(fsrPin, INPUT);
 
  deviation = 10;
 }
@@ -35,27 +35,29 @@ void setup() {
   double c = -0.01461;
   double d = -2.231;
 
-  return((a*exp(b*voltage) + (c*exp(d*voltage))*9.81)); //9.81 multiplication converts KgF to Newtons
+  return((a*exp(b*voltage) + c*exp(d*voltage))*9.81); //9.81 multiplication converts KgF to Newtons
   }
 
 
 void loop() {
  delay(100); //Corresponds to 10Hz sample rate
  sensorValue = analogRead(fsrPin);
- if(sensorValue >= (prevSensorValue - deviation) && sensorValue <= (prevSensorValue + deviation)){
+ if(sensorValue >= (prevSensorValue - deviation) && sensorValue <= (prevSensorValue + deviation))
   return;
 
   voltageValue = double((sensorValue*5))/1023; //convert to voltage
   newtonValue = convertToNewtons(voltageValue); //actual force value
 
-  Serial.print("Pressure: ");
-  Serial.print(sensorValue);
-  Serial.print(" ()-1023) steps, ");
-  Serial.print(voltageValue);
-  Serial.print(" (v), ");
-  Serial.print(newtonValue);
-  Serial.println(" N.");
+  Serial.print("Pressure, ");
+  Serial.println(sensorValue);
+  //Serial.print(" (0-1023) steps, ");
+  //Serial.print(", ");
+  //Serial.print(voltageValue);
+  //Serial.print(" (v), ");
+  //Serial.print(", ");
+ //Serial.println(newtonValue);
+  //Serial.println(" N.");
 
   prevSensorValue = sensorValue;
- }
+ 
 }
