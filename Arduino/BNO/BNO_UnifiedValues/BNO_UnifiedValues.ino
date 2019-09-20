@@ -1,13 +1,12 @@
-
-
 #include <Wire.h>                 // Library used for communication with I2C
 #include <Adafruit_Sensor.h>      // Adafruit unified sensor library
 #include <Adafruit_BNO055.h>      // Adafruit library for this breakout
 #include <utility/imumaths.h>     // Utility to define vector, matrices and quaternions,
-                                  // And their helper functions
+                                  
 
 // Here, we set the delay, in ms,  between fresh samples (the sample rate)
 #define DELAY_MS 1000
+
 
 // structure to store total rotations since IMU  initialized, forward and reverse
 // initialized with a global variable global_rotations, this variable stores rotations
