@@ -24,7 +24,7 @@ float previous_axis_value = 666;  // Initial value so we don't account for it
 Adafruit_BNO055 bno = Adafruit_BNO055(12345);
 
 // Function to compute rotation on a given axis
-// takes the axis that you want to use and variable it can change 
+// takes the axis that you want to use and variable it can change
 // CAREFUL YOU MUST PASS ROTATIONS AS A POINTER
 // (float axis, Rotations * rotations)
 bool compute_rotations(float axis, Rotations * rotations) {
@@ -32,7 +32,7 @@ bool compute_rotations(float axis, Rotations * rotations) {
   // variable to store initial axis value in compute rotations - declared static so that it stores
   // this value in between function calls, but no other functions can change its value
   //Variables declared as static will only be created and initialized the first time a function is called
-  
+
   float offset_rot = (axis-previous_axis_value) / 360; // offset since previous measurement, in rotations
 
   // so we do not account for anything in the setup phase
@@ -45,10 +45,10 @@ bool compute_rotations(float axis, Rotations * rotations) {
   } else {
     (rotations->reverse_rotations) += offset_rot;
   }
-  
+
   // place previous axis value
   previous_axis_value = axis;
-   
+
   return(true); // returns true by default, do not remove, as it helps with the initial setup.
 }
 
@@ -78,12 +78,12 @@ void setup(void) {
 
 
 
-// Arduino loop function, called once 'setup' is complete 
+// Arduino loop function, called once 'setup' is complete
 void loop(void) {
   /* Get a new sensor event */
   sensors_event_t event;
   bno.getEvent(&event);
-  
+
   /* Display the floating point data */
 //  Serial.print("X: ");
 //  Serial.print(event.orientation.x, 4);   // 4 decimal places
@@ -92,9 +92,9 @@ void loop(void) {
 //  Serial.print("\tZ: ");
 //  Serial.print(event.orientation.z, 4);
 
-  // if this is the first loop iteration, ignore position data (always zero)  
-  //if its second loop iteration set the starting position for your axis 
-  // if its another iteration, just continue computing the rotation data 
+  // if this is the first loop iteration, ignore position data (always zero)
+  //if its second loop iteration set the starting position for your axis
+  // if its another iteration, just continue computing the rotation data
 
   float axis_value = event.orientation.x;   // replace this with whatever axis you're tracking
   not_first_loop = (not_first_loop)?compute_rotations(axis_value, &global_rotations) : true;
@@ -103,7 +103,7 @@ void loop(void) {
   float posRotations = (global_rotations.forward_rotations);
   float negRotations = (-global_rotations.reverse_rotations);
   float totalRotations = (posRotations + negRotations);
-  int distFactor = 10;
+  float distFactor = 2.07345; //in metres
   float totalDistance = (totalRotations*distFactor);
 
   Serial.println("");
@@ -119,7 +119,7 @@ void loop(void) {
   Serial.println(totalDistance);
   Serial.println("==============");
 
-  
+
   /* Optional: Display calibration status */
   // displayCalStatus();
 
