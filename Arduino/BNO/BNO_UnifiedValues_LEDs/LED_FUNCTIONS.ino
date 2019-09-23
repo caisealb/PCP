@@ -39,7 +39,7 @@ void distCounterLED() {
 }
 
 void illumNoCounter() {
-  illumNo = (totalDistance / 0.1);
+  illumNo = (totalDistance / 10);
   illumNoRound = illumNo;
   illumNoRound = illumNoRound % 17;
 }
