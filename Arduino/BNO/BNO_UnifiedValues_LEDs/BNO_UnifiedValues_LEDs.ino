@@ -1,13 +1,39 @@
+////LIBRARIES////
+#include <Adafruit_NeoPixel.h>    // Neopixel ring library
 #include <Wire.h>                 // Library used for communication with I2C
 #include <Adafruit_Sensor.h>      // Adafruit unified sensor library
 #include <Adafruit_BNO055.h>      // Adafruit library for this breakout
 #include <utility/imumaths.h>     // Utility to define vector, matrices and quaternions,
-
-
+                                  
+////DEFINITIONS////
 // Here, we set the delay, in ms,  between fresh samples (the sample rate)
 #define DELAY_MS 1000
 
+//Pins for neopixel connections
+#define ringPin1 6
+#define ringPin2 7
+//Parameters for rings
+Adafruit_NeoPixel ring1 = Adafruit_NeoPixel(16, ringPin1, NEO_GRB + NEO_KHZ800);
+Adafruit_NeoPixel ring2 = Adafruit_NeoPixel(16, ringPin2, NEO_GRB + NEO_KHZ800);
 
+
+////VARIABLES////
+ //Calculate distance based on total pos and neg rotations
+  float posRotations;
+  float negRotations;
+  float totalRotations;
+  float distFactor = 2.07345;
+  float totalDistance;
+  float illumNo;
+  int illumNoRound;
+  int prevIllumNoRound;
+  int red;
+  int green;
+  int blue;
+
+
+
+////ROTATION CALCULATIONS////
 // structure to store total rotations since IMU  initialized, forward and reverse
 // initialized with a global variable global_rotations, this variable stores rotations
 // on a particular axis, in both directions, since startup
@@ -51,10 +77,19 @@ bool compute_rotations(float axis, Rotations * rotations) {
   return(true); // returns true by default, do not remove, as it helps with the initial setup.
 }
 
-// Arduino setup function (automatically called at startup)
+
+
+////SETUP////
 void setup(void) {
   Serial.begin(9600);
-  Serial.println("Lets begin our Orientation Sensor Test"); Serial.println("");
+  //Initialise LEDs
+  ring1.begin();
+  ring1.setBrightness(50);
+  ring1.show();
+
+  ring2.begin();
+  ring2.setBrightness(50);
+  ring2.show();
 
   // Initialise the sensor
   if(!bno.begin()) {
@@ -63,7 +98,7 @@ void setup(void) {
     while(1);
   }
 
-  delay(1000);
+  delay(200);
 
   /* Display some basic information on this sensor */
   //displaySensorDetails();
@@ -77,7 +112,8 @@ void setup(void) {
 
 
 
-// Arduino loop function, called once 'setup' is complete
+
+////LOOP////
 void loop(void) {
   /* Get a new sensor event */
   sensors_event_t event;
@@ -98,13 +134,11 @@ void loop(void) {
   float axis_value = event.orientation.x;   // replace this with whatever axis you're tracking
   not_first_loop = (not_first_loop)?compute_rotations(axis_value, &global_rotations) : true;
 
-  //Calculate distance based on total pos and neg rotations
-  float posRotations = (global_rotations.forward_rotations);
-  float negRotations = (-global_rotations.reverse_rotations);
-  float totalRotations = (posRotations + negRotations);
-  float distFactor = 2.07345; //in metres
-  float totalDistance = (totalRotations*distFactor);
+  calcDist();
+  distCounterLED();
 
+  Serial.println(illumNoRound);
+  
   Serial.println("");
   Serial.println("==============");
   Serial.println("Total Rotations in selected axis");
@@ -131,3 +165,16 @@ void loop(void) {
   /* Wait the specified delay before requesting nex data */
   delay(DELAY_MS) ;
 }
+
+
+void calcDist() {
+  //Calculate distance based on total pos and neg rotations
+  posRotations = (global_rotations.forward_rotations);
+  negRotations = (-global_rotations.reverse_rotations);
+  totalRotations = (posRotations + negRotations);
+  totalDistance = (totalRotations*distFactor);
+}
+
+
+
+ 
