@@ -1,0 +1,13 @@
+First functional version as of 20/09/19
+- 1x neopixel LED ring
+  -each consecutive LED is illuminated when a certain total distance is achieved via BNO sensor
+  - intended distance = 100m; 10m for testing purposes
+
+- BNO sensor outputs unified values; interpreted to find no. of rotations
+  - no. of rotations multiplied by distance factor (total distance in m covered by 1 wheel rotation)
+
+
+Second version as of 23/09/19
+- LED colour changes with no. of distance units achieved - 1-4 = red, 5-8 = orange, 9-12 = yellow, 13-16 = green
+  - note: transition from 16 back to 0 must be clearly completed otherwise LED cycles overlap
+  
