@@ -26,6 +26,7 @@ Adafruit_NeoPixel ring2 = Adafruit_NeoPixel(16, ringPin2, NEO_GRB + NEO_KHZ800);
   float totalDistance;
   float illumNo;
   int illumNoRound;
+  int prevIllumNoRound;
   int red;
   int green;
   int blue;
