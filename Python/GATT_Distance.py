@@ -15,7 +15,7 @@ from dcd.entities.property import PropertyType
 #Serial
 import serial
 ser = serial.Serial(
-    port = os.environ['SERIAL'],
+    port = '/dev/ttyACM0',
     baudrate = 9600,
     timeout = 2)
 
