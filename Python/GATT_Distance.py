@@ -12,6 +12,13 @@ from dotenv import \
 from dcd.entities.thing import Thing
 from dcd.entities.property import PropertyType
 
+#Serial
+import serial
+ser = serial.Serial(
+    port = os.environ['SERIAL'],
+    baudrate = 9600,
+    timeout = 2)
+
 # The thing ID and access token
 load_dotenv()
 THING_ID = os.environ['THING_ID']
@@ -40,7 +47,9 @@ def handle_distance_data(handle, value_bytes):
     values = [float(x) for x in value_bytes.decode('utf-8').split(",")]
     find_or_create("Distance",
                    PropertyType.ONE_DIMENSION).update_values(values)
-
+    ser.write((values[x])+'\n')
+    ser.close()
+    print(values[x])
 
 def discover_characteristic(device):
     #List characteristics of a device
