@@ -45,10 +45,12 @@ def handle_distance_data(handle, value_bytes):
     #value_bytes -- bytearray, the data returned in the notification
     print("Received data: %s (handle %d)" % (str(value_bytes), handle))
     values = [float(x) for x in value_bytes.decode('utf-8').split(",")]
+    ser.write(((value_bytes.decode('utf-8')+ '\n').encode()))
+
     find_or_create("Distance",
                    PropertyType.ONE_DIMENSION).update_values(values)
-    ser.write(str(value_bytes) + '\n')
-    ser.close()
+    # ser.write(str(value_bytes) + '\n')
+    # ser.close()
 
 def discover_characteristic(device):
     #List characteristics of a device
