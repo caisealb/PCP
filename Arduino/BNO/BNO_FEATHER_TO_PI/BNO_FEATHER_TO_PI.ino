@@ -19,6 +19,7 @@
 
 ////DEFINITIONS & POINTERS////
 #define BNO055_SAMPLERATE_DELAY_MS (1000)
+Adafruit_BNO055 bno = Adafruit_BNO055(55);
 
 
 ////VARIABLES////
@@ -45,7 +46,7 @@ struct Rotations {
 bool not_first_loop = false; // Boolean variable to stop logging of first loop
 float previous_axis_value = 666;  // Initial value so we don't account for it
 // Creating our sensor object to handle the sensor, with initialization 12345
-Adafruit_BNO055 bno = Adafruit_BNO055(12345);
+//Adafruit_BNO055 bno = Adafruit_BNO055(12345);
 
 // Function to compute rotation on a given axis
 // takes the axis that you want to use and variable it can change
@@ -121,6 +122,12 @@ void setup() {
 
 ////LOOP////
 void loop(void) {
+
+  sensors_event_t event;
+  bno.getEvent(&event);
+  float axis_value = event.orientation.x;   // replace this with whatever axis you're tracking
+  not_first_loop = (not_first_loop) ? compute_rotations(axis_value, &global_rotations) : true;
+
   calcDist();
   //Check if command executed
   if (!ble.waitForOK()) {
@@ -218,7 +225,7 @@ void calcDist() {
   ble.print( F("AT+GATTCHAR=") );
   ble.print( distanceCharId );
   ble.print( F(",") );
-  ble.print(String(totalDistance));
-  Serial.println(totalDistance);
+  ble.println(String(totalDistance));
+  Serial.println(totalRotations);
 
 }
