@@ -219,5 +219,6 @@ void calcDist() {
   ble.print( distanceCharId );
   ble.print( F(",") );
   ble.print(String(totalDistance));
+  Serial.println(totalDistance);
 
 }
