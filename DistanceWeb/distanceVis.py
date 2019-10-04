@@ -78,12 +78,7 @@ def keyboard_interrupt_handler(signal_num, frame):
     wheel.unsubscribe(GATT_CHARACTERISTIC_DISTANCE)
     exit(0)
 
-
-
-if __name__ == '__main__':
-    # app.run(host='0.0.0.0')
-    socketio.run(app, host = '0.0.0.0')
-
+def connect_bluetooth():
     # Start a BLE adapter
     bleAdapter = pygatt.GATTToolBackend()
     bleAdapter.start()
@@ -95,5 +90,10 @@ if __name__ == '__main__':
     wheel.subscribe(GATT_CHARACTERISTIC_DISTANCE,
                          callback=handle_distance_data)
 
-    # Register our Keyboard handler to exit
-    signal.signal(signal.SIGINT, keyboard_interrupt_handler)
+if __name__ == '__main__':
+    # app.run(host='0.0.0.0')
+    socketio.run(app, host = '0.0.0.0')
+    connect_bluetooth()
+
+# Register our Keyboard handler to exit
+signal.signal(signal.SIGINT, keyboard_interrupt_handler)

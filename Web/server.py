@@ -31,6 +31,10 @@ def create():
     sensors.append(request.json["sensorName"])
     return 'Added sensor!'
 
+@socketio.on('json')
+def handle_json(json):
+    print('received json: ' + str(json))
+    emit('json', json, broadcast=True)
 
 if __name__ == '__main__':
     socketio.run(app, host = '0.0.0.0')
