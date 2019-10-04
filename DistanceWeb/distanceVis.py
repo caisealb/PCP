@@ -93,10 +93,12 @@ def connect_bluetooth():
     wheel.subscribe(GATT_CHARACTERISTIC_DISTANCE,
                          callback=handle_distance_data)
 
-if __name__ == '__main__':
-    # app.run(host='0.0.0.0')
-    socketio.run(app, host = '0.0.0.0')
-    connect_bluetooth()
-
 # Register our Keyboard handler to exit
 signal.signal(signal.SIGINT, keyboard_interrupt_handler)
+
+socketio.run(app, host = '0.0.0.0')
+
+connect_bluetooth()
+#
+# if __name__ == '__main__':
+#     # app.run(host='0.0.0.0')
