@@ -3,7 +3,7 @@
       <script type="text/javascript">
         function move() {
           var elem = document.getElementById("myBar");
-          var width = {{ distBar|tojson }}
+          var width = {{ distBar }}
           var id = setInterval(frame, 10);
           function frame() {
             if (width >= 100) {
