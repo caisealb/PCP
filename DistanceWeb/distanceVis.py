@@ -19,12 +19,14 @@ GATT_CHARACTERISTIC_DISTANCE = "02-11-88-33-44-55-66-77-88-99-AA-BB-CC-DD-EE-FF"
 # Many devices, e.g. Fitbit, use random addressing, this is required to connect.
 ADDRESS_TYPE = pygatt.BLEAddressType.random
 
+distVal = 0
 
 def handle_distance_data(handle, value_bytes):
     #handle -- integer, characteristic read handle the data was received on
     #value_bytes -- bytearray, the data returned in the notification
     print("Received data: %s (handle %d)" % (str(value_bytes), handle))
     values = [float(x) for x in value_bytes.decode('utf-8').split(",")]
+    global distVal
     distData = ((value_bytes.decode('utf-8')).encode())
     distVal = (float(distData))
     print(distVal)
@@ -76,7 +78,7 @@ def hello_world():
     return 'Hello, World!'
 
 @app.route('/distance')
-def distance(distVal):
+def distance():
     distBar = distVal
     return render_template('distanceVis.html', distBar=distBar)
 
