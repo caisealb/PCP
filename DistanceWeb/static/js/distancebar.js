@@ -1,6 +1,6 @@
 
 
-function move() {
+window.onload = function move() {
   var elem = document.getElementById("myBar");
   var width = 1;
   var id = setInterval(frame, 10);
