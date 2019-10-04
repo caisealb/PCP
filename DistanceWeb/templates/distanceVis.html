@@ -1,6 +1,21 @@
 <html>
     <head>
-      <script type="text/javascript" {{ url_for('static', filename='js/distancebar.js')}}></script>
+      <script type="text/javascript">
+        function move() {
+          var elem = document.getElementById("myBar");
+          var width = 1;
+          var id = setInterval(frame, 10);
+          function frame() {
+            if (width >= 100) {
+              clearInterval(id);
+            } else {
+              width++;
+              elem.style.width = width + '%';
+            }
+          }
+        }
+        window.onload = move;
+      </script>
         <title>Our App</title>
         <link rel="stylesheet" type="text/css"
               href="{{ url_for('static', filename='css/style.css') }}">
