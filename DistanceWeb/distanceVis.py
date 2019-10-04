@@ -23,6 +23,28 @@ ADDRESS_TYPE = pygatt.BLEAddressType.random
 
 distVal = 0
 
+# ==== ==== ===== == =====  Web server
+
+app = Flask(__name__)
+
+app.config['SECRET KEY'] = 'secret!'
+socketio = SocketIO(app)
+
+@app.route('/')
+def hello_world():
+    return 'Hello, World!'
+
+@app.route('/distance')
+def distance():
+    distBar = distVal
+    return render_template('distanceVis.html', distBar=distBar)
+
+@socketio.on('json')
+def handle_json(json):
+    print('received json: ' + str(json))
+    emit('json', json, broadcast=True)
+
+
 def handle_distance_data(handle, value_bytes):
     #handle -- integer, characteristic read handle the data was received on
     #value_bytes -- bytearray, the data returned in the notification
@@ -57,41 +79,21 @@ def keyboard_interrupt_handler(signal_num, frame):
     exit(0)
 
 
-# Start a BLE adapter
-bleAdapter = pygatt.GATTToolBackend()
-bleAdapter.start()
-
-# Use the BLE adapter to connect to our device
-wheel = bleAdapter.connect(BLUETOOTH_DEVICE_MAC, address_type=ADDRESS_TYPE)
-
-# Subscribe to the GATT service
-wheel.subscribe(GATT_CHARACTERISTIC_DISTANCE,
-                     callback=handle_distance_data)
-
-# Register our Keyboard handler to exit
-signal.signal(signal.SIGINT, keyboard_interrupt_handler)
-
-# ==== ==== ===== == =====  Web server
-
-app = Flask(__name__)
-
-app.config['SECRET KEY'] = 'secret!'
-socketio = SocketIO(app)
-
-@app.route('/')
-def hello_world():
-    return 'Hello, World!'
-
-@app.route('/distance')
-def distance():
-    distBar = distVal
-    return render_template('distanceVis.html', distBar=distBar)
-
-@socketio.on('json')
-def handle_json(json):
-    print('received json: ' + str(json))
-    emit('json', json, broadcast=True)
 
 if __name__ == '__main__':
     # app.run(host='0.0.0.0')
     socketio.run(app, host = '0.0.0.0')
+
+    # Start a BLE adapter
+    bleAdapter = pygatt.GATTToolBackend()
+    bleAdapter.start()
+
+    # Use the BLE adapter to connect to our device
+    wheel = bleAdapter.connect(BLUETOOTH_DEVICE_MAC, address_type=ADDRESS_TYPE)
+
+    # Subscribe to the GATT service
+    wheel.subscribe(GATT_CHARACTERISTIC_DISTANCE,
+                         callback=handle_distance_data)
+
+    # Register our Keyboard handler to exit
+    signal.signal(signal.SIGINT, keyboard_interrupt_handler)
