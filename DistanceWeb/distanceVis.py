@@ -54,7 +54,7 @@ def handle_distance_data(handle, value_bytes):
     distData = ((value_bytes.decode('utf-8')).encode())
     distVal = (float(distData))
     print(distVal)
-    emit('json', '{"distance": "' + str(distVal) + '"}', broadcast=True)
+    emit('json', '{"distance": "%s"}' % str(distVal), broadcast=True)
     return distVal
 
 
@@ -79,13 +79,16 @@ def keyboard_interrupt_handler(signal_num, frame):
     exit(0)
 
 def connect_bluetooth():
+    print("Starting Bluetooth...")
     # Start a BLE adapter
     bleAdapter = pygatt.GATTToolBackend()
     bleAdapter.start()
 
+    print("connecting to Bluetooth device...")
     # Use the BLE adapter to connect to our device
     wheel = bleAdapter.connect(BLUETOOTH_DEVICE_MAC, address_type=ADDRESS_TYPE)
 
+    print("subscribing...")
     # Subscribe to the GATT service
     wheel.subscribe(GATT_CHARACTERISTIC_DISTANCE,
                          callback=handle_distance_data)
