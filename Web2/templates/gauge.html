@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title> Gauge </title>
     <script src="https://d3js.org/d3.v3.min.js" language="JavaScript"></script>
     <script type="text/javascript" charset="utf-8">
       var socket = io();
@@ -16,28 +16,30 @@
         }
       });
 
-
       function sendMessage(message) {
         socket.emit('json', {data: NewValue()});
       }
+
     </script>
     <script src="{{ url_for('static', filename='js/liquidFillGauge.js') }}" language="JavaScript"></script>
     <style>
-        .liquidFillGaugeText { font-family: Helvetica; font-weight: bold; }
+        .liquidFillGaugeText { font-family: Times; font-weight: bold; }
     </style>
 </head>
 <body>
   <button onclick="sendMessage('Button clicked')">Click!</button>
-  <svg id="fillgauge1" width="97%" height="250" onclick="gauge1.update(NewValue());"></svg>
+
+  <svg id="fillgauge1" width="19%" height="200" onclick="gauge1.update(NewValue());"></svg>
   <svg id="fillgauge2" width="19%" height="200" onclick="gauge2.update(NewValue());"></svg>
   <svg id="fillgauge3" width="19%" height="200" onclick="gauge3.update(NewValue());"></svg>
   <svg id="fillgauge4" width="19%" height="200" onclick="gauge4.update(NewValue());"></svg>
   <svg id="fillgauge5" width="19%" height="200" onclick="gauge5.update(NewValue());"></svg>
   <svg id="fillgauge6" width="19%" height="200" onclick="gauge6.update(NewValue());"></svg>
+
   <script language="JavaScript">
-      var gauge1 = loadLiquidFillGauge("fillgauge1", 55);
-      var config1 = liquidFillGaugeDefaultSettings();
-      config1.circleColor = "#FF7777";
+      var gauge1 = loadLiquidFillGauge("fillgauge1", 55); //function named loadLiquidFillGauge, applied to the first one with the number 55)
+      var config1 = liquidFillGaugeDefaultSettings(); //config1 is for the first circle, contains a function named liquidFillGaugeDefaultSettings
+      config1.circleColor = "#FF7777"; //defining the attributtes of the first circle
       config1.textColor = "#FF4444";
       config1.waveTextColor = "#FFAAAA";
       config1.waveColor = "#FFDDDD";
