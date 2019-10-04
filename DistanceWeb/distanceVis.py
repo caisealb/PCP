@@ -25,6 +25,8 @@ def handle_distance_data(handle, value_bytes):
     #value_bytes -- bytearray, the data returned in the notification
     print("Received data: %s (handle %d)" % (str(value_bytes), handle))
     values = [float(x) for x in value_bytes.decode('utf-8').split(",")]
+    distVal = ((value_bytes.decode('utf-8')+ '\n').encode())
+    return distVal
 
 
 def discover_characteristic(device):
@@ -73,7 +75,8 @@ def hello_world():
 
 @app.route('/distance')
 def distance():
-    return render_template('distanceVis.html')
+    distData = handle_distance_data()
+    return render_template('distanceVis.html', distData=distData)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0')
