@@ -77,8 +77,8 @@ def hello_world():
 
 @app.route('/distance')
 def distance(distData):
-    distData = handle_distance_data()
-    return render_template('distanceVis.html', distData=distData)
+    distBar = handle_distance_data()
+    return render_template('distanceVis.html', distBar=distBar)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0')
