@@ -27,6 +27,7 @@ def handle_distance_data(handle, value_bytes):
     values = [float(x) for x in value_bytes.decode('utf-8').split(",")]
     distVal = ((value_bytes.decode('utf-8')).encode())
     print("distVal = " + str(distVal))
+    print(float(distVal))
     return distVal
 
 
