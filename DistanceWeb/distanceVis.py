@@ -56,7 +56,7 @@ def handle_distance_data(handle, value_bytes):
     print(distVal)
     try:
         emit('json', '{"distance": "%s"}' % str(distVal), broadcast=True)
-    execpt:
+    exept:
         print("No socket?")
     return distVal
 
