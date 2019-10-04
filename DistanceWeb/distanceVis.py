@@ -8,6 +8,8 @@ import os  # To access environment variables
 from dotenv import \
     load_dotenv  # To load the environment variables from the .env file
 
+from flask import Flask, request, render_template
+from flask_socketio import SocketIO, emit
 
 # The thing ID and access token
 load_dotenv()
@@ -30,6 +32,7 @@ def handle_distance_data(handle, value_bytes):
     distData = ((value_bytes.decode('utf-8')).encode())
     distVal = (float(distData))
     print(distVal)
+    emit('json', '{"distance": "' + distVal + '"}', broadcast=True)
     return distVal
 
 
@@ -68,10 +71,12 @@ wheel.subscribe(GATT_CHARACTERISTIC_DISTANCE,
 # Register our Keyboard handler to exit
 signal.signal(signal.SIGINT, keyboard_interrupt_handler)
 
-
-from flask import Flask, request, render_template
+# ==== ==== ===== == =====  Web server
 
 app = Flask(__name__)
+
+app.config['SECRET KEY'] = 'secret!'
+socketio = SocketIO(app)
 
 @app.route('/')
 def hello_world():
@@ -82,5 +87,11 @@ def distance():
     distBar = distVal
     return render_template('distanceVis.html', distBar=distBar)
 
+@socketio.on('json')
+def handle_json(json):
+    print('received json: ' + str(json))
+    emit('json', json, broadcast=True)
+
 if __name__ == '__main__':
-    app.run(host='0.0.0.0')
+    # app.run(host='0.0.0.0')
+    socketio.run(app, host = '0.0.0.0')
