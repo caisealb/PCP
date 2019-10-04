@@ -54,7 +54,10 @@ def handle_distance_data(handle, value_bytes):
     distData = ((value_bytes.decode('utf-8')).encode())
     distVal = (float(distData))
     print(distVal)
-    emit('json', '{"distance": "%s"}' % str(distVal), broadcast=True)
+    try:
+        emit('json', '{"distance": "%s"}' % str(distVal), broadcast=True)
+    execpt:
+        print("No socket?")
     return distVal
 
 
@@ -96,9 +99,9 @@ def connect_bluetooth():
 # Register our Keyboard handler to exit
 signal.signal(signal.SIGINT, keyboard_interrupt_handler)
 
-socketio.run(app, host = '0.0.0.0')
-
 connect_bluetooth()
+
+socketio.run(app, host = '0.0.0.0')
 #
 # if __name__ == '__main__':
 #     # app.run(host='0.0.0.0')
