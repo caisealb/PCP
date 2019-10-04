@@ -79,4 +79,5 @@ def distance():
     return render_template('distanceVis.html', distData=distData)
 
 if __name__ == '__main__':
+    distance(distData)
     app.run(host='0.0.0.0')
