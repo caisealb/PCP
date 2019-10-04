@@ -32,7 +32,7 @@ def handle_distance_data(handle, value_bytes):
     distData = ((value_bytes.decode('utf-8')).encode())
     distVal = (float(distData))
     print(distVal)
-    emit('json', '{"distance": "' + distVal + '"}', broadcast=True)
+    emit('json', '{"distance": "' + str(distVal) + '"}', broadcast=True)
     return distVal
 
 
