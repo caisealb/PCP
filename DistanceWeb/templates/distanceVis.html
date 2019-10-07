@@ -32,7 +32,7 @@
 
         function move() {
           var elem = document.getElementById("myBar");
-          var width = {{ distBar }};
+          var width = {{ json.distance }};
           var id = setInterval(frame, 10);
           function frame() {
             if (width >= 100) {
