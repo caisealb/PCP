@@ -18,6 +18,7 @@
         socket.on('distance', function(json) {
 
           console.log(json['distance']);
+          console.log(json.distance);
           if (json.distance !== undefined) {
             document.getElementById("myBar").with = json.distance;
           }
