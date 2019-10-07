@@ -220,6 +220,7 @@ void calcDist() {
   totalRotations = (posRotations + negRotations);
   totalDistance = (totalRotations * distFactor);
 
+
   // Command is sent when \n (\r) or println is called
   // AT+GATTCHAR=CharacteristicID,value
   ble.print( F("AT+GATTCHAR=") );
