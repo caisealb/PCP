@@ -21,7 +21,7 @@
           console.log(json.distance);
 
           if (json.distance !== undefined) {
-            document.getElementById("myBar").width = json.distance;
+             document.getElementById("myBar").width = json.distance;
           }
         });
 
@@ -43,7 +43,7 @@
             }
           }
         }
-        window.onload = move;
+        window.onload = move();
       </script>
         <title>Our App</title>
         <link rel="stylesheet" type="text/css"
