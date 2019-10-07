@@ -39,10 +39,18 @@ def distance():
     distBar = distVal
     return render_template('distanceVis.html', distBar=distBar)
 
-# @socketio.on('json')
-# def handle_json(json):
-#     print('received json: ' + str(json))
-#     emit('json', json, broadcast=True)
+@socketio.on('json')
+def handle_json(json):
+    print('received json: ' + str(json))
+    emit('json', json, broadcast=True)
+
+@socketio.on('json')
+def send_distance_data():
+    try:
+        emit('json', '{"distance": "%s"}' % str(distVal), broadcast=True)
+    except:
+        print("No socket?")
+
 
 
 def handle_distance_data(handle, value_bytes):
@@ -54,10 +62,6 @@ def handle_distance_data(handle, value_bytes):
     distData = ((value_bytes.decode('utf-8')).encode())
     distVal = (float(distData))
     print(distVal)
-    try:
-        emit('json', '{"distance": "%s"}' % str(distVal), broadcast=True)
-    except:
-        print("No socket?")
     return distVal
 
 
