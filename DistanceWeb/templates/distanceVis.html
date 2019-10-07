@@ -15,6 +15,17 @@
           }
         });
 
+        socket.on('distance', function(dist_obj) {
+          const json = JSON.parse(dist_obj);
+          console.log(json);
+          console.log(json.distance);
+
+          if (json.distance !== undefined) {
+            document.getElementById("myBar").with = json.distance;
+          }
+        });
+
+
         // function sendMessage(message) {
         //   socket.emit('json', {data: NewValue()});
         // }
