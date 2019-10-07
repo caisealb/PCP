@@ -5,7 +5,7 @@
                   crossorigin="anonymous"></script>
       <script type="text/javascript" charset="utf-8">
         var socket = io();
-        var barWidth;
+        var barWidth = 0;
         socket.on('connect', function() {
           // socket.emit('json', {data: 'I\'m connected!'});
         });
@@ -34,7 +34,6 @@
 
         function move() {
           var elem = document.getElementById("myBar");
-          var width = 0;
           var id = setInterval(frame, 10);
           function frame() {
             if (barWidth >= 100) {
