@@ -36,7 +36,7 @@
           var elem = document.getElementById("myBar");
           var id = setInterval(frame, 10);
           function frame() {
-            if (width >= 100) {
+            if (barWidth >= 100) {
               clearInterval(id);
             } else {
               elem.style.width = barWidth;
