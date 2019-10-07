@@ -23,7 +23,7 @@
           if (json.distance !== undefined) {
             var barWidth = parseFloat(json.distance);
             console.log(barWidth);
-             document.getElementById("myBar").width = barWidth;
+            move(barWidth);
           }
         });
 
@@ -34,13 +34,12 @@
 
         function move() {
           var elem = document.getElementById("myBar");
-          var width = {{ distBar }};
           var id = setInterval(frame, 10);
           function frame() {
             if (width >= 100) {
               clearInterval(id);
             } else {
-              elem.style.width = width;
+              elem.style.width = barWidth;
               // + '%';
             }
           }
