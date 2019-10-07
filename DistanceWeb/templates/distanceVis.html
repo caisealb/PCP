@@ -20,12 +20,6 @@
             // socket.emit('json', {data: 'I\'m connected!'});
           });
 
-          // socket.on('json', function(msg, cb) {
-          //   if (msg.distance !== undefined) {
-          //     document.getElementById("myBar").width = msg.distance;
-          //   }
-          // });
-
           socket.on('distance', function(dist_obj) {
             const json = JSON.parse(dist_obj);
             console.log(json);
@@ -37,11 +31,6 @@
             }
           });
 
-
-          // function sendMessage(message) {
-          //   socket.emit('json', {data: NewValue()});
-          // }
-
           function move() {
             var elem = document.getElementById("myBar");
             var id = setInterval(frame, 10);
@@ -50,7 +39,6 @@
                 clearInterval(id);
               } else {
                 elem.style.width = barWidth;
-                // + '%';
               }
             }
           }
