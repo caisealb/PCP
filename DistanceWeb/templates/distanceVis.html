@@ -21,7 +21,8 @@
           console.log(json.distance);
 
           if (json.distance !== undefined) {
-             document.getElementById("myBar").width = json.distance;
+            var barWidth = parseFloat(json.distance);
+             document.getElementById("myBar").width = barWidth;
           }
         });
 
