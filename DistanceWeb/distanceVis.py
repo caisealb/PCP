@@ -30,6 +30,7 @@ app = Flask(__name__)
 app.config['SECRET KEY'] = 'secret!'
 socketio = SocketIO(app)
 
+
 @app.route('/')
 def hello_world():
     return 'Hello, World!'
@@ -44,6 +45,12 @@ def handle_json(json):
     print('received json: ' + str(json))
     emit('json', json, broadcast=True)
 
+@socketio.on('distance')
+def handle_json(json):
+    return('received json: ' + str(json))
+
+
+
 
 def handle_distance_data(handle, value_bytes):
     #handle -- integer, characteristic read handle the data was received on
@@ -56,7 +63,7 @@ def handle_distance_data(handle, value_bytes):
 
     #print(distVal)
     try:
-       emit('json', '{"distance": "%s"}' % str(distVal), broadcast=True)
+       socketio.emit('distance', '{"distance": "%s"}' % str(distVal), broadcast=True)
     except:
        print("No socket?")
     return distVal
