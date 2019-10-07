@@ -51,13 +51,15 @@ def handle_distance_data(handle, value_bytes):
     print("Received data: %s (handle %d)" % (str(value_bytes), handle))
     values = [float(x) for x in value_bytes.decode('utf-8').split(",")]
     global distVal
-    distData = ((value_bytes.decode('utf-8')).encode())
-    distVal = (float(distData))
-    print(distVal)
-    try:
-        emit('json', '{"distance": "%s"}' % str(distVal), broadcast=True)
-    except:
-        print("No socket?")
+
+    print(float(value_bytes))
+    #distData = ((value_bytes.decode('utf-8')).encode())
+    #distVal = (float(distData))
+    #print(distVal)
+    #try:
+    #    emit('json', '{"distance": "%s"}' % str(distVal), broadcast=True)
+    #except:
+    #    print("No socket?")
     return distVal
 
 
