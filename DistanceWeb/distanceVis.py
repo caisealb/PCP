@@ -60,7 +60,7 @@ def handle_distance_data(handle, value_bytes):
     #    emit('json', '{"distance": "%s"}' % str(distVal), broadcast=True)
     #except:
     #    print("No socket?")
-    return distVal
+    #return distVal
 
 
 def discover_characteristic(device):
