@@ -9,11 +9,11 @@
           // socket.emit('json', {data: 'I\'m connected!'});
         });
 
-        socket.on('json', function(msg, cb) {
-          if (msg.distance !== undefined) {
-            document.getElementById("myBar").with = msg.distance;
-          }
-        });
+        // socket.on('json', function(msg, cb) {
+        //   if (msg.distance !== undefined) {
+        //     document.getElementById("myBar").width = msg.distance;
+        //   }
+        // });
 
         socket.on('distance', function(dist_obj) {
           const json = JSON.parse(dist_obj);
@@ -21,7 +21,7 @@
           console.log(json.distance);
 
           if (json.distance !== undefined) {
-            document.getElementById("myBar").with = json.distance;
+            document.getElementById("myBar").width = json.distance;
           }
         });
 
@@ -32,7 +32,7 @@
 
         function move() {
           var elem = document.getElementById("myBar");
-          var width = json.distance;
+          var width = {{ distBar }};
           var id = setInterval(frame, 10);
           function frame() {
             if (width >= 100) {
