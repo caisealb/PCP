@@ -39,6 +39,15 @@
                 clearInterval(id);
               } else {
                 elem.style.width = barWidth;
+                if ((barWidth > 0) && (barWidth < 35)){
+                  elem.style.backgroundColor = "red";
+                }
+                else if ((barWidth >= 35) && (barWidth < 70)) {
+                  elem.style.backgroundColor = "yellow";
+                }
+                else if (barWidth >= 70) {
+                  elem.style.backgroundColor = "green"
+                }
               }
             }
           }
