@@ -15,9 +15,9 @@
           }
         });
 
-        socket.on('distance', function(json) {
+        socket.on('distance', function(dist_obj) {
 
-          console.log(json['distance']);
+          console.log(dist_obj);
 
           if (json.distance !== undefined) {
             document.getElementById("myBar").with = json.distance;
