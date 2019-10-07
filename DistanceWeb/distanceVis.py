@@ -9,7 +9,7 @@ from dotenv import \
     load_dotenv  # To load the environment variables from the .env file
 
 from flask import Flask, request, render_template
-from flask_socketio import SocketIO, emit
+from flask_socketio import SocketIO, emit, send
 
 # The thing ID and access token
 load_dotenv()
@@ -51,13 +51,14 @@ def handle_distance_data(handle, value_bytes):
     print("Received data: %s (handle %d)" % (str(value_bytes), handle))
     values = [float(x) for x in value_bytes.decode('utf-8').split(",")]
     global distVal
-    distData = ((value_bytes.decode('utf-8')).encode())
-    distVal = (float(distData))
+    distVal = (float(value_bytes))
     print(distVal)
+
+    #print(distVal)
     try:
-        emit('json', '{"distance": "%s"}' % str(distVal), broadcast=True)
+       emit('json', '{"distance": "%s"}' % str(distVal), broadcast=True)
     except:
-        print("No socket?")
+       print("No socket?")
     return distVal
 
 
@@ -101,7 +102,8 @@ signal.signal(signal.SIGINT, keyboard_interrupt_handler)
 
 connect_bluetooth()
 
-socketio.run(app, host = '0.0.0.0')
+if __name__ == '__main__':
+    socketio.run(app, host = '0.0.0.0')
 #
 # if __name__ == '__main__':
 #     # app.run(host='0.0.0.0')
