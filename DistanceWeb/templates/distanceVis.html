@@ -15,6 +15,14 @@
           }
         });
 
+        socket.on('distance', function(msg, cb) {
+          if (msg.distance !== undefined) {
+            console.log(msg);
+            document.getElementById("myBar").with = msg.distance;
+          }
+        });
+
+
         // function sendMessage(message) {
         //   socket.emit('json', {data: NewValue()});
         // }
