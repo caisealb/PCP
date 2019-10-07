@@ -31,7 +31,7 @@ bool success;
 float posRotations;
 float negRotations;
 float totalRotations;
-float distFactor = 1.3823;
+float distFactor = 0.5;
 float totalDistance;
 
 
