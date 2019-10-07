@@ -46,8 +46,8 @@ def handle_json(json):
     emit('json', json, broadcast=True)
 
 @socketio.on('distance')
-def handle_json(json):
-    print('received json: ' + str(json))
+def handle_distance(json):
+    print( float(json['distance']))
 
 
 
