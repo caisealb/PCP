@@ -48,11 +48,11 @@ def handle_json(json):
 def handle_distance_data(handle, value_bytes):
     #handle -- integer, characteristic read handle the data was received on
     #value_bytes -- bytearray, the data returned in the notification
-    print("Received data: %s (handle %d)" % (str(value_bytes), handle))
+    #print("Received data: %s (handle %d)" % (str(value_bytes), handle))
     values = [float(x) for x in value_bytes.decode('utf-8').split(",")]
     global distVal
     distVal = (float(value_bytes))
-    print(distVal)
+    print("Received data: &s (handle &d)" % (str(distVal))
     #distData = ((value_bytes.decode('utf-8')).encode())
     #distVal = (float(distData))
     #print(distVal)
