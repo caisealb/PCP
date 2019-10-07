@@ -15,10 +15,10 @@
           }
         });
 
-        socket.on('distance', function(distance) {
+        socket.on('distance', function(json) {
 
-          console.log(distance);
-          if (msg.distance !== undefined) {  
+          console.log(json['distance']);
+          if (msg.distance !== undefined) {
             document.getElementById("myBar").with = msg.distance;
           }
         });
