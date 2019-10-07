@@ -5,6 +5,7 @@
                   crossorigin="anonymous"></script>
       <script type="text/javascript" charset="utf-8">
         var socket = io();
+        var barWidth;
         socket.on('connect', function() {
           // socket.emit('json', {data: 'I\'m connected!'});
         });
@@ -21,9 +22,8 @@
           console.log(json.distance);
 
           if (json.distance !== undefined) {
-            var barWidth = parseFloat(json.distance);
+            barWidth = parseFloat(json.distance);
             console.log(barWidth);
-            move(barWidth);
           }
         });
 
