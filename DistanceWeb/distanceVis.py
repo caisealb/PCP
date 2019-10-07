@@ -47,7 +47,7 @@ def handle_json(json):
 
 @socketio.on('distance')
 def handle_distance(json):
-    print( float(json['distance']))
+    print(float(json['distance']))
 
 
 
@@ -59,6 +59,8 @@ def handle_distance_data(handle, value_bytes):
     values = [float(x) for x in value_bytes.decode('utf-8').split(",")]
     global distVal
     distVal = (float(value_bytes))
+    if distVal >= 100:
+        distVal = 0
     print(distVal)
 
     #print(distVal)
