@@ -47,7 +47,7 @@ def handle_json(json):
 
 @socketio.on('distance')
 def handle_distance(json):
-    app.render_template('distanceVis.html', float(json['distance']))
+    #print( float(json['distance']))
 
 
 

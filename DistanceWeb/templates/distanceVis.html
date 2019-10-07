@@ -15,11 +15,10 @@
           }
         });
 
-        socket.on('distance', function() {
+        socket.on('distance', function(distance) {
 
-          console.log("WE ARE ALIVE");
-          if (msg.distance !== undefined) {
-            
+          console.log(distance);
+          if (msg.distance !== undefined) {  
             document.getElementById("myBar").with = msg.distance;
           }
         });
