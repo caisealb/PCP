@@ -10,6 +10,10 @@ app = Flask(__name__)
 def test():
     return render_template('test.html')
 
+    @app.route('/speed')
+    def speed():
+        return render_template('speed.html')
+
 @app.route('/barchart')
 def barchart():
     return render_template('moving_barChart.html')

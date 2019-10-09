@@ -6,6 +6,7 @@ p {
   color: black;
   text-align: center;
   font: helvetica;
+  font-size: 30px;
   font-style: italic;
 }
 
@@ -14,16 +15,28 @@ h1 {
   text-align: center;
 }
 
-
 #whole {
   text-align: center;
 }
 
+#center{
+  display: inline-block;
+  text-align: center;
+}
+
+#span3{
+   color: purple;
+   font-family:Arial, Helvetica, sans-serif;
+   font-size: 36px;
+   display: inline-block;
+   -webkit-transform: rotate(-45deg);
+   position: absolute;
+}
 
 #logo {
   display: inline-block;
   position: relative;
-  /* text-align: center; */
+  text-align: center;
 }
 
 #logo .speedometer {
@@ -35,6 +48,7 @@ h1 {
   border-bottom: 20px solid white;
   -webkit-transform: rotate(45deg);
   display: inline-block;
+  text-align: left;
 }
 
 #logo .needle {
@@ -56,6 +70,7 @@ h1 {
 
 /* left circle - time */
 #j {
+  position: relative;
   width: 100px;
   height: 100px;
   border-radius: 100%;
@@ -65,12 +80,22 @@ h1 {
   -webkit-transform: rotate(45deg);
   display: inline-block;
   text-align: center;
-  top: 100px;         // 100px from top relative to its old position
-  left: 100px;
+}
+
+#span1{
+   color: pink;
+   font-family:Arial, Helvetica, sans-serif;
+   font-size: 36px;
+   position: absolute;
+   top: 20px;
+   left: 20px;
+   display: inline-block;
+   -webkit-transform: rotate(-45deg);
 }
 
 /* right circle: distance */
 #h {
+  position: relative;
   width: 100px;
   height: 100px;
   border-radius: 100%;
@@ -80,10 +105,18 @@ h1 {
   -webkit-transform: rotate(45deg);
   display: inline-block;
   text-align: center;
-  top: 100px;         // 100px from top relative to its old position
-  left: 100px;
 }
 
+#span2{
+  color: green;
+  font-family:Arial, Helvetica, sans-serif;
+  font-size: 36px;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  display: inline-block;
+  -webkit-transform: rotate(-45deg);
+}
 
 @-webkit-keyframes move {
   0% {
