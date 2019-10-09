@@ -9,7 +9,7 @@ from dotenv import \
     load_dotenv  # To load the environment variables from the .env file
 
 from flask import Flask, request, render_template
-from flask_socketio import SocketIO, emit
+from flask_socketio import SocketIO, emit, send
 
 # The thing ID and access token
 load_dotenv()
@@ -30,6 +30,7 @@ app = Flask(__name__)
 app.config['SECRET KEY'] = 'secret!'
 socketio = SocketIO(app)
 
+
 @app.route('/')
 def hello_world():
     return 'Hello, World!'
@@ -44,6 +45,12 @@ def handle_json(json):
     print('received json: ' + str(json))
     emit('json', json, broadcast=True)
 
+@socketio.on('distance')
+def handle_distance(json):
+    print(float(json['distance']))
+
+
+
 
 def handle_distance_data(handle, value_bytes):
     #handle -- integer, characteristic read handle the data was received on
@@ -53,13 +60,12 @@ def handle_distance_data(handle, value_bytes):
     global distVal
     distVal = (float(value_bytes))
     print(distVal)
-    #distData = ((value_bytes.decode('utf-8')).encode())
-    #distVal = (float(distData))
+
     #print(distVal)
-    #try:
-    #    emit('json', '{"distance": "%s"}' % str(distVal), broadcast=True)
-    #except:
-    #    print("No socket?")
+    try:
+       socketio.emit('distance', '{"distance": "%s"}' % str(distVal), broadcast=True)
+    except:
+       print("No socket?")
     return distVal
 
 

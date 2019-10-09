@@ -3,46 +3,56 @@
       <script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"
                   integrity="sha256-yr4fRk/GU1ehYJPAs8P4JlTgu0Hdsp4ZKrx8bDEDC3I="
                   crossorigin="anonymous"></script>
-      <script type="text/javascript" charset="utf-8">
-        var socket = io();
-        socket.on('connect', function() {
-          // socket.emit('json', {data: 'I\'m connected!'});
-        });
-
-        socket.on('json', function(msg, cb) {
-          if (msg.distance !== undefined) {
-            document.getElementById("myBar").with = msg.distance;
-          }
-        });
-
-        // function sendMessage(message) {
-        //   socket.emit('json', {data: NewValue()});
-        // }
-
-        function move() {
-          var elem = document.getElementById("myBar");
-          var width = {{ distBar }};
-          var id = setInterval(frame, 10);
-          function frame() {
-            if (width >= 100) {
-              clearInterval(id);
-            } else {
-              elem.style.width = width;
-              // + '%';
-            }
-          }
-        }
-        window.onload = move;
-      </script>
-        <title>Our App</title>
+        <title>My Distance Tracker</title>
         <link rel="stylesheet" type="text/css"
               href="{{ url_for('static', filename='css/style.css') }}">
     </head>
 
     <body>
-        <h1>Welcome to our application!</h1>
+        <h1>My Distance Tracker</h1>
+        <h3>Try to reach 100m!</h2>
         <div id="myProgress">
           <div id="myBar"></div>
         </div>
+        <script type="text/javascript" charset="utf-8">
+          var socket = io();
+          var barWidth = 0;
+          socket.on('connect', function() {
+            // socket.emit('json', {data: 'I\'m connected!'});
+          });
+
+          socket.on('distance', function(dist_obj) {
+            const json = JSON.parse(dist_obj);
+            console.log(json);
+            console.log(json.distance);
+
+            if (json.distance !== undefined) {
+              barWidth = parseFloat(json.distance);
+              console.log(barWidth);
+            }
+          });
+
+          function move() {
+            var elem = document.getElementById("myBar");
+            var id = setInterval(frame, 10);
+            function frame() {
+              if (barWidth >= 100) {
+                clearInterval(id);
+              } else {
+                elem.style.width = barWidth + '%';
+                if ((barWidth > 0) && (barWidth < 35)){
+                  elem.style.backgroundColor = "red";
+                }
+                else if ((barWidth >= 35) && (barWidth < 70)) {
+                  elem.style.backgroundColor = "yellow";
+                }
+                else if (barWidth >= 70) {
+                  elem.style.backgroundColor = "green"
+                }
+              }
+            }
+          }
+          window.onload = move();
+        </script>
     </body>
 </html>

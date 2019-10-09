@@ -31,9 +31,9 @@ bool success;
 float posRotations;
 float negRotations;
 float totalRotations;
-float distFactor = 10;
+float distFactor = 1.3823;
 float totalDistance;
-
+float angle;
 
 
 ////ROTATIONS STRUCTURE////
@@ -111,7 +111,7 @@ void error(const __FlashStringHelper*err) {
 
 ////SETUP////
 void setup() {
-  delay(500);
+  //delay(500);
   Serial.begin(115200);
   randomSeed(micros());
   initSensor();
@@ -126,9 +126,11 @@ void loop(void) {
   sensors_event_t event;
   bno.getEvent(&event);
   float axis_value = event.orientation.x;   // replace this with whatever axis you're tracking
+  angle = event.orientation.y;
   not_first_loop = (not_first_loop) ? compute_rotations(axis_value, &global_rotations) : true;
 
   calcDist();
+  calcAngle();
   //Check if command executed
   if (!ble.waitForOK()) {
     error(F("Failed to get response!"));
@@ -220,7 +222,6 @@ void calcDist() {
   totalRotations = (posRotations + negRotations);
   totalDistance = (totalRotations * distFactor);
 
-
   // Command is sent when \n (\r) or println is called
   // AT+GATTCHAR=CharacteristicID,value
   ble.print( F("AT+GATTCHAR=") );
@@ -230,3 +231,7 @@ void calcDist() {
   Serial.println(totalRotations);
 
 }
+
+void calcAngle(){
+  Serial.println(angle);
+  }
