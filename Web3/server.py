@@ -10,6 +10,11 @@ app = Flask(__name__)
 def test():
     return render_template('test.html')
 
+@app.route('/test2')
+def test2():
+    return render_template('test2.html')
+
+
     @app.route('/speed')
     def speed():
         return render_template('speed.html')
