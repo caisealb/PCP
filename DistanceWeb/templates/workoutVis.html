@@ -39,7 +39,7 @@
         <script type="text/javascript" charset="utf-8">
             var socket = io();
             var totalDis = 0;
-            var disDisplay;
+            var disDisplay = 0;
             socket.on('connect', function() {
               // socket.emit('json', {data: 'I\'m connected!'});
             });
@@ -58,7 +58,7 @@
                 });
             function setDistance(){
               var elem = document.getElementById("span2");
-              elem.innerHTML = "hello";
+              elem.innerHTML = disDisplay;
             }
             window.onload = setDistance();
           </script>
