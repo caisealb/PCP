@@ -39,6 +39,7 @@
         <script type="text/javascript" charset="utf-8">
             var socket = io();
             var totalDis = 0;
+            var disDisplay;
             socket.on('connect', function() {
               // socket.emit('json', {data: 'I\'m connected!'});
             });
@@ -49,13 +50,15 @@
                 console.log(json.distance);
 
                 if (json.distance !== undefined) {
+                    disDisplay = json.distance;
                     totalDis = parseFloat(json.distance);
                     console.log(totalDis);
+                    console.log(disDisplay);
                     }
                 });
-            function setDistance(totalDis){
+            function setDistance(){
               var elem = document.getElementById("span2");
-              elem.innerHTML = "totalDis";
+              elem.innerHTML = disDisplay;
             }
             window.onload = setDistance();
           </script>
