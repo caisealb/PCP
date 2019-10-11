@@ -21,9 +21,14 @@
               if (json.distance !== undefined) {
                   totalDis = parseFloat(json.distance);
                   console.log(totalDis);
-                  return totalDis;
                   }
               });
+          function setDistance(){
+            var elem = document.getElementById("span2");
+            const disDisplay = totalDis;
+            elem.innerHTML = disDisplay;
+          }
+          window.onload = setDistance();          
         </script>
     </head>
 
@@ -50,11 +55,7 @@
           </div>
 
           <div id="h">
-              <span id="span2">
-                <script type="text/javascript">
-                  document.write(totalDis)
-                </script>
-              </span>
+              <span id="span2"></span>
           </div>
 
         </div>
