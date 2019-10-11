@@ -9,33 +9,44 @@
     </head>
 
     <body>
-        <h1>My Workout Tracker</h1>
-        <p> Speed </p>
+      <h1> My Workout </h1>
 
-        <!-- <div id="myCircle"></div>
-        <div id="myCircle2"></div>
-        <div id="myCircle3"></div> -->
+<div id="whole", class="span">
 
-        <div id="whole">
-
-          <div id="j">
-               <span id="span1">3:05</span>
-          </div>
-
-          <div id="center">
-            <span id="span3">2.8</span>
-              <div id="logo">
-                <span class="speedometer"></span>
-                <span class="needle"></span>
+      <div id="j">
+           <div class="span1">
+            03:05
+            <br />
+              <div class="span5">
+              min:sec
               </div>
+           </div>
+      </div>
+
+      <div id="center">
+        <div class="span3">
+          2.8
+          <br />
+          <div class="span6">
+          km/h
           </div>
+       </div>
 
-          <div id="h">
-              <span id="span2"></span>
+
+          <div id="logo">
+            <span class="speedometer"></span>
+            <span class="needle"></span>
           </div>
+      </div>
 
-        </div>
+      <div id="h">
+          <div id="span2">
+            <div id="span4">
+                       meters
+                    </div></div>
+      </div>
 
+</div>
         <script type="text/javascript" charset="utf-8">
             var socket = io();
             var totalDis = 0;
