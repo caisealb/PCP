@@ -51,12 +51,12 @@
 
                 if (json.distance !== undefined) {
                     totalDis = parseFloat(json.distance);
-                    disDisplay = totalDis.toString();
                     console.log(totalDis);
                     console.log(disDisplay);
                     }
                 });
             function setDistance(){
+              disDisplay = totalDis.toString();
               var elem = document.getElementById("span2");
               elem.innerHTML = disDisplay;
             }
