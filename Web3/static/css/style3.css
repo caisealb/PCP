@@ -16,17 +16,27 @@ h1 {
 }
 
 #whole {
-  text-align: center;
-  position: relative;
-  top: 300px;
+background-color: lightblue;
+margin: 10%;
 }
 
-#center{
+#container{
+  text-align: center;
+}
+
+#speed{
   display: inline-block;
-  text-align: center;
 }
 
-#logo {
+#time{
+  display: inline-block;
+}
+
+#distance{
+  display: inline-block;
+}
+
+/* #logo {
   display: inline-block;
   position: relative;
   text-align: center;
@@ -166,4 +176,4 @@ h1 {
   100% {
     transform: rotate(-90deg);
   }
-}
+} */
