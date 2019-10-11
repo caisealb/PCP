@@ -63,7 +63,7 @@ h1 {
   left: 90px;
   position: absolute;
   top: 10px;
-  -webkit-animation: move 5s infinite;
+  -webkit-animation: move 10s infinite;
   transform: rotate(45deg);
   transform-origin: bottom;
 }
