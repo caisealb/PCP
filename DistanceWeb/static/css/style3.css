@@ -20,7 +20,7 @@ h1 {
   width:800px;
   height:800px;
   position: relative;
-  top: 20%;
+  top: 50px;
   background-color:white;
   margin: 0 auto;
   text-align: center;
@@ -29,7 +29,7 @@ h1 {
 /* left measure: time */
       #time{
       position: relative;
-      top: 60%;
+      top: 50px;
       width:30%;
       height:30%;
       background-color:red;
@@ -73,7 +73,7 @@ h1 {
 
       #speed{
       position: relative;
-      top: 60%;
+      top: 50px;
       width:30%;
       height:30%;
       background-color:lightgreen;
@@ -145,7 +145,7 @@ h1 {
 
     #distance{
     position: relative;
-    top: 60%;
+    top: 50px;
     width:30%;
     height:30%;
     background-color:pink;
