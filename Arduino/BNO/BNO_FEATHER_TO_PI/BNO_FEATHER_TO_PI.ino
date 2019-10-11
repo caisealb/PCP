@@ -26,6 +26,7 @@ Adafruit_BNO055 bno = Adafruit_BNO055(55);
 //For Bluetooth
 int32_t imuServiceId;
 int32_t distanceCharId;
+int32_t speedCharId;
 bool success;
 //For distance calculation
 float posRotations;
@@ -187,12 +188,20 @@ void initBLE(void) {
     error(F("Could not add BNO service"));
   }
 
-  /* Add the BNO Measurement characteristic */
+  /* Add the distance measurement characteristic */
   /* Chars ID for Measurement should be 1 */
-  Serial.println(F("Adding the BNO Measurement characteristic (UUID = 0x2A37): "));
+  Serial.println(F("Adding the distance measurement characteristic (UUID = 0x2A37): "));
   success = ble.sendCommandWithIntReply( F("AT+GATTADDCHAR=UUID128=02-11-88-33-44-55-66-77-88-99-AA-BB-CC-DD-EE-FF,PROPERTIES=0x10,MIN_LEN=1,MAX_LEN=17,VALUE=\"\""), &distanceCharId);
   if (! success) {
-    error(F("Could not add BNO Measurement characteristic"));
+    error(F("Could not add distance measurement characteristic"));
+  }
+
+  /* Add the speed measurement characteristic */
+  /* Chars ID for Measurement should be 1 */
+  Serial.println(F("Adding the speed measurement characteristic (UUID = 0x2A37): "));
+  success = ble.sendCommandWithIntReply( F("AT+GATTADDCHAR=UUID128=02-11-88-22-33-44-55-66-77-88-AA-BB-CC-DD-EE-FF,PROPERTIES=0x10,MIN_LEN=1,MAX_LEN=17,VALUE=\"\""), &speedCharId);
+  if (! success) {
+    error(F("Could not add speed measurement characteristic"));
   }
 
   /* Reset the device for the new service setting changes to take effect */
@@ -244,8 +253,16 @@ void calcSpeed() {
   if (currentTime - prevTime > timerInterval) {
     float distDiff = totalDistance - prevTotalDistance;
     currentSpeed = distDiff; //equal to because it's measured every 1 second - same as dividing by 1, i.e. itself
-    Serial.println(currentSpeed);
   }
+  
+  // Command is sent when \n (\r) or println is called
+  // AT+GATTCHAR=CharacteristicID,value
+  ble.print( F("AT+GATTCHAR=") );
+  ble.print( speedCharId );
+  ble.print( F(",") );
+  ble.println(String(currentSpeed));
+  Serial.println(currentSpeed);
+  
   prevTime = millis();
   prevTotalDistance = totalDistance;
 }
