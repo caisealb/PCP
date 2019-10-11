@@ -58,12 +58,15 @@ void loop()
   
   if (timer > millis())  timer = millis();
 
-  if (millis() - timer > 2000) { 
+  if (millis() - timer > 1000) { 
     timer = millis(); // reset the timer
       latdeg=GPS.latitudeDegrees;
       longdeg=GPS.longitudeDegrees;
+      Serial.print("{lat: ");
       Serial.print(latdeg,8);
       Serial.print(", ");
-      Serial.println(longdeg,8);
+      Serial.print("lng: ");
+      Serial.print(longdeg,8);
+      Serial.println("},");
     }
   }
