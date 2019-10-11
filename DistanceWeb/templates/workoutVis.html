@@ -8,7 +8,7 @@
                   crossorigin="anonymous"></script>
       <script type="text/javascript" charset="utf-8">
           var socket = io();
-          var totalDis;
+          var totalDis = 0;
           socket.on('connect', function() {
             // socket.emit('json', {data: 'I\'m connected!'});
           });
@@ -21,6 +21,7 @@
               if (json.distance !== undefined) {
                   totalDis = parseFloat(json.distance);
                   console.log(totalDis);
+                  return totalDis;
                   }
               });
         </script>
