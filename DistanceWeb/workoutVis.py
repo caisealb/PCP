@@ -17,11 +17,13 @@ BLUETOOTH_DEVICE_MAC = os.environ['BLUETOOTH_DEVICE_MAC']
 
 # UUID of the GATT characteristic to subscribe
 GATT_CHARACTERISTIC_DISTANCE = "02-11-88-33-44-55-66-77-88-99-AA-BB-CC-DD-EE-FF"
+GATT_CHARACTERISTIC_SPEED = "02-11-88-22-33-44-55-66-77-88-AA-BB-CC-DD-EE-FF"
 
 # Many devices, e.g. Fitbit, use random addressing, this is required to connect.
 ADDRESS_TYPE = pygatt.BLEAddressType.random
 
 distVal = 0
+speedVal = 0
 
 # ==== ==== ===== == =====  Web server
 
@@ -55,18 +57,32 @@ def handle_distance(json):
 def handle_distance_data(handle, value_bytes):
     #handle -- integer, characteristic read handle the data was received on
     #value_bytes -- bytearray, the data returned in the notification
-    print("Received data: %s (handle %d)" % (str(value_bytes), handle))
+    print("Received distance data: %s (handle %d)" % (str(value_bytes), handle))
     values = [float(x) for x in value_bytes.decode('utf-8').split(",")]
     global distVal
     distVal = (float(value_bytes))
     print(distVal)
 
-    #print(distVal)
     try:
        socketio.emit('distance', '{"distance": "%s"}' % str(distVal), broadcast=True)
     except:
        print("No socket?")
     return distVal
+
+def handle_speed_data(handle, value_bytes):
+    #handle -- integer, characteristic read handle the data was received on
+    #value_bytes -- bytearray, the data returned in the notification
+    print("Received speed data: %s (handle %d)" % (str(value_bytes), handle))
+    values = [float(x) for x in value_bytes.decode('utf-8').split(",")]
+    global speedVal
+    speedVal = (float(value_bytes))
+    print(speedVal)
+
+    try:
+       socketio.emit('speed', '{"speed": "%s"}' % str(speedVal), broadcast=True)
+    except:
+       print("No socket?")
+    return speedVal
 
 
 def discover_characteristic(device):
