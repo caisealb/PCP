@@ -111,7 +111,7 @@ h1 {
   color: green;
   font-family:Arial, Helvetica, sans-serif;
   font-size: 20px;
-  position: absolute;
+  /* position: absolute; */
   top: 20px;
   left: 20px;
   display: inline-block;
