@@ -2,7 +2,7 @@
     <head>
       <title>My Workout Tracker</title>
       <link rel="stylesheet" type="text/css"
-            href="{{ url_for('static', filename='css/style2.css') }}">
+            href="{{ url_for('static', filename='css/style3.css') }}">
       <script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"
                   integrity="sha256-yr4fRk/GU1ehYJPAs8P4JlTgu0Hdsp4ZKrx8bDEDC3I="
                   crossorigin="anonymous"></script>
@@ -11,42 +11,51 @@
     <body>
       <h1> My Workout </h1>
 
-<div id="whole", class="span">
+<div id="container", class = "span">
 
-      <div id="j">
-           <div class="span1">
-            03:05
-            <br />
-              <div class="span5">
-              min:sec
-              </div>
-           </div>
+  <div id="time">
+    <div id="timeCircle">
+        <div id="timeText">
+        </div>
+        <div id="timeTextMeasure">
+        </br></br>
+         hr:min:sec
+        </div>
       </div>
+  </div>
 
-      <div id="center">
-        <div class="span3">
-          </div>
-       </div>
-
-
-          <div id="logo">
-            <span class="speedometer"></span>
-            <span class="needle"></span>
-          </div>
+  <div id="speed">
+    <div id="speedCircle">
+      <div id="needle">
       </div>
-
-      <div id="h">
-          <div id="span2">
-          </div>
+        <div id="speedText">
+        </div>
+        <div id="speedTextMeasure">
+        </br></br>
+         m/s
+        </div>
       </div>
+  </div>
 
-</div>
+  <div id="distance">
+    <div id="distanceCircle">
+        <div id="distanceText">
+        </div>
+        <div id="distanceTextMeasure">
+        </br></br>
+         meters
+        </div>
+      </div>
+  </div>
+
+  </div>
         <script type="text/javascript" charset="utf-8">
             var socket = io();
             var totalDis = 0;
             var currentSpeed = 0;
             var speedDisplay = 0;
             var disDisplay = 0;
+
             socket.on('connect', function() {
               // socket.emit('json', {data: 'I\'m connected!'});
             });
@@ -65,9 +74,10 @@
                     }
                 });
             function setDistance(){
-              var elem = document.getElementById("span2");
-              elem.innerHTML = (disDisplay + " metres");
+              var disttext = document.getElementById("distanceText");
+              disttext.innerHTML = (disDisplay);
             }
+
             socket.on('speed', function(speed_obj) {
                 const json = JSON.parse(speed_obj);
                 console.log(json);
@@ -81,10 +91,42 @@
                     setSpeed();
                     }
                 });
-            function setSpeed(){
-              var elem2 = document.getElementById("span3");
-              elem2.innerHTML = (speedDisplay + " m/s");
-            }
+              function setSpeed(){
+                var speedtext = document.getElementById("speedText");
+                speedtext.innerHTML = (speedDisplay);
+              }
           </script>
+          <script type="text/javascript" charset="utf-8">
+            var startTime = Date.now();
+            var second = 1000;
+            var minute = second * 60;
+            var hour = minute * 60;
+            var container = document.getElementById('timeText');
+
+            function stopTimer() {
+                clearInterval(timer);
+            }
+
+            function pad(n){
+              return ('00' + n).slice(-2);
+            }
+            function showTime(){
+            var timer = setInterval(function(){
+              var currentTime = Date.now();
+              var difference = currentTime - startTime;
+
+              var hours = pad((difference / hour) | 0);
+              var minutes = pad(((difference % hour) / minute) | 0);
+              var seconds = pad(((difference % minute) / second) | 0);
+
+              container.innerHTML = hours + ':' + minutes + ':' + seconds;
+            // This only represents time between renders. Actual time rendered is based
+            // on the elapsed time calculated above.
+            }, 250);
+            console.log(hours + ':' + minutes + ':' + seconds);
+          }
+            window.onload = showTime();
+            </script>
+          <!-- <button type="button" onclick="stopTimer()">Stop</button> -->
     </body>
 </html>
