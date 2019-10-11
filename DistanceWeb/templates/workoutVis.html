@@ -46,14 +46,13 @@
 
             socket.on('distance', function(dist_obj) {
                 const json = JSON.parse(dist_obj);
+                disDisplay = JSON.stringify(dist_obj);
                 console.log(json);
                 console.log(json.distance);
+                console.log(disDisplay);
 
                 if (json.distance !== undefined) {
-                    disDisplay = json.distance;
                     totalDis = parseFloat(json.distance);
-                    console.log(totalDis);
-                    console.log(disDisplay);
                     }
                 });
             function setDistance(){
