@@ -1,0 +1,63 @@
+<html>
+    <head>
+      <title>My Workout Tracker</title>
+      <link rel="stylesheet" type="text/css"
+            href="{{ url_for('static', filename='css/style2.css') }}">
+      <script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"
+                  integrity="sha256-yr4fRk/GU1ehYJPAs8P4JlTgu0Hdsp4ZKrx8bDEDC3I="
+                  crossorigin="anonymous"></script>
+      <script type="text/javascript" charset="utf-8">
+          var socket = io();
+          var totalDis = 0;
+          socket.on('connect', function() {
+            // socket.emit('json', {data: 'I\'m connected!'});
+          });
+
+          socket.on('distance', function(dist_obj) {
+              const json = JSON.parse(dist_obj);
+              console.log(json);
+              console.log(json.distance);
+
+              if (json.distance !== undefined) {
+                  totalDis = parseFloat(json.distance);
+                  console.log(totalDis);
+                  }
+              });
+
+            function displayDis() {
+              var elem = document.getElementById("span2").innerHTML;
+              elem = document.write(totalDis);
+            }
+            window.onload = displayDis();
+        </script>
+    </head>
+
+    <body>
+        <h1>My Workout Tracker</h1>
+        <p> Speed </p>
+
+        <!-- <div id="myCircle"></div>
+        <div id="myCircle2"></div>
+        <div id="myCircle3"></div> -->
+
+        <div id="whole">
+
+          <div id="j">
+               <span id="span1">3:05</span>
+          </div>
+
+          <div id="center">
+            <span id="span3">2.8</span>
+              <div id="logo">
+                <span class="speedometer"></span>
+                <span class="needle"></span>
+              </div>
+          </div>
+
+          <div id="h">
+              <span id="span2"></span>
+          </div>
+
+        </div>
+    </body>
+</html>
