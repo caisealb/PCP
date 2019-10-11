@@ -32,7 +32,7 @@ bool success;
 float posRotations;
 float negRotations;
 float totalRotations;
-float distFactor = 10;
+float distFactor = 1.38;
 float totalDistance;
 float prevTotalDistance;
 float currentSpeed;
