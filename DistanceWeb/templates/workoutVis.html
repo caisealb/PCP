@@ -110,7 +110,7 @@
             function pad(n){
               return ('00' + n).slice(-2);
             }
-
+            function showTime(){
             var timer = setInterval(function(){
               var currentTime = Date.now();
               var difference = currentTime - startTime;
@@ -120,11 +120,12 @@
               var seconds = pad(((difference % minute) / second) | 0);
 
               container.innerHTML = hours + ':' + minutes + ':' + seconds;
-
             // This only represents time between renders. Actual time rendered is based
             // on the elapsed time calculated above.
             }, 250);
             console.log(hours + ':' + minutes + ':' + seconds);
+          }
+            window.onload = showTime();
             </script>
           <!-- <button type="button" onclick="stopTimer()">Stop</button> -->
     </body>
