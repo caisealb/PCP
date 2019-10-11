@@ -55,7 +55,8 @@
                 });
             function setDistance(){
               var elem = document.getElementById("span2");
-              elem.innerHTML = document.write(totalDis);
+              const disDisplay = totalDis;
+              elem.innerHTML = document.write(disDisplay);
             }
             window.onload = setDistance();
           </script>
