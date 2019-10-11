@@ -25,10 +25,6 @@
 
       <div id="center">
         <div class="span3">
-          2.8
-          <br />
-          <div class="span6">
-          km/h
           </div>
        </div>
 
@@ -48,6 +44,8 @@
         <script type="text/javascript" charset="utf-8">
             var socket = io();
             var totalDis = 0;
+            var currentSpeed = 0;
+            var speedDisplay = 0;
             var disDisplay = 0;
             socket.on('connect', function() {
               // socket.emit('json', {data: 'I\'m connected!'});
@@ -69,6 +67,23 @@
             function setDistance(){
               var elem = document.getElementById("span2");
               elem.innerHTML = (disDisplay + " metres");
+            }
+            socket.on('speed', function(speed_obj) {
+                const json = JSON.parse(speed_obj);
+                console.log(json);
+                //console.log(json.distance);
+
+                if (json.speed !== undefined) {
+                    currentSpeed = parseFloat(json.speed);
+                    speedDisplay = currentSpeed.toString();
+                    console.log(currentSpeed);
+                    console.log(speedDisplay);
+                    setSpeed();
+                    }
+                });
+            function setSpeed(){
+              var elem2 = document.getElementById("span3");
+              elem2.innerHTML = (speedDisplay + " m/s");
             }
           </script>
     </body>
