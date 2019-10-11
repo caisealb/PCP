@@ -51,16 +51,16 @@
 
                 if (json.distance !== undefined) {
                     totalDis = parseFloat(json.distance);
+                    disDisplay = totalDis.toString();
                     console.log(totalDis);
                     console.log(disDisplay);
+                    setDistance();
                     }
                 });
             function setDistance(){
-              disDisplay = totalDis.toString();
               var elem = document.getElementById("span2");
               elem.innerHTML = disDisplay;
             }
-            window.onload = setDistance();
           </script>
     </body>
 </html>
