@@ -37,10 +37,13 @@ socketio = SocketIO(app)
 def hello_world():
     return 'Hello, World!'
 
-@app.route('/distance')
+@app.route('/workout')
 def distance():
     totalDis = distVal
     return render_template('workoutVis.html', totalDis=totalDis)
+def speed():
+    currentSpeed = speedVal
+    return render_template('workoutVis.html', currentSpeed=currentSpeed)
 
 @socketio.on('json')
 def handle_json(json):
@@ -51,7 +54,9 @@ def handle_json(json):
 def handle_distance(json):
     print(float(json['distance']))
 
-
+@socketio.on('speed')
+def handle_speed(json):
+    print(float(json['speed']))
 
 
 def handle_distance_data(handle, value_bytes):
