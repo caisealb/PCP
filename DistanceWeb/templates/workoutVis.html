@@ -9,72 +9,71 @@
     </head>
 
     <body>
-          <h1> My Workout </h1>
+      <h1> My Workout </h1>
 
-  <div id="whole", class="span">
+<div id="whole", class="span">
 
-          <div id="j">
-               <div class="span1">
-                03:05
-                <br />
-                  <div class="span5">
-                  min:sec
-                  </div>
-               </div>
-          </div>
-
-          <div id="center">
-            <div class="span3">
-              2.8
-              <br />
-              <div class="span6">
-              km/h
+      <div id="j">
+           <div class="span1">
+            03:05
+            <br />
+              <div class="span5">
+              min:sec
               </div>
            </div>
+      </div>
 
-
-              <div id="logo">
-                <span class="speedometer"></span>
-                <span class="needle"></span>
-              </div>
+      <div id="center">
+        <div class="span3">
+          2.8
+          <br />
+          <div class="span6">
+          km/h
           </div>
+       </div>
 
-          <div id="h">
-              <div class="span2">
-                <br />
-                <div class="span4">
-                           meters
-                        </div></div>
+
+          <div id="logo">
+            <span class="speedometer"></span>
+            <span class="needle"></span>
           </div>
+      </div>
 
-  </div>
-  <script type="text/javascript" charset="utf-8">
-      var socket = io();
-      var totalDis = 0;
-      var disDisplay = 0;
-      socket.on('connect', function() {
-        // socket.emit('json', {data: 'I\'m connected!'});
-      });
+      <div id="h">
+          <div class="span2">
+            <br>
+            <div class="span4">
+                       meters
+                    </div></div>
+      </div>
 
-      socket.on('distance', function(dist_obj) {
-          const json = JSON.parse(dist_obj);
-          console.log(json);
-          //console.log(json.distance);
+    </div>
 
-          if (json.distance !== undefined) {
-              totalDis = parseFloat(json.distance);
-              disDisplay = totalDis.toString();
-              console.log(totalDis);
-              console.log(disDisplay);
-              setDistance();
-              }
-          });
-      function setDistance(){
-        var elem = document.getElementById("span2");
-        elem.innerHTML = disDisplay;
-      }
-    </script>
+    <script type="text/javascript" charset="utf-8">
+        var socket = io();
+        var totalDis = 0;
+        var disDisplay = 0;
+        socket.on('connect', function() {
+          // socket.emit('json', {data: 'I\'m connected!'});
+        });
 
+        socket.on('distance', function(dist_obj) {
+            const json = JSON.parse(dist_obj);
+            console.log(json);
+            //console.log(json.distance);
+
+            if (json.distance !== undefined) {
+                totalDis = parseFloat(json.distance);
+                disDisplay = totalDis.toString();
+                console.log(totalDis);
+                console.log(disDisplay);
+                setDistance();
+                }
+            });
+            function setDistance(){
+              var elem = document.getElementById("span2");
+              elem.innerHTML = disDisplay;
+            }
+          </script>
     </body>
-
 </html>
