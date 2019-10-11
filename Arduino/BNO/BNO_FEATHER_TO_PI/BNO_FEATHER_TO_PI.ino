@@ -33,7 +33,11 @@ float negRotations;
 float totalRotations;
 float distFactor = 10;
 float totalDistance;
-
+float prevTotalDistance;
+float currentSpeed;
+unsigned long currentTime;
+unsigned long prevTime;
+int timerInterval = 1000;
 
 
 ////ROTATIONS STRUCTURE////
@@ -129,6 +133,7 @@ void loop(void) {
   not_first_loop = (not_first_loop) ? compute_rotations(axis_value, &global_rotations) : true;
 
   calcDist();
+  calcSpeed();
   //Check if command executed
   if (!ble.waitForOK()) {
     error(F("Failed to get response!"));
@@ -229,4 +234,18 @@ void calcDist() {
   ble.println(String(totalDistance));
   Serial.println(totalRotations);
 
+}
+
+
+////SPEED VALUE////
+
+void calcSpeed() {
+  currentTime = millis();
+  if (currentTime - prevTime > timerInterval) {
+    float distDiff = totalDistance - prevTotalDistance;
+    currentSpeed = distDiff; //equal to because it's measured every 1 second - same as dividing by 1, i.e. itself
+    Serial.println(currentSpeed);
+  }
+  prevTime = millis();
+  prevTotalDistance = totalDistance;
 }
