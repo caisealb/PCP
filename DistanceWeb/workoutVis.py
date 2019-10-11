@@ -117,8 +117,8 @@ def connect_bluetooth():
 
     print("subscribing...")
     # Subscribe to the GATT service
-    wheel.subscribe(GATT_CHARACTERISTIC_DISTANCE,
-                         callback=handle_distance_data, handle_speed_data)
+    wheel.subscribe(GATT_CHARACTERISTIC_DISTANCE, callback=handle_distance_data)
+    wheel.subscribe(GATT_CHARACTERISTIC_SPEED, callback=handle_speed_data)
 
 # Register our Keyboard handler to exit
 signal.signal(signal.SIGINT, keyboard_interrupt_handler)
