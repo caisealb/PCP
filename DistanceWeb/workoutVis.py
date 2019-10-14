@@ -32,7 +32,7 @@ speedVal = 0
 # ==== ==== ===== == =====  Serial comms
 
 s1 = serial.Serial(port, 9600)
-s1.flushImput()
+s1.flushInput()
 
 while True:
     if s1.inWaitin()>0:
