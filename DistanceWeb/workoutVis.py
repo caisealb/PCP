@@ -131,12 +131,7 @@ def connect_bluetooth():
     wheel.subscribe(GATT_CHARACTERISTIC_DISTANCE, callback=handle_distance_data)
     wheel.subscribe(GATT_CHARACTERISTIC_SPEED, callback=handle_speed_data)
 
-# Register our Keyboard handler to exit
-signal.signal(signal.SIGINT, keyboard_interrupt_handler)
-
-# ==== ==== ===== == =====  Serial comms
-#Run serial comms
-def serialComms():
+    #serial
     s1 = serial.Serial(port, 9600)
     try:
         s1.open()
@@ -146,6 +141,14 @@ def serialComms():
         if s1.inWaiting()>0:
             inputValue = s1.read()
             print(inputValue)
+
+# Register our Keyboard handler to exit
+signal.signal(signal.SIGINT, keyboard_interrupt_handler)
+
+# ==== ==== ===== == =====  Serial comms
+#Run serial comms
+def serialComms():
+
 
 # ==== ==== ===== == =====  Run
 
