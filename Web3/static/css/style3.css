@@ -16,12 +16,13 @@ h1 {
   text-align: center;
 }
 
+
 #container{
-  width:800px;
-  height:800px;
+  width:90%;
+  height:90%;
   position: relative;
-  top: 50%;
-  background-color:white;
+  top: 200px;
+  /* background-color:white; */
   margin: 0 auto;
   text-align: center;
   }
@@ -32,22 +33,16 @@ h1 {
       top: 60%;
       width:30%;
       height:30%;
-      background-color:red;
       text-align: center;
       display: inline-block;
-      border-top-left-radius: 30px;  /* 100px of height + 10px of border */
-      border-top-right-radius: 30px; /* 100px of height + 10px of border */
-      border-bottom-left-radius: 30px;  /* 100px of height + 10px of border */
-      border-bottom-right-radius: 30px; /* 100px of height + 10px of border */
-      /* margin: 0 auto; */
       }
 
       #timeCircle{
         position: relative;
         display: inline-block;
         top: 8%;
-        width: 80%;
-        height: 80%;
+        width: 200px;
+        height: 200px;
         background-color: white;
         border-top-left-radius: 100px;  /* 100px of height + 10px of border */
         border-top-right-radius: 100px; /* 100px of height + 10px of border */
@@ -73,17 +68,11 @@ h1 {
 
       #speed{
       position: relative;
-      top: 60%;
+      top: -50px;
       width:30%;
       height:30%;
-      background-color:lightgreen;
       text-align: center;
       display: inline-block;
-      border-top-left-radius: 30px;  /* 100px of height + 10px of border */
-      border-top-right-radius: 30px; /* 100px of height + 10px of border */
-      border-bottom-left-radius: 30px;  /* 100px of height + 10px of border */
-      border-bottom-right-radius: 30px; /* 100px of height + 10px of border */
-      /* margin: 0 auto; */
       }
 
       #needle {
@@ -115,8 +104,8 @@ h1 {
     position: relative;
     display: inline-block;
     top: 8%;
-    width: 80%;
-    height: 60%;
+    width: 200px;
+    height: 150px;
     background-color: white;
     border-top-left-radius: 100px;  /* 100px of height + 10px of border */
     border-top-right-radius: 100px; /* 100px of height + 10px of border */
@@ -124,7 +113,6 @@ h1 {
     border-bottom-right-radius: 20px; /* 100px of height + 10px of border */
     border: 5px solid pink;
     /* border-bottom: 0; */
-
 }
 
       #speedText{
@@ -145,25 +133,19 @@ h1 {
 
     #distance{
     position: relative;
-    top: 60%;
+    top: 100%;
     width:30%;
     height:30%;
-    background-color:pink;
     text-align: center;
     display: inline-block;
-    border-top-left-radius: 30px;  /* 100px of height + 10px of border */
-    border-top-right-radius: 30px; /* 100px of height + 10px of border */
-    border-bottom-left-radius: 30px;  /* 100px of height + 10px of border */
-    border-bottom-right-radius: 30px; /* 100px of height + 10px of border */
-    /* margin: 0 auto; */
     }
 
     #distanceCircle{
       position: relative;
       display: inline-block;
       top: 8%;
-      width: 80%;
-      height: 80%;
+      width: 200px;
+      height: 200px;
       background-color: white;
       border-top-left-radius: 100px;  /* 100px of height + 10px of border */
       border-top-right-radius: 100px; /* 100px of height + 10px of border */
@@ -185,6 +167,63 @@ h1 {
       color: pink;
     }
 
+  #options {
+    position: relative;
+    top:100px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+
+      #pauseCircle{
+        width: 50px;
+        height: 50px;
+        background-color:white;
+        text-align: center;
+        display: inline-block;
+        margin-top: -130px;
+        margin-bottom: 50px;
+        border: 2px solid darkblue;
+        border-top-left-radius: 150px;  /* 100px of height + 10px of border */
+        border-top-right-radius: 150px; /* 100px of height + 10px of border */
+        border-bottom-left-radius: 150px;  /* 100px of height + 10px of border */
+        border-bottom-right-radius: 150px; /* 100px of height + 10px of border */
+      }
+
+      #pauseStripe{
+              width: 10px;
+              height: 25px;
+              display: inline-block;
+              background-color: darkblue;
+              margin-top: 12px;
+        }
+
+
+
+
+    #stopCircle{
+      width: 50px;
+      height: 50px;
+      background-color:white;
+      text-align: center;
+      display: inline-block;
+      margin-top: -130px;
+      margin-bottom: 50px;
+      border: 2px solid darkblue;
+      border-top-left-radius: 150px;  /* 100px of height + 10px of border */
+      border-top-right-radius: 150px; /* 100px of height + 10px of border */
+      border-bottom-left-radius: 150px;  /* 100px of height + 10px of border */
+      border-bottom-right-radius: 150px; /* 100px of height + 10px of border */
+    }
+
+    #stopTriangle{
+            width: 25px;
+            height: 25px;
+            display: inline-block;
+            background-color: darkblue;
+            margin-top: 12px;
+      }
+
 
 @-webkit-keyframes move {
   0% {
@@ -196,4 +235,14 @@ h1 {
   100% {
     transform: rotate(-90deg);
   }
+}
+
+#overlay{
+  position: fixed;
+  width: 200%;
+  height: 2000px;
+  margin-top: -1000px;
+  margin-left: -200px;
+  background-color: white;
+  visibility: hidden;
 }
