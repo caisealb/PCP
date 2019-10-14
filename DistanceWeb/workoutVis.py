@@ -29,16 +29,6 @@ ADDRESS_TYPE = pygatt.BLEAddressType.random
 distVal = 0
 speedVal = 0
 
-# ==== ==== ===== == =====  Serial comms
-    #Run serial comms
-def serialComms():
-    s1 = serial.Serial(port, 9600)
-    s1.flushInput()
-    while True:
-        if s1.inWaiting()>0:
-            inputValue = s1.read()
-            print("Serial connection OK!")
-            print(inputValue)
 
 # ==== ==== ===== == =====  Web server
 
@@ -143,6 +133,18 @@ def connect_bluetooth():
 
 # Register our Keyboard handler to exit
 signal.signal(signal.SIGINT, keyboard_interrupt_handler)
+
+# ==== ==== ===== == =====  Serial comms
+#Run serial comms
+def serialComms():
+    s1 = serial.Serial(port, 9600)
+    s1.flushInput()
+    while True:
+        if s1.inWaiting()>0:
+            inputValue = s1.read()
+            print(inputValue)
+
+# ==== ==== ===== == =====  Run
 
 connect_bluetooth()
 serialComms()
