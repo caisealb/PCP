@@ -6,6 +6,11 @@ app = Flask(__name__)
 # def hello_world():
 #     return 'Hello, World!'
 
+
+@app.route('/test4')
+def test4():
+    return render_template('test4.html')
+
 @app.route('/test')
 def test():
     return render_template('test.html')
@@ -25,7 +30,6 @@ def barchart():
 @app.route('/gauge')
 def gauge():
     return render_template('gauge.html')
-
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0')

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+        <title> Our App - home </title>
+        <link rel="stylesheet" type="text/css"
+        href="{{ url_for('static', filename='css/style4.css') }}">
+
+        <script type="text/javascript" charset="utf-8"></script>
+        <script src="{{ url_for('static', filename='js/speedometer.js') }}" language="JavaScript"></script>
+
+  </head>
+
+  <body>
+
+    <h1> Start your Workout </h1>
+
+    <!-- <button onclick="startWorkout()">start</button> -->
+    <div id="container" >
+        <a href="http://localhost:5000/test3">
+          <div id="startButton">
+            <div id="triangle">
+            </div>
+          </div>
+          <h2> Start</h2>
+        </a>
+    </div>
+
+  </body>
+</html>
