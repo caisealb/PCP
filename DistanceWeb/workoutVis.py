@@ -29,16 +29,6 @@ ADDRESS_TYPE = pygatt.BLEAddressType.random
 distVal = 0
 speedVal = 0
 
-# ==== ==== ===== == =====  Serial comms
-
-s1 = serial.Serial(port, 9600)
-s1.flushInput()
-
-while True:
-    if s1.inWaiting()>0:
-        inputValue = s1.read(1)
-        print(ord(inputValue))
-
 # ==== ==== ===== == =====  Web server
 
 app = Flask(__name__)
@@ -102,6 +92,15 @@ def handle_speed_data(handle, value_bytes):
     except:
        print("No socket?")
     return speedVal
+
+def handle_gps_data():
+    s1 = serial.Serial(port, 9600)
+    s1.flushInput()
+
+    while True:
+        if s1.inWaiting()>0:
+            inputValue = s1.read(1)
+            print("Received co-ordinates:" + (ord(inputValue)))
 
 def discover_characteristic(device):
     #List characteristics of a device
