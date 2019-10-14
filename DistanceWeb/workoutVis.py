@@ -144,7 +144,6 @@ def serialComms():
     except:
          print("Can't open serial connection")
     while True:
-        sleep(0.01)
         if s1.inWaiting()>0:
             inputValue = s1.read()
             print(inputValue)
