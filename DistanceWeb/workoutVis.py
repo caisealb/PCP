@@ -147,7 +147,7 @@ signal.signal(signal.SIGINT, keyboard_interrupt_handler)
 
 # ==== ==== ===== == =====  Serial comms
 #Run serial comms
-def serialComms():
+# def serialComms():
 
 
 # ==== ==== ===== == =====  Run
