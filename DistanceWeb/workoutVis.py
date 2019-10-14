@@ -96,8 +96,7 @@ def handle_speed_data(handle, value_bytes):
     return speedVal
 
 def handle_gps_data():
-
-    while True:
+    # while True:
         if s1.inWaiting()>0:
             inputValue = s1.read(1)
             print("Received co-ordinates:" + (ord(inputValue)))
