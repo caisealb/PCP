@@ -12,8 +12,10 @@ from dotenv import \
 from flask import Flask, request, render_template
 from flask_socketio import SocketIO, emit, send
 
-# Serial port
+# Serial comms
 port = "/dev/ttyACM0"
+s1 = serial.Serial(port, 9600)
+s1.flushInput()
 
 # Bluetooth device mac address
 load_dotenv()
@@ -94,8 +96,6 @@ def handle_speed_data(handle, value_bytes):
     return speedVal
 
 def handle_gps_data():
-    s1 = serial.Serial(port, 9600)
-    s1.flushInput()
 
     while True:
         if s1.inWaiting()>0:
