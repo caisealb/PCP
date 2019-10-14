@@ -36,6 +36,7 @@ float distFactor = 1.38;
 float totalDistance;
 float prevTotalDistance;
 float currentSpeed;
+float scaledSpeed;
 unsigned long currentTime;
 unsigned long prevTime;
 int timerInterval = 1000;
@@ -253,6 +254,7 @@ void calcSpeed() {
   if (currentTime - prevTime > timerInterval) {
     float distDiff = totalDistance - prevTotalDistance;
     currentSpeed = distDiff; //equal to because it's measured every 1 second - same as dividing by 1, i.e. itself
+    scaledSpeed = (currentSpeed*3.6); //multiply by 3.6 to convert from m/s to km/h
   }
   
   // Command is sent when \n (\r) or println is called
@@ -260,8 +262,8 @@ void calcSpeed() {
   ble.print( F("AT+GATTCHAR=") );
   ble.print( speedCharId );
   ble.print( F(",") );
-  ble.println(String(currentSpeed));
-  Serial.println(currentSpeed);
+  ble.println(String(scaledSpeed));
+  Serial.println(scaledSpeed);
   
   prevTime = millis();
   prevTotalDistance = totalDistance;
