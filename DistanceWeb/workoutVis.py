@@ -31,13 +31,13 @@ speedVal = 0
 
 # ==== ==== ===== == =====  Serial comms
     #Run serial comms
-    s1 = serial.Serial(port, 9600)
-    s1.flushInput()
-    while True:
-        if s1.inWaiting()>0:
-            inputValue = s1.read()
-            print(inputValue)
-            print("Received co-ordinates:" + (ord(inputValue)))
+s1 = serial.Serial(port, 9600)
+s1.flushInput()
+while True:
+    if s1.inWaiting()>0:
+        inputValue = s1.read()
+        print(inputValue)
+        print("Received co-ordinates:" + (ord(inputValue)))
 
 # ==== ==== ===== == =====  Web server
 
