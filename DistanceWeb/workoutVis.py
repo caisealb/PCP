@@ -31,12 +31,14 @@ speedVal = 0
 
 # ==== ==== ===== == =====  Serial comms
     #Run serial comms
-s1 = serial.Serial(port, 9600)
-s1.flushInput()
-while True:
-    if s1.inWaiting()>0:
-        inputValue = s1.read()
-        print(inputValue)
+def serialComms():
+    s1 = serial.Serial(port, 9600)
+    s1.flushInput()
+    while True:
+        if s1.inWaiting()>0:
+            inputValue = s1.read()
+            print("Serial connection OK!")
+            print(inputValue)
 
 # ==== ==== ===== == =====  Web server
 
@@ -143,6 +145,7 @@ def connect_bluetooth():
 signal.signal(signal.SIGINT, keyboard_interrupt_handler)
 
 connect_bluetooth()
+serialComms()
 
 if __name__ == '__main__':
     #Run socketIO app
