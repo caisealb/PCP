@@ -14,8 +14,6 @@ from flask_socketio import SocketIO, emit, send
 
 # Serial comms
 port = "/dev/ttyACM0"
-s1 = serial.Serial(port, 9600)
-s1.flushInput()
 
 # Bluetooth device mac address
 load_dotenv()
@@ -95,11 +93,7 @@ def handle_speed_data(handle, value_bytes):
        print("No socket?")
     return speedVal
 
-def handle_gps_data():
-    # while True:
-        if s1.inWaiting()>0:
-            inputValue = s1.read(1)
-            print("Received co-ordinates:" + (ord(inputValue)))
+
 
 def discover_characteristic(device):
     #List characteristics of a device
@@ -142,8 +136,15 @@ signal.signal(signal.SIGINT, keyboard_interrupt_handler)
 connect_bluetooth()
 
 if __name__ == '__main__':
+    #Run socketIO app
     socketio.run(app, host = '0.0.0.0')
-    handle_gps_data()
+    #Run serial comms
+    s1 = serial.Serial(port, 9600)
+    s1.flushInput()
+    while True:
+        if s1.inWaiting()>0:
+            inputValue = s1.read(1)
+            print("Received co-ordinates:" + (ord(inputValue)))
 #
 # if __name__ == '__main__':
 #     # app.run(host='0.0.0.0')
