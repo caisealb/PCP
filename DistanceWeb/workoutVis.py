@@ -2,6 +2,7 @@
 #!/usr/bin/env python3
 
 # Import required library
+import serial # To use serial comms with arduino
 import pygatt  # To access BLE GATT support
 import signal  # To catch the Ctrl+C and end the program properly
 import os  # To access environment variables
@@ -11,7 +12,10 @@ from dotenv import \
 from flask import Flask, request, render_template
 from flask_socketio import SocketIO, emit, send
 
-# The thing ID and access token
+# Serial port
+port = "/dev/ttyACM0"
+
+# Bluetooth device mac address
 load_dotenv()
 BLUETOOTH_DEVICE_MAC = os.environ['BLUETOOTH_DEVICE_MAC']
 
@@ -24,6 +28,16 @@ ADDRESS_TYPE = pygatt.BLEAddressType.random
 
 distVal = 0
 speedVal = 0
+
+# ==== ==== ===== == =====  Serial comms
+
+s1 = serial.Serial(port, 9600)
+s1.flushImput()
+
+while True:
+    if s1.inWaitin()>0:
+        inputValue = s1.read(1)
+        print(ord(inputValue))
 
 # ==== ==== ===== == =====  Web server
 
@@ -88,7 +102,6 @@ def handle_speed_data(handle, value_bytes):
     except:
        print("No socket?")
     return speedVal
-
 
 def discover_characteristic(device):
     #List characteristics of a device
