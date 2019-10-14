@@ -139,10 +139,17 @@ signal.signal(signal.SIGINT, keyboard_interrupt_handler)
 def serialComms():
     s1 = serial.Serial(port, 9600)
     s1.flushInput()
-    # while True:
-    if s1.inWaiting()>0:
-        inputValue = s1.read()
-        print(inputValue)
+    try:
+        s1.open()
+    except serial.SerialException, e:
+         yield 'event:error\n' + 'data:' + 'Serial port error({0}): {1}\n\n'.format(e.errno, e.strerror)
+    while True:
+        sleep(0.01)
+        if s1.inWaiting()>0:
+            inputValue = s1.read()
+            print(inputValue)
+    else:
+        print("Serial error")
 
 # ==== ==== ===== == =====  Run
 
