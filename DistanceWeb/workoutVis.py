@@ -144,7 +144,9 @@ if __name__ == '__main__':
     while True:
         if s1.inWaiting()>0:
             inputValue = s1.read(1)
+            print(inputValue)
             print("Received co-ordinates:" + (ord(inputValue)))
+
 #
 # if __name__ == '__main__':
 #     # app.run(host='0.0.0.0')
