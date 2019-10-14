@@ -37,7 +37,6 @@ while True:
     if s1.inWaiting()>0:
         inputValue = s1.read()
         print(inputValue)
-        print("Received co-ordinates:" + (ord(inputValue)))
 
 # ==== ==== ===== == =====  Web server
 
