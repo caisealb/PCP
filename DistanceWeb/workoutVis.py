@@ -118,7 +118,6 @@ def keyboard_interrupt_handler(signal_num, frame):
     exit(0)
 
 def connect_bluetooth():
-    name = multiprocessing.current_process().name
     print("Starting Bluetooth...")
     # Start a BLE adapter
     bleAdapter = pygatt.GATTToolBackend()
@@ -133,14 +132,13 @@ def connect_bluetooth():
     wheel.subscribe(GATT_CHARACTERISTIC_DISTANCE, callback=handle_distance_data)
     wheel.subscribe(GATT_CHARACTERISTIC_SPEED, callback=handle_speed_data)
     print("subscribed!")
-    
+
 # Register our Keyboard handler to exit
 signal.signal(signal.SIGINT, keyboard_interrupt_handler)
 
 # ==== ==== ===== == =====  Serial comms
 #Run serial comms
 def serialComms():
-    name = multiprocessing.current_process().name
     s1 = serial.Serial(port, 9600)
     s1.flushInput()
     try:
@@ -154,16 +152,10 @@ def serialComms():
 
 # ==== ==== ===== == =====  Run
 
-# connect_bluetooth()
+connect_bluetooth()
 # serialComms()
 
 if __name__ == '__main__':
-    #Multiprocessing processes
-    bluetooth = multiprocessing.Process(name='connect_bluetooth', target=connect_bluetooth)
-    serialcomms = multiprocessing.Process(name='serialComms', target=serialComms)
-    #Start processes
-    bluetooth.start()
-    serialcomms.start()
     #Run socketIO app
     socketio.run(app, host = '0.0.0.0')
 
