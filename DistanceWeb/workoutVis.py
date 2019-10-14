@@ -29,6 +29,16 @@ ADDRESS_TYPE = pygatt.BLEAddressType.random
 distVal = 0
 speedVal = 0
 
+# ==== ==== ===== == =====  Serial comms
+    #Run serial comms
+    s1 = serial.Serial(port, 9600)
+    s1.flushInput()
+    while True:
+        if s1.inWaiting()>0:
+            inputValue = s1.read()
+            print(inputValue)
+            print("Received co-ordinates:" + (ord(inputValue)))
+
 # ==== ==== ===== == =====  Web server
 
 app = Flask(__name__)
@@ -138,14 +148,7 @@ connect_bluetooth()
 if __name__ == '__main__':
     #Run socketIO app
     socketio.run(app, host = '0.0.0.0')
-    #Run serial comms
-    s1 = serial.Serial(port, 9600)
-    s1.flushInput()
-    while True:
-        if s1.inWaiting()>0:
-            inputValue = s1.read()
-            print(inputValue)
-            print("Received co-ordinates:" + (ord(inputValue)))
+
 
 #
 # if __name__ == '__main__':
