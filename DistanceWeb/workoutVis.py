@@ -139,15 +139,15 @@ signal.signal(signal.SIGINT, keyboard_interrupt_handler)
 def serialComms():
     s1 = serial.Serial(port, 9600)
     s1.flushInput()
-    while True:
-        if s1.inWaiting()>0:
-            inputValue = s1.read()
-            print(inputValue)
+    # while True:
+    if s1.inWaiting()>0:
+        inputValue = s1.read()
+        print(inputValue)
 
 # ==== ==== ===== == =====  Run
 
 connect_bluetooth()
-# serialComms()
+serialComms()
 
 if __name__ == '__main__':
     #Run socketIO app
