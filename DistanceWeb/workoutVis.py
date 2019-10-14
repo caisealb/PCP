@@ -150,7 +150,7 @@ def serialComms():
 # ==== ==== ===== == =====  Run
 
 connect_bluetooth()
-serialComms()
+# serialComms()
 
 if __name__ == '__main__':
     #Run socketIO app
