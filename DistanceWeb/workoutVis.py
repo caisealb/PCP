@@ -141,15 +141,13 @@ def serialComms():
     s1.flushInput()
     try:
         s1.open()
-    except serial.SerialException, e:
-         yield 'event:error\n' + 'data:' + 'Serial port error({0}): {1}\n\n'.format(e.errno, e.strerror)
+    except:
+         print("Can't open serial connection")
     while True:
         sleep(0.01)
         if s1.inWaiting()>0:
             inputValue = s1.read()
             print(inputValue)
-    else:
-        print("Serial error")
 
 # ==== ==== ===== == =====  Run
 
