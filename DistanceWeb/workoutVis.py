@@ -170,6 +170,7 @@ def serialComms():
             print("Test")
             sleep(5)
             try:
+                ser.read()
                 serData = (ser.read().decode('utf-8'))
                 print("Reading data...")
                 print(serData)
