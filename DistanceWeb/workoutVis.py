@@ -151,6 +151,8 @@ def serialComms():
         if s1.inWaiting()>0:
             inputValue = s1.read()
             print(inputValue)
+        else
+            print("No Data")
 
 # ==== ==== ===== == =====  Run
 thread1 = Thread(target = connect_bluetooth)
