@@ -155,7 +155,7 @@ def serialComms():
 thread = Thread(target = connect_bluetooth)
 thread.start()
 # connect_bluetooth()
-serialComms()
+# serialComms()
 
 if __name__ == '__main__':
     #Run socketIO app
