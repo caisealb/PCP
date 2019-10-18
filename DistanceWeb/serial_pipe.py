@@ -11,7 +11,7 @@ from dotenv import \
 from time import sleep
 
 # Serial comms
-port = "/dev/ttyACM0"
+port = "/dev/ttyACM1"
 
 def serialComms(conn):
     # print("test1")
