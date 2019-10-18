@@ -91,7 +91,7 @@ def handle_speed_data(handle, value_bytes):
     print(speedVal)
 
     try:
-       socketio.emit('speed', '{"speed": "%s"}' % str(speedVal), broadcast=True)
+       socketio.emit('speed', '{"speed": "s"}' % str(speedVal), broadcast=True)
     except:
        print("No socket?")
     return speedVal
@@ -185,8 +185,8 @@ def serialComms():
 if __name__ == '__main__':
     connect_bluetooth()
     # serialComms()
-    thread = Thread(target = serialComms)
-    thread.start()
+    # thread = Thread(target = serialComms)
+    # thread.start()
     #Run socketIO app
     socketio.run(app, host = '0.0.0.0')
 
