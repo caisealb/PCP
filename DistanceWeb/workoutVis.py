@@ -180,10 +180,9 @@ def serialComms():
 # ==== ==== ===== == =====  Run
 # thread1 = Thread(target = connect_bluetooth)
 # thread1.start()
-
+    connect_bluetooth()
 
 if __name__ == '__main__':
-    connect_bluetooth()
     # serialComms()
     # thread = Thread(target = serialComms)
     # thread.start()
