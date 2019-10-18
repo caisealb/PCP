@@ -158,7 +158,7 @@ def serialComms():
         ser.open()
     except:
          # print("Can't open serial connection :(")
-        print "Unexpected error:", sys.exc_info()[0]
+        print("Unexpected error:", sys.exc_info()[0])
         raise
     while True:
         if ser.inWaiting()>0:
