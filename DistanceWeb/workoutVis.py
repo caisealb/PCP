@@ -171,7 +171,7 @@ def serialComms():
             sleep(5)
             try:
                 ser.read()
-                serData = (ser.read().decode('utf-8'))
+                serData = (ser.readline().decode())
                 print("Reading data...")
                 print(serData)
             except:
