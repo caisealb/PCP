@@ -150,6 +150,7 @@ if __name__ == '__main__':
     p = Process(target = serialComms, args = (child_conn,))
     p.start()
     print(parent_conn.recv())
+    p.join()
     #Run socketIO app
     socketio.run(app, host = '0.0.0.0')
 
