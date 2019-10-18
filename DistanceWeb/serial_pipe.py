@@ -24,7 +24,6 @@ def serialComms(conn):
     #         print(reading)
     ser = Serial(port, 115200, timeout = 1)
     print(ser.name)
-
     if (ser.isOpen() == False):
         try:
             ser.open()
@@ -33,7 +32,7 @@ def serialComms(conn):
              # print("Can't open serial connection :(")
             print("Unexpected error:", sys.exc_info()[0])
             raise
-    print("Serial port open!")
+    # print("Serial port open!")
     while True:
         # if ser.inWaiting()>0:
             # inputValue = ser.read()
