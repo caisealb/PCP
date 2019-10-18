@@ -2,7 +2,6 @@
 #!/usr/bin/env python3
 
 # Import required library
-from threading import Thread #threading library
 import serial # To use serial comms with arduino
 import pygatt  # To access BLE GATT support
 import signal  # To catch the Ctrl+C and end the program properly
@@ -10,6 +9,7 @@ import os  # To access environment variables
 from dotenv import \
     load_dotenv  # To load the environment variables from the .env file
 
+from threading import Thread #threading library
 
 from flask import Flask, request, render_template
 from flask_socketio import SocketIO, emit, send
