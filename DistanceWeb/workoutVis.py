@@ -141,11 +141,12 @@ signal.signal(signal.SIGINT, keyboard_interrupt_handler)
 # ==== ==== ===== == =====  Serial comms
 #Run serial comms
 def serialComms(ser):
+    print("test1")
     while not connected:
         connected = True
 
         while True:
-            print("test")
+            print("test2")
             reading = ser.readLine().decode()
             print(reading)
     # ser.flushInput()
