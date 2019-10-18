@@ -140,8 +140,8 @@ signal.signal(signal.SIGINT, keyboard_interrupt_handler)
 # ==== ==== ===== == =====  Serial comms
 #Run serial comms
 def serialComms():
-    s1 = Serial(port, 115200)
-    s1.flushInput()
+    ser = Serial(port, 115200)
+    ser.flushInput()
     print (s1.name)
     try:
         s1.open()
