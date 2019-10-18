@@ -91,7 +91,7 @@ def handle_speed_data(handle, value_bytes):
     print(speedVal)
 
     try:
-       socketio.emit('speed', '{"speed": "s"}' % str(speedVal), broadcast=True)
+       socketio.emit('speed', '{"speed": "%s"}' % str(speedVal), broadcast=True)
     except:
        print("No socket?")
     return speedVal
