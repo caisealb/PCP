@@ -141,7 +141,7 @@ signal.signal(signal.SIGINT, keyboard_interrupt_handler)
 #Run serial comms
 def serialComms():
     s1 = serial.Serial(port, 115200)
-    s1.flushInput()
+    # s1.flushInput()
     try:
         s1.open()
     except:
