@@ -2,6 +2,8 @@
 #!/usr/bin/env python3
 
 # Import required library
+from multiprocessing import Process, Queue, Pipe #multiprocessing to implement pipe
+from serial_pipe import serialComms #import process from serial_pipe.py
 from serial import Serial # To use serial comms with arduino
 import pygatt  # To access BLE GATT support
 import signal  # To catch the Ctrl+C and end the program properly
@@ -9,7 +11,7 @@ import os  # To access environment variables
 from dotenv import \
     load_dotenv  # To load the environment variables from the .env file
 
-from threading import Thread #threading library
+# from threading import Thread #threading library
 from time import sleep
 from flask import Flask, request, render_template
 from flask_socketio import SocketIO, emit, send
@@ -140,54 +142,21 @@ def connect_bluetooth():
 # Register our Keyboard handler to exit
 signal.signal(signal.SIGINT, keyboard_interrupt_handler)
 
-# ==== ==== ===== == =====  Serial comms
-#Run serial comms
-def serialComms():
-    # print("test1")
-    # while not connected:
-    #     connected = True
-    #
-    #     while True:
-    #         print("test2")
-    #         reading = ser.readLine().decode()
-    #         print(reading)
-    ser = Serial(port, 115200, timeout = 1)
-    print(ser.name)
-
-    if (ser.isOpen() == False):
-        try:
-            ser.open()
-            print("port opened")
-        except:
-             # print("Can't open serial connection :(")
-            print("Unexpected error:", sys.exc_info()[0])
-            raise
-    print("Serial port open!")
-    while True:
-        # if ser.inWaiting()>0:
-            # inputValue = ser.read()
-            # print(inputValue)
-            sleep(5)
-            try:
-                ser.read()
-                serData = (ser.readline().decode())
-                print("Reading data...")
-                print(serData)
-            except:
-                print("Unexpected error:", sys.exc_info()[0])
-                raise
-
-# ==== ==== ===== == =====  Run
-# thread1 = Thread(target = connect_bluetooth)
-# thread1.start()
+#Connect to bluetooth and subscribe to characteristics
 connect_bluetooth()
 
 if __name__ == '__main__':
-    # serialComms()
-    # thread = Thread(target = serialComms)
-    # thread.start()
     #Run socketIO app
     socketio.run(app, host = '0.0.0.0')
+    #Pipe between serial and workoutVis
+    parent_conn, child_conn = Pipe()
+    p = Process(target = serialComms, args = (child_conn,))
+    p.start()
+    rawData = parent_conn.recv()
+    print("Received data: " + rawData)
+    child_conn.close()
+    parent_conn.close()
+    p.join()
 
 
 #
