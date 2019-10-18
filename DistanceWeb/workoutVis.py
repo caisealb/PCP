@@ -2,7 +2,7 @@
 #!/usr/bin/env python3
 
 # Import required library
-from serial import Serial # To use serial comms with arduino
+import serial # To use serial comms with arduino
 import pygatt  # To access BLE GATT support
 import signal  # To catch the Ctrl+C and end the program properly
 import os  # To access environment variables
@@ -16,6 +16,8 @@ from flask_socketio import SocketIO, emit, send
 
 # Serial comms
 port = "/dev/ttyACM0"
+ser = serial.Serial(port, 115200)
+
 
 # Bluetooth device mac address
 load_dotenv()
@@ -139,8 +141,7 @@ signal.signal(signal.SIGINT, keyboard_interrupt_handler)
 
 # ==== ==== ===== == =====  Serial comms
 #Run serial comms
-def serialComms():
-    ser = Serial(port, 115200)
+def serialComms(ser):
     ser.flushInput()
     print (ser.name)
     try:
@@ -157,10 +158,10 @@ def serialComms():
 # thread1.start()
 connect_bluetooth()
 # serialComms()
-thread = Thread(target = serialComms)
+thread = Thread(target = serialComms, args = (ser))
+thread.start()
 
 if __name__ == '__main__':
-    thread.start()
     #Run socketIO app
     socketio.run(app, host = '0.0.0.0')
 
