@@ -43,7 +43,7 @@ def serialComms(conn):
                 serDataRaw = ser.read()
                 serData = (ser.read().decode())
                 print("Reading data...")
-                print(serDataRaw)
+                # print(serDataRaw)
                 conn.send(serDataRaw)
                 # conn.close()
             except:
