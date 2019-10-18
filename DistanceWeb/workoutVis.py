@@ -127,13 +127,16 @@ def connect_bluetooth():
 
     print("connecting to Bluetooth device...")
     # Use the BLE adapter to connect to our device
-    wheel = bleAdapter.connect(BLUETOOTH_DEVICE_MAC, address_type=ADDRESS_TYPE)
+    try:
+        wheel = bleAdapter.connect(BLUETOOTH_DEVICE_MAC, address_type=ADDRESS_TYPE)
 
-    print("subscribing...")
-    # Subscribe to the GATT service
-    wheel.subscribe(GATT_CHARACTERISTIC_DISTANCE, callback=handle_distance_data)
-    wheel.subscribe(GATT_CHARACTERISTIC_SPEED, callback=handle_speed_data)
-    print("subscribed!")
+        print("subscribing...")
+        # Subscribe to the GATT service
+        wheel.subscribe(GATT_CHARACTERISTIC_DISTANCE, callback=handle_distance_data)
+        wheel.subscribe(GATT_CHARACTERISTIC_SPEED, callback=handle_speed_data)
+        print("subscribed!")
+    except:
+        print("Not connected")
 
 # Register our Keyboard handler to exit
 signal.signal(signal.SIGINT, keyboard_interrupt_handler)
