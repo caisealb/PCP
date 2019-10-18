@@ -10,7 +10,7 @@ from dotenv import \
     load_dotenv  # To load the environment variables from the .env file
 
 from threading import Thread #threading library
-
+from time import sleep
 from flask import Flask, request, render_template
 from flask_socketio import SocketIO, emit, send
 
@@ -164,9 +164,11 @@ def serialComms():
             raise
     print("Open")
     while True:
-        if ser.inWaiting()>0:
+        # if ser.inWaiting()>0:
             inputValue = ser.read()
             print(inputValue)
+            print("Test")
+            sleep(5)
 
 # ==== ==== ===== == =====  Run
 # thread1 = Thread(target = connect_bluetooth)
