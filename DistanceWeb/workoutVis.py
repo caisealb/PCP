@@ -151,7 +151,7 @@ def serialComms():
     #         print("test2")
     #         reading = ser.readLine().decode()
     #         print(reading)
-    ser = Serial(port, 115200)
+    ser = Serial(port, 115200, timeout = 1)
     print(ser.name)
 
     if (ser.isOpen() == False):
