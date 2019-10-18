@@ -44,6 +44,7 @@ def serialComms(conn):
                 serData = (ser.readline().decode())
                 print("Reading data...")
                 print(serData)
+                conn.open()
                 conn.send(serData)
                 conn.close()
             except:
