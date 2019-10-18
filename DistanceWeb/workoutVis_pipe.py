@@ -17,7 +17,7 @@ from flask import Flask, request, render_template
 from flask_socketio import SocketIO, emit, send
 
 # Serial comms
-port = "/dev/ttyACM0"
+port = "/dev/ttyACM1"
 
 # Bluetooth device mac address
 load_dotenv()
@@ -152,7 +152,7 @@ rawData = parent_conn.recv()
 print("Received data: " + rawData)
 # child_conn.close()
 # parent_conn.close()
-# p.join()
+p.join()
 
 if __name__ == '__main__':
     #Run socketIO app
