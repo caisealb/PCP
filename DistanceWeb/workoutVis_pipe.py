@@ -147,17 +147,17 @@ connect_bluetooth()
 #Pipe between serial and workoutVis
 parent_conn, child_conn = Pipe()
 p = Process(target = serialComms, args = (child_conn,))
-p.start()
-rawData = (parent_conn.recv().decode())
-print("Received data: " + rawData)
-# child_conn.close()
-# parent_conn.close()
-p.join()
+
 
 if __name__ == '__main__':
     #Run socketIO app
     socketio.run(app, host = '0.0.0.0')
-
+    p.start()
+    rawData = (parent_conn.recv().decode())
+    print("Received data: " + rawData)
+    # child_conn.close()
+    # parent_conn.close()
+    p.join()
 
 
 #
