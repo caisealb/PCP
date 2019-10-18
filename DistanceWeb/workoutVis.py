@@ -149,7 +149,7 @@ def serialComms():
          print("Can't open serial connection :(")
     while True:
         if ser.inWaiting()>0:
-            inputValue = s1.read()
+            inputValue = ser.read()
             print(inputValue)
 
 # ==== ==== ===== == =====  Run
@@ -157,8 +157,8 @@ def serialComms():
 # thread1.start()
 connect_bluetooth()
 # serialComms()
-thread2 = Thread(target = serialComms)
-thread2.start()
+thread = Thread(target = serialComms)
+thread.start()
 
 if __name__ == '__main__':
     #Run socketIO app
