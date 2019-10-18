@@ -153,12 +153,12 @@ def serialComms():
 
 # ==== ==== ===== == =====  Run
 
-thread = Thread(target = connect_bluetooth)
-thread.start()
 # connect_bluetooth()
 serialComms()
 
 if __name__ == '__main__':
+    thread = Thread(target = connect_bluetooth)
+    thread.start()
     #Run socketIO app
     socketio.run(app, host = '0.0.0.0')
 
