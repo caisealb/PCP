@@ -152,16 +152,17 @@ def serialComms():
     #         reading = ser.readLine().decode()
     #         print(reading)
     ser = Serial(port, 115200)
-    ser.close()
-    ser.open()
-    ser.flushInput()
     print(ser.name)
-    try:
-        ser.open()
-    except:
-         # print("Can't open serial connection :(")
-        print("Unexpected error:", sys.exc_info()[0])
-        raise
+
+    if (ser.isOpen() == False):
+        try:
+            ser.open()
+            print("port opened")
+        except:
+             # print("Can't open serial connection :(")
+            print("Unexpected error:", sys.exc_info()[0])
+            raise
+
     while True:
         if ser.inWaiting()>0:
             inputValue = ser.read()
