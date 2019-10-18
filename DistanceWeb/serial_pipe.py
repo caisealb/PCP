@@ -45,7 +45,7 @@ def serialComms(conn):
                 print("Reading data...")
                 print(serDataRaw)
                 conn.send(serDataRaw)
-                # conn.close()
+                conn.close()
             except:
                 print("Unexpected error:", sys.exc_info()[0])
                 raise
