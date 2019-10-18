@@ -169,6 +169,11 @@ def serialComms():
             # print(inputValue)
             print("Test")
             sleep(5)
+            try:
+                ser.read()
+            except:
+                print("Unexpected error:", sys.exc_info()[0])
+                raise
 
 # ==== ==== ===== == =====  Run
 # thread1 = Thread(target = connect_bluetooth)
