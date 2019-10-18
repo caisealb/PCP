@@ -165,8 +165,8 @@ def serialComms():
     print("Open")
     while True:
         # if ser.inWaiting()>0:
-            inputValue = ser.read()
-            print(inputValue)
+            # inputValue = ser.read()
+            # print(inputValue)
             print("Test")
             sleep(5)
 
