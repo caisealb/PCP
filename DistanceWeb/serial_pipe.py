@@ -13,7 +13,7 @@ from time import sleep
 # Serial comms
 port = "/dev/ttyACM1"
 
-def serialComms(conn):
+def serialComms(child_conn):
     # print("test1")
     # while not connected:
     #     connected = True
@@ -43,8 +43,11 @@ def serialComms(conn):
                 serData = (ser.read().decode())
                 print("Reading data...")
                 # print(serDataRaw)
-                conn.send(serDataRaw)
-                conn.close()
+                writer(child_conn, serDataRaw)
+                child_conn.close()
             except:
                 print("Unexpected error:", sys.exc_info()[0])
                 raise
+
+def writer(conn, data):
+    conn.send(data)
