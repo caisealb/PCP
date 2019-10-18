@@ -152,8 +152,10 @@ def serialComms():
     #         reading = ser.readLine().decode()
     #         print(reading)
     ser = Serial(port, 115200)
+    ser.close()
+    ser.open()
     ser.flushInput()
-    print (ser.name)
+    print(ser.name)
     try:
         ser.open()
     except:
