@@ -3,10 +3,10 @@
   <head>
         <title>Our App</title>
         <link rel="stylesheet" type="text/css"
-        href="{{ url_for('static', filename='css/style3.css') }}">
+        href="{{ url_for('static', filename='css/workout.css') }}">
 
         <script type="text/javascript" charset="utf-8"></script>
-        <script src="{{ url_for('static', filename='js/speedometer.js') }}" language="JavaScript"></script>
+        <script src="{{ url_for('static', filename='js/workout.js') }}" language="JavaScript"></script>
 
   </head>
 
@@ -16,15 +16,14 @@
 
         <div id="options" >
 
-          <div id="pauseCircle", onclick="pauseFunction()">
+          <div id="pauseCircle" onmouseover="hoverPause()" onmouseout="hoverOutPause()" onclick="pauseFunction()">
             <div id="pauseStripe">
             </div>
             <div id="pauseStripe">
             </div>
           </div>
 
-
-          <div id="stopCircle"> <a href="http://localhost:5000/test4">
+          <div id="stopCircle" onmouseover="hoverFunction()" onmouseout="hoverOutFunction()"> <a href="http://localhost:5000/start">
             <div id="stopTriangle">
             </div>
             </a>
@@ -45,6 +44,7 @@
           </div>
         </div>
     </div>
+
 
     <div id="speed">
       <div id="speedCircle">
@@ -73,8 +73,14 @@
     </div>
     </div>
 
-                <div id="overlay">
-                </div>
+    <div id="overlay", onclick="continueFunction()">
+    </div>
+
+    <!-- <div id="continueButton", class = "pause">
+      <div id="continueTriangle", class = "pause">
+                    <h2> continue </h2>
+      </div>
+    </div> -->
 
   </body>
 </html>

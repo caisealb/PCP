@@ -7,17 +7,21 @@ app = Flask(__name__)
 #     return 'Hello, World!'
 
 
-@app.route('/test4')
-def test4():
-    return render_template('test4.html')
+@app.route('/start')
+def start():
+    return render_template('start.html')
 
 @app.route('/test')
 def test():
     return render_template('test.html')
 
-@app.route('/test3')
-def test3():
-    return render_template('test3.html')
+@app.route('/Workout')
+def Workout():
+    return render_template('Workout.html')
+
+@app.route('/summary')
+def test5():
+    return render_template('summary.html')
 
     @app.route('/speed')
     def speed():

@@ -1,6 +1,7 @@
-body {
-  background-color: lightblue;
-  margin: 10%;
+
+body{
+background: #282e3a;
+font-family: tahoma;
 }
 
 p {
@@ -14,6 +15,8 @@ p {
 h1 {
   color: white;
   text-align: center;
+  font: helvetica;
+  font-size: 50px;
 }
 
 
@@ -21,10 +24,11 @@ h1 {
   width:90%;
   height:90%;
   position: relative;
-  top: 200px;
+  top: 250px;
   /* background-color:white; */
   margin: 0 auto;
   text-align: center;
+  /* -webkit-transform-origin: top left; */
   }
 
 /* left measure: time */
@@ -169,11 +173,10 @@ h1 {
 
   #options {
     position: relative;
-    top:100px;
+    top:20px;
     margin: 0 auto;
     text-align: center;
   }
-
 
       #pauseCircle{
         width: 50px;
@@ -197,8 +200,6 @@ h1 {
               background-color: darkblue;
               margin-top: 12px;
         }
-
-
 
 
     #stopCircle{
@@ -244,5 +245,30 @@ h1 {
   margin-top: -1000px;
   margin-left: -200px;
   background-color: white;
+  text-align: center;
   visibility: hidden;
+  opacity: 0.5;
+}
+
+#continueButton{
+  position: static;
+  width: 300px;
+  height: 300px;
+  background-color:yellow;
+  border-top-left-radius: 150px;
+  border-top-right-radius: 150px;
+  border-bottom-left-radius: 150px;
+  border-bottom-right-radius: 150px;
+  visibility: hidden;
+}
+
+#continueTriangle{
+        width: 0;
+        height: 0;
+        border-top: 50px solid transparent;
+        border-left: 100px solid red;
+        border-bottom: 50px solid transparent;
+        display: inline-block;
+        margin-top: 100px;
+        visibility: hidden;
 }
