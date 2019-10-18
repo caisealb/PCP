@@ -153,9 +153,9 @@ def serialComms():
             print(inputValue)
 
 # ==== ==== ===== == =====  Run
-thread1 = Thread(target = connect_bluetooth)
-thread1.start()
-# connect_bluetooth()
+# thread1 = Thread(target = connect_bluetooth)
+# thread1.start()
+connect_bluetooth()
 # serialComms()
 thread2 = Thread(target = serialComms)
 thread2.start()
