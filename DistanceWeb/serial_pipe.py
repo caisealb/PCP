@@ -40,12 +40,13 @@ def serialComms(conn):
             # print(inputValue)
             # sleep(5)
             try:
-                serDataRaw = ser.read()
-                serData = (ser.readline().decode())
-                print("Reading data...")
-                print(serDataRaw)
-                conn.send(serDataRaw)
-                conn.close()
+                if (ser.inWaiting() > 0):
+                    serDataRaw = ser.read(ser.inWaiting())
+                    serData = (ser.readline().decode())
+                    print("Reading data...")
+                    print(serDataRaw)
+                    conn.send(serDataRaw)
             except:
                 print("Unexpected error:", sys.exc_info()[0])
                 raise
+    conn.close()
