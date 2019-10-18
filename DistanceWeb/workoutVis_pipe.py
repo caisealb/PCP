@@ -142,18 +142,18 @@ def connect_bluetooth():
 # Register our Keyboard handler to exit
 signal.signal(signal.SIGINT, keyboard_interrupt_handler)
 
+#Connect to bluetooth and subscribe to characteristics
+connect_bluetooth()
+parent_conn, child_conn = Pipe()
+p = Process(target = serialComms, args = (child_conn,))
+p.start()
+rawData = ((parent_conn.recv()).decode("utf-8"))
+print("Received data: " + rawData)
+# child_conn.close()
+# parent_conn.close()
+p.join()
 
 if __name__ == '__main__':
-    #Connect to bluetooth and subscribe to characteristics
-    connect_bluetooth()
-    parent_conn, child_conn = Pipe()
-    p = Process(target = serialComms, args = (child_conn,))
-    p.start()
-    rawData = ((parent_conn.recv()).decode("utf-8"))
-    print("Received data: " + rawData)
-    # child_conn.close()
-    # parent_conn.close()
-    p.join()
     #Run socketIO app
     socketio.run(app, host = '0.0.0.0')
 
