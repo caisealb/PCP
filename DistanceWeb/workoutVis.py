@@ -140,7 +140,7 @@ signal.signal(signal.SIGINT, keyboard_interrupt_handler)
 # ==== ==== ===== == =====  Serial comms
 #Run serial comms
 def serialComms():
-    s1 = serial.Serial(port, 9600)
+    s1 = serial.Serial(port, 115200)
     s1.flushInput()
     try:
         s1.open()
@@ -152,13 +152,12 @@ def serialComms():
             print(inputValue)
 
 # ==== ==== ===== == =====  Run
-
+thread = Thread(target = connect_bluetooth)
+thread.start()
 # connect_bluetooth()
 serialComms()
 
 if __name__ == '__main__':
-    thread = Thread(target = connect_bluetooth)
-    thread.start()
     #Run socketIO app
     socketio.run(app, host = '0.0.0.0')
 
