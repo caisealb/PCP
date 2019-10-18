@@ -2,13 +2,14 @@
 #!/usr/bin/env python3
 
 # Import required library
-import multiprocessing # To run multiple processes at same time
+from threading import Thread #threading library
 import serial # To use serial comms with arduino
 import pygatt  # To access BLE GATT support
 import signal  # To catch the Ctrl+C and end the program properly
 import os  # To access environment variables
 from dotenv import \
     load_dotenv  # To load the environment variables from the .env file
+
 
 from flask import Flask, request, render_template
 from flask_socketio import SocketIO, emit, send
@@ -144,7 +145,7 @@ def serialComms():
     try:
         s1.open()
     except:
-         print("Can't open serial connection")
+         print("Can't open serial connection :(")
     while True:
         if s1.inWaiting()>0:
             inputValue = s1.read()
@@ -152,8 +153,10 @@ def serialComms():
 
 # ==== ==== ===== == =====  Run
 
-connect_bluetooth()
-# serialComms()
+thread = Thread(target = connect_bluetooth)
+thread.start()
+# connect_bluetooth()
+serialComms()
 
 if __name__ == '__main__':
     #Run socketIO app
