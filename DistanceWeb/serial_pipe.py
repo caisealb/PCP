@@ -38,7 +38,7 @@ def serialComms(child_conn):
         # if ser.inWaiting()>0:
             # inputValue = ser.read()
             # print(inputValue)
-            sleep(5)
+            # sleep(5)
             try:
                 ser.read()
                 serData = (ser.readline().decode())
