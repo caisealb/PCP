@@ -1,0 +1,27 @@
+
+body{
+background: #282e3a;
+font-family: tahoma;
+}
+
+p {
+  color: black;
+  text-align: center;
+  font: helvetica;
+  font-size: 30px;
+  font-style: italic;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+  top: 500px;
+}
+
+#reStartButton{
+
+}
+
+#reStartTriangle{
+
+}
