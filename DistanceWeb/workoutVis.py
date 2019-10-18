@@ -170,7 +170,9 @@ def serialComms():
             print("Test")
             sleep(5)
             try:
-                ser.read()
+                reading = ser.read()
+                print("Reading data...")
+                print((reading).decode())
             except:
                 print("Unexpected error:", sys.exc_info()[0])
                 raise
