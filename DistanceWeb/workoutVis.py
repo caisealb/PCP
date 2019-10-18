@@ -16,7 +16,6 @@ from flask_socketio import SocketIO, emit, send
 
 # Serial comms
 port = "/dev/ttyACM0"
-ser = Serial(port, 115200)
 
 # Bluetooth device mac address
 load_dotenv()
@@ -143,25 +142,26 @@ signal.signal(signal.SIGINT, keyboard_interrupt_handler)
 
 # ==== ==== ===== == =====  Serial comms
 #Run serial comms
-def serialComms(ser):
-    print("test1")
-    while not connected:
-        connected = True
-
-        while True:
-            print("test2")
-            reading = ser.readLine().decode()
-            print(reading)
-    # ser.flushInput()
-    # print (ser.name)
-    # try:
-    #     ser.open()
-    # except:
-    #      print("Can't open serial connection :(")
-    # while True:
-    #     if ser.inWaiting()>0:
-    #         inputValue = ser.read()
-    #         print(inputValue)
+def serialComms():
+    # print("test1")
+    # while not connected:
+    #     connected = True
+    #
+    #     while True:
+    #         print("test2")
+    #         reading = ser.readLine().decode()
+    #         print(reading)
+    ser = Serial(port, 115200)
+    ser.flushInput()
+    print (ser.name)
+    try:
+        ser.open()
+    except:
+         print("Can't open serial connection :(")
+    while True:
+        if ser.inWaiting()>0:
+            inputValue = ser.read()
+            print(inputValue)
 
 # ==== ==== ===== == =====  Run
 # thread1 = Thread(target = connect_bluetooth)
@@ -171,7 +171,7 @@ def serialComms(ser):
 if __name__ == '__main__':
     connect_bluetooth()
     # serialComms()
-    thread = Thread(target = serialComms, args = (ser))
+    thread = Thread(target = serialComms)
     thread.start()
     #Run socketIO app
     socketio.run(app, host = '0.0.0.0')
