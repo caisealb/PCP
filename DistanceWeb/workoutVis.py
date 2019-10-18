@@ -142,13 +142,13 @@ signal.signal(signal.SIGINT, keyboard_interrupt_handler)
 def serialComms():
     ser = Serial(port, 115200)
     ser.flushInput()
-    print (s1.name)
+    print (ser.name)
     try:
-        s1.open()
+        ser.open()
     except:
          print("Can't open serial connection :(")
     while True:
-        if s1.inWaiting()>0:
+        if ser.inWaiting()>0:
             inputValue = s1.read()
             print(inputValue)
 
