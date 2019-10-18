@@ -2,7 +2,7 @@
 #!/usr/bin/env python3
 
 # Import required library
-import serial # To use serial comms with arduino
+from serial import Serial # To use serial comms with arduino
 import pygatt  # To access BLE GATT support
 import signal  # To catch the Ctrl+C and end the program properly
 import os  # To access environment variables
@@ -140,8 +140,9 @@ signal.signal(signal.SIGINT, keyboard_interrupt_handler)
 # ==== ==== ===== == =====  Serial comms
 #Run serial comms
 def serialComms():
-    s1 = serial.Serial(port, 115200)
-    # s1.flushInput()
+    s1 = Serial(port, 115200)
+    s1.flushInput()
+    print (s1.name)
     try:
         s1.open()
     except:
