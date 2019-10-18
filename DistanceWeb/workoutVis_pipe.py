@@ -149,7 +149,7 @@ if __name__ == '__main__':
     parent_conn, child_conn = Pipe()
     p = Process(target = serialComms, args = (child_conn,))
     p.start()
-    print(parent_conn.recv())
+    print("Received data: " + (parent_conn.recv()))
     child_conn.close()
     parent_conn.close()
     p.join()
