@@ -166,12 +166,13 @@ def serialComms(ser):
 # ==== ==== ===== == =====  Run
 # thread1 = Thread(target = connect_bluetooth)
 # thread1.start()
-connect_bluetooth()
-# serialComms()
-thread = Thread(target = serialComms, args = (ser))
-thread.start()
+
 
 if __name__ == '__main__':
+    connect_bluetooth()
+    # serialComms()
+    thread = Thread(target = serialComms, args = (ser))
+    thread.start()
     #Run socketIO app
     socketio.run(app, host = '0.0.0.0')
 
