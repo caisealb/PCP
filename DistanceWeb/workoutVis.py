@@ -157,7 +157,7 @@ thread1 = Thread(target = connect_bluetooth)
 thread1.start()
 # connect_bluetooth()
 # serialComms()
-thread2 = Thread(target = serialComms, args=(port,))
+thread2 = Thread(target = serialComms)
 thread2.start()
 
 if __name__ == '__main__':
