@@ -151,8 +151,8 @@ if __name__ == '__main__':
     p.start()
     rawData = ((parent_conn.recv()).decode("utf-8"))
     print("Received data: " + rawData)
-    child_conn.close()
-    parent_conn.close()
+    # child_conn.close()
+    # parent_conn.close()
     p.join()
     #Run socketIO app
     socketio.run(app, host = '0.0.0.0')
