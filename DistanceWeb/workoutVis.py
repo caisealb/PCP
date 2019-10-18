@@ -15,7 +15,7 @@ from flask import Flask, request, render_template
 from flask_socketio import SocketIO, emit, send
 
 # Serial comms
-port = "/dev/ttyACM0"
+port = "/dev/ttyACM1"
 
 # Bluetooth device mac address
 load_dotenv()
