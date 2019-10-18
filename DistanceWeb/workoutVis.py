@@ -162,12 +162,11 @@ def serialComms():
              # print("Can't open serial connection :(")
             print("Unexpected error:", sys.exc_info()[0])
             raise
-    print("Open")
+    print("Serial port open!")
     while True:
         # if ser.inWaiting()>0:
             # inputValue = ser.read()
             # print(inputValue)
-            print("Test")
             sleep(5)
             try:
                 ser.read()
