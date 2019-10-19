@@ -11,9 +11,9 @@ from dotenv import \
 from time import sleep
 
 # Serial comms
-port = "/dev/ttyACM0"
+port = "/dev/ttyACM1"
 
-def serialComms(conn):
+def serialComms(child_conn):
     # print("test1")
     # while not connected:
     #     connected = True
@@ -24,7 +24,6 @@ def serialComms(conn):
     #         print(reading)
     ser = Serial(port, 115200, timeout = 1)
     print(ser.name)
-
     if (ser.isOpen() == False):
         try:
             ser.open()
@@ -33,7 +32,7 @@ def serialComms(conn):
              # print("Can't open serial connection :(")
             print("Unexpected error:", sys.exc_info()[0])
             raise
-    print("Serial port open!")
+    # print("Serial port open!")
     while True:
         # if ser.inWaiting()>0:
             # inputValue = ser.read()
@@ -44,8 +43,11 @@ def serialComms(conn):
                 serData = (ser.read().decode())
                 print("Reading data...")
                 # print(serDataRaw)
-                conn.send(serDataRaw)
-                # conn.close()
+                writer(child_conn, serDataRaw)
+                child_conn.close()
             except:
                 print("Unexpected error:", sys.exc_info()[0])
                 raise
+
+def writer(conn, data):
+    conn.send(data)
