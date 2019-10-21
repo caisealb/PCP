@@ -1,15 +1,9 @@
-function pauseFunction(){
-  document.getElementById("overlay").style.visibility = "visible";
-}
 
-function continueFunction(){
-  document.getElementById("overlay").style.visibility = "hidden";
-}
-
+//stop button
 function hoverFunction(){
-  document.getElementById("stopCircle").style.backgroundColor = "lightblue";
+  document.getElementById("newCircle").style.opacity = "0.5";
 }
 
 function hoverOutFunction(){
-  document.getElementById("stopCircle").style.backgroundColor = "white";
+  document.getElementById("newCircle").style.opacity = "1";
 }

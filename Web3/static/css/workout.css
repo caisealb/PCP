@@ -47,42 +47,45 @@ h1 {
         top: 8%;
         width: 200px;
         height: 200px;
-        background-color: white;
+        background-color: #bcabae;
+        box-shadow: 0px 0px 10px black;
         border-top-left-radius: 100px;  /* 100px of height + 10px of border */
         border-top-right-radius: 100px; /* 100px of height + 10px of border */
         border-bottom-left-radius: 100px;  /* 100px of height + 10px of border */
         border-bottom-right-radius: 100px; /* 100px of height + 10px of border */
-        border: 5px solid lightgreen;
       }
 
       #timeText{
         position: relative;
         font-size: 48px;
         top: 50px;
-        color: red;
+        color: white;
       }
 
       #timeTextMeasure{
         position: relative;
         font-size: 24px;
-        color: red;
+        color: white;
       }
 
 /* middle measure: speedometer */
 
       #speed{
       position: relative;
-      top: -50px;
+      top: -100px;
       width:30%;
       height:30%;
       text-align: center;
       display: inline-block;
       }
 
+
       #needle {
-        width: 5px;
+        position: relative;
+        width: 10px;
         height: 100px;
-        background: lightblue;
+        top: 40px;
+        background: #eca72c;
         border-bottom-left-radius: 5px;
         border-bottom-right-radius: 5px;
         border-top-left-radius: 100%;
@@ -107,29 +110,29 @@ h1 {
 #speedCircle{
     position: relative;
     display: inline-block;
-    top: 8%;
-    width: 200px;
-    height: 150px;
-    background-color: white;
-    border-top-left-radius: 100px;  /* 100px of height + 10px of border */
-    border-top-right-radius: 100px; /* 100px of height + 10px of border */
-    border-bottom-left-radius: 20px;  /* 100px of height + 10px of border */
-    border-bottom-right-radius: 20px; /* 100px of height + 10px of border */
-    border: 5px solid pink;
-    /* border-bottom: 0; */
+    /* top: 8%; */
+    width: 300px;
+    height: 300px;
+    box-shadow: 0px 0px 20px black;
+    background-color: #bcabae;
+    border-top-left-radius: 200px;  /* 100px of height + 10px of border */
+    border-top-right-radius: 200px; /* 100px of height + 10px of border */
+    border-bottom-left-radius: 200px;  /* 100px of height + 10px of border */
+    border-bottom-right-radius: 200px; /* 100px of height + 10px of border */
 }
 
       #speedText{
         position: relative;
         font-size: 48px;
-        top: 50px;
-        color: lightgreen;
+        top: 150px;
+        color: white;
       }
 
       #speedTextMeasure{
         position: relative;
+        top: 100px;
         font-size: 24px;
-        color: lightgreen;
+        color: white;
       }
 
 
@@ -147,6 +150,7 @@ h1 {
     #distanceCircle{
       position: relative;
       display: inline-block;
+      box-shadow: 0px 0px 10px black;
       top: 8%;
       width: 200px;
       height: 200px;
@@ -155,20 +159,20 @@ h1 {
       border-top-right-radius: 100px; /* 100px of height + 10px of border */
       border-bottom-left-radius: 100px;  /* 100px of height + 10px of border */
       border-bottom-right-radius: 100px; /* 100px of height + 10px of border */
-      border: 5px solid red;
+      background-color: #bcabae;
     }
 
     #distanceText{
       position: relative;
       font-size: 48px;
       top: 50px;
-      color: pink;
+      color: white;
     }
 
     #distanceTextMeasure{
       position: relative;
       font-size: 24px;
-      color: pink;
+      color: white;
     }
 
   #options {
@@ -186,7 +190,7 @@ h1 {
         display: inline-block;
         margin-top: -130px;
         margin-bottom: 50px;
-        border: 2px;
+        /* border: 2px; */
         /* border-color: #eca72c; */
         border-top-left-radius: 150px;  /* 100px of height + 10px of border */
         border-top-right-radius: 150px; /* 100px of height + 10px of border */

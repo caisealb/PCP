@@ -10,6 +10,11 @@ app = Flask(__name__)
 def barchart():
     return render_template('barchart.html')
 
+    @app.route('/distance')
+    def distance():
+        return render_template('distance.html')
+
+
     @app.route('/home')
     def home():
         return render_template('index.html')
