@@ -55,6 +55,10 @@
             var currentSpeed = 0;
             var speedDisplay = 0;
             var disDisplay = 0;
+            var currentLat = 0;
+            var latDisplay = 0;
+            var currentLong = 0;
+            var longDisplay = 0;
 
             socket.on('connect', function() {
               // socket.emit('json', {data: 'I\'m connected!'});
@@ -95,6 +99,41 @@
                 var speedtext = document.getElementById("speedText");
                 speedtext.innerHTML = (speedDisplay);
               }
+
+            socket.on('latitude', function(lat_obj) {
+                const json = JSON.parse(lat_obj);
+                console.log(json);
+                //console.log(json.distance);
+
+                if (json.latitude !== undefined) {
+                    currentLat = parseFloat(json.latitude);
+                    latDisplay = currentLat.toString();
+                    console.log(currentLat);
+                    console.log(latDisplay);
+                    // setLat();
+                    }
+                  });
+                // function setLat(){
+                //   var lattext = document.getElementById("latText");
+                //   speedtext.innerHTML = (latDisplay); }
+
+            socket.on('longitude', function(long_obj) {
+                const json = JSON.parse(long_obj);
+                console.log(json);
+                //console.log(json.distance);
+
+                if (json.longitude !== undefined) {
+                    currentLong = parseFloat(json.longitude);
+                    longDisplay = currentLong.toString();
+                    console.log(currentLong);
+                    console.log(longDisplay);
+                    // setLat();
+                    }
+                  });
+                // function setLat(){
+                //   var lattext = document.getElementById("latText");
+                //   speedtext.innerHTML = (latDisplay);
+
           </script>
           <script type="text/javascript" charset="utf-8">
             var startTime = Date.now();
