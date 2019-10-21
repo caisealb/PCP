@@ -195,8 +195,8 @@ def serialComms():
                 print("Longitude:")
                 print(longFloat)
                 try:
-                    socketio.emit('latitude', '{"latitude": "%s"}' % str(latitudes), broadcast=True)
-                    socketio.emit('longitude', '{"longitude": "%s"}' % str(longitudes), broadcast=True)
+                    socketio.emit('latitude', '{"latitude": "%s"}' % str(latFloat), broadcast=True)
+                    socketio.emit('longitude', '{"longitude": "%s"}' % str(longFloat), broadcast=True)
                 except:
                     print("No socket - lat/long")
             except:
