@@ -7,16 +7,48 @@ function hoverOutFunction(){
   document.getElementById("playButton").style.backgroundColor = "transparent";
 }
 
+
 function startFunction(){
   document.getElementById("playButton").style.visibility = "hidden";
   document.getElementById("del-countdown").style.display = "block";
-
-  for (var i=3; i > 0; i--){
-    var timerText = document.getElementById("clock");
-    timerText.innerHTML = (i);
-    setTimeout(1000);
-  }
+  countdown();
 }
+
+  var timeLeft = 3;
+  var elem = document.getElementById("clock");
+  var timerId = setInterval(countdown, 1000);
+
+  function countdown() {
+      if (timeLeft == -1) {
+          clearTimeout(timerId);
+          doSomething();
+      } else {
+          elem.innerHTML = (timeLeft);
+          timeLeft--;
+      }
+  }
+
+  function doSomething() {
+      window.location.href = "Workout.html";
+  }
+
+
+
+
+
+
+
+
+
+
+//   var timerText = document.getElementById("clock");
+//   for (var i=3; i > 0; i--){
+//   timerText.innerHTML = (i);
+// }, 1000);
+// }
+
+
+
 
 //
 // function updateTimer(deadline){
