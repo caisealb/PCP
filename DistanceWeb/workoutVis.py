@@ -178,6 +178,8 @@ def serialComms():
                 # print(dataElements)
                 latitudes = dataElements[3::5]
                 print(latitudes)
+                longitudes = dataElements[5::6]
+                print(longitudes)
 
 
             except:
