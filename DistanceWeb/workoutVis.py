@@ -176,7 +176,7 @@ def serialComms():
                 # print(serData)
                 dataElements = [x.strip() for x in serData.split(',')]
                 # print(dataElements)
-                latitudes = dataElements[2::5]
+                latitudes = dataElements[3::5]
                 print(latitudes)
 
 
