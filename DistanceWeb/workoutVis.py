@@ -180,6 +180,7 @@ def serialComms():
                 ser.read()
                 serData = (ser.readline().decode())
                 print("Reading data...")
+                print(serData)
 
                 # print(serData)
                 dataElements = [x.strip() for x in serData.split(',')]
