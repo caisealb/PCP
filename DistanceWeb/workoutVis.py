@@ -178,7 +178,7 @@ def serialComms():
                 # print(dataElements)
                 latitudes = dataElements[3::5]
                 print(latitudes)
-                longitudes = dataElements[7::9]
+                longitudes = dataElements[1::9]
                 print(longitudes)
             except:
                 print("Unexpected error:", sys.exc_info()[0])
