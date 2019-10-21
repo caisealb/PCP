@@ -11,7 +11,7 @@ void setup()
 {
      
   Serial.begin(115200);
-  Serial.println("Adafruit GPS library basic Parsing test!");
+//  Serial.println("Adafruit GPS library basic Parsing test!");
   GPS.begin(9600);
   
   GPS.sendCommand(PMTK_SET_NMEA_OUTPUT_RMCGGA);
