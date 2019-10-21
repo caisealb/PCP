@@ -188,17 +188,15 @@ def serialComms():
                 # print(dataElements)
                 latitudes = dataElements[1::5]
                 latFloat = [float(i) for i in latitudes]
-                latItem = latFloat.items()
                 print("Latitude:")
-                print(latItem)
-                longitudes = dataElements[3::5]
+                print(latFloat)
+                longitudes = dataElements[8::5]
                 longFloat = [float(i) for i in longitudes]
-                longItem = longFloat.items()
                 print("Longitude:")
-                print(longItem)
+                print(longFloat)
                 try:
-                    socketio.emit('latitude', '{"latitude": "%s"}' % str(latItem), broadcast=True)
-                    socketio.emit('longitude', '{"longitude": "%s"}' % str(longItem), broadcast=True)
+                    socketio.emit('latitude', '{"latitude": "%s"}' % str(latFloat), broadcast=True)
+                    socketio.emit('longitude', '{"longitude": "%s"}' % str(longFloat), broadcast=True)
                 except:
                     print("No socket - lat/long")
             except:
