@@ -173,7 +173,7 @@ def serialComms():
                 serData = (ser.readline().decode())
                 print("Reading data...")
                 # print(serData)
-                dataElements = serData.split()
+                dataElements = [x.strip() for x in serData.split(',')]
                 print(dataElements)
                 # latitude = dataElements[1]
                 # longitude = dataElements[5]
