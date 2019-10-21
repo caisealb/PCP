@@ -172,7 +172,12 @@ def serialComms():
                 ser.read()
                 serData = (ser.readline().decode())
                 print("Reading data...")
-                print(serData)
+                # print(serData)
+                dataElements = serData.split()
+                latitude = dataElements[1]
+                longitude = dataElements[4]
+                print(latitude)
+                print(longitude)
             except:
                 print("Unexpected error:", sys.exc_info()[0])
                 raise
