@@ -3,7 +3,7 @@
 # ==== ==== ===== == ===== Libraries and variables ==== ==== ===== == =====
 # Import required library
 from serial import Serial # To use serial comms with arduino
-from operator import itemgetter 
+from operator import itemgetter
 import pygatt  # To access BLE GATT support
 import signal  # To catch the Ctrl+C and end the program properly
 import os  # To access environment variables
@@ -188,7 +188,7 @@ def serialComms():
                 print(dataElements)
                 # print(dataElements)
                 latitudes = dataElements[1::5]
-                latFloat = itemgetter(dataElements)
+                latFloat = itemgetter(latitudes)
                 print("Latitude:")
                 print(latFloat)
                 longitudes = dataElements[3::5]
