@@ -3,6 +3,7 @@
 # ==== ==== ===== == ===== Libraries and variables ==== ==== ===== == =====
 # Import required library
 from serial import Serial # To use serial comms with arduino
+from operator import itemgetter
 import pygatt  # To access BLE GATT support
 import signal  # To catch the Ctrl+C and end the program properly
 import os  # To access environment variables
@@ -186,15 +187,17 @@ def serialComms():
                 dataElements = [x.strip() for x in serData.split(',')]
                 print(dataElements)
                 # print(dataElements)
-                latitudes = dataElements[1::5]
+                # latitudes = dataElements[1::5]
+                latFloat = float(dataElements[1])
                 print("Latitude:")
-                print(latitudes)
-                longitudes = dataElements[3::5]
+                print(latFloat)
+                # longitudes = dataElements[3::5]
+                longFloat = float(dataElements[3])
                 print("Longitude:")
-                print(longitudes)
+                print(longFloat)
                 try:
-                    socketio.emit('latitude', '{"latitude": "%s"}' % str(latitudes), broadcast=True)
-                    socketio.emit('longitude', '{"longitude": "%s"}' % str(longitudes), broadcast=True)
+                    socketio.emit('latitude', '{"latitude": "%s"}' % str(latFloat), broadcast=True)
+                    socketio.emit('longitude', '{"longitude": "%s"}' % str(longFloat), broadcast=True)
                 except:
                     print("No socket - lat/long")
             except:
