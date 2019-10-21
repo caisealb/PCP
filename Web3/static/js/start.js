@@ -7,6 +7,7 @@ function hoverOutFunction(){
   document.getElementById("playButton").style.backgroundColor = "transparent";
 }
 
+
 function startFunction(){
   document.getElementById("playButton").style.visibility = "hidden";
   document.getElementById("del-countdown").style.display = "block";
@@ -14,9 +15,10 @@ function startFunction(){
   for (var i=3; i > 0; i--){
     var timerText = document.getElementById("clock");
     timerText.innerHTML = (i);
-    setTimeout(1000);
   }
+    setTimeout(10000);
 }
+
 
 //
 // function updateTimer(deadline){
