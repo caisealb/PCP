@@ -62,11 +62,11 @@ void loop()
     timer = millis(); // reset the timer
       latdeg=GPS.latitudeDegrees;
       longdeg=GPS.longitudeDegrees;
-      Serial.print("{lat: ");
+      Serial.print("lat: ");
       Serial.print(latdeg,8);
       Serial.print(", ");
       Serial.print("lng: ");
       Serial.print(longdeg,8);
-      Serial.println("},");
+      Serial.println(",");
     }
   }
