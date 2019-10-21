@@ -40,7 +40,8 @@ letter-spacing: 10px;
   width: 300px;
   height: 300px;
   background-color:white;
-  border: 5px solid darkblue;
+  border: 5px solid;
+  border-color: #eca72c;
   display: inline-block;
   margin-top: 50px;
   border-top-left-radius: 150px;  /* 100px of height + 10px of border */
@@ -102,12 +103,6 @@ letter-spacing: 10px;
   box-sizing: border-box;
 }
 
-/* putting text after the clock content inline with it */
-/* #clock:after{
-  content: "";
-  display: block;
-  clear: both;
-} */
 
 /* text "seconds" styling */
 #units {
@@ -121,13 +116,3 @@ letter-spacing: 10px;
   letter-spacing: 2px;
   text-shadow: 1px 1px 1px rgba(10,10,10, 0.7);
 }
-
-
-/* span.turn{
-  animation: turn 0.7s ease forwards;
-}
-
-@keyframes turn{
-  0%{transform: rotateX(0deg)}
-  100%{transform: rotateX(360deg)}
-} */

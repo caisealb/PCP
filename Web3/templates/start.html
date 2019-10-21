@@ -12,27 +12,17 @@
 
   <body>
 
-    <h1> Start your Workout </h1>
+    <h1 id="header"> Start your Workout </h1>
 
     <!-- start button (phase 1) -->
   <div id="main">
-    <div id="playButton" onmouseover="hoverFunction()" onmouseout="hoverOutFunction()" onclick ="startFunction()" ></div>
+    <div id="playButton" onmouseover="hoverFunction()" onmouseout="hoverOutFunction()" onclick ="startFunction()"></div>
   </div>
 
-        <div id="del-countdown">
-          <div id="clock"> 3 </div>
-          <div id="units"> Seconds </div>
-        </div>
-
-    <!-- <div id="container">
-          <div id="startButton" onmouseover="hoverFunction()" onmouseout="hoverOutFunction()" onclick ="hideStartButton" onclick="startTimer()" >
-            <div id="startTriangle">
-            </div>
-          </div>
-    </div> -->
-
-<!--         <a href="http://localhost:5000/Workout">      -->
-<!-- counter (phase )-->
+  <div id="del-countdown">
+      <p id="clock"></p>
+      <div id="units"> Seconds </div>
+  </div>
 
   </body>
 </html>
