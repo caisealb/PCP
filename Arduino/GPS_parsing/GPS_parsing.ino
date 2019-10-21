@@ -70,6 +70,6 @@ void loop()
       Serial.print(",");
       Serial.print(longdeg);
       Serial.print(",");
-      Serial.println("}")
+      Serial.println("}");
     }
   }
