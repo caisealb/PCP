@@ -1,6 +1,6 @@
 
 #!/usr/bin/env python3
-
+# ==== ==== ===== == ===== Libraries and variables ==== ==== ===== == =====
 # Import required library
 from serial import Serial # To use serial comms with arduino
 import pygatt  # To access BLE GATT support
@@ -32,7 +32,7 @@ distVal = 0
 speedVal = 0
 
 
-# ==== ==== ===== == =====  Web server
+# ==== ==== ===== == =====  Web server ==== ==== ===== == =====
 
 app = Flask(__name__)
 
@@ -65,6 +65,14 @@ def handle_distance(json):
 def handle_speed(json):
     print(float(json['speed']))
 
+@socketio.on('latitude')
+def handle_speed(json):
+    print(float(json['latitude']))
+
+@socketio.on('longitude')
+def handle_speed(json):
+    print(float(json['longitude']))
+
 
 def handle_distance_data(handle, value_bytes):
     #handle -- integer, characteristic read handle the data was received on
@@ -96,7 +104,7 @@ def handle_speed_data(handle, value_bytes):
        print("No socket - speed")
     return speedVal
 
-
+# ==== ==== ===== == =====  Bluetooth ==== ==== ===== == =====
 
 def discover_characteristic(device):
     #List characteristics of a device
@@ -140,7 +148,7 @@ def connect_bluetooth():
 # Register our Keyboard handler to exit
 signal.signal(signal.SIGINT, keyboard_interrupt_handler)
 
-# ==== ==== ===== == =====  Serial comms
+# ==== ==== ===== == =====  Serial comms ==== ==== ===== == =====
 #Run serial comms
 def serialComms():
     # print("test1")
@@ -191,7 +199,7 @@ def serialComms():
                 print("Unexpected error:", sys.exc_info()[0])
                 raise
 
-# ==== ==== ===== == =====  Run
+# ==== ==== ===== == =====  Run ==== ==== ===== == =====
 # thread1 = Thread(target = connect_bluetooth)
 # thread1.start()
 connect_bluetooth()
