@@ -181,12 +181,13 @@ h1 {
       #pauseCircle{
         width: 50px;
         height: 50px;
-        background-color:white;
+        background-color: #eca72c;
         text-align: center;
         display: inline-block;
         margin-top: -130px;
         margin-bottom: 50px;
-        border: 2px solid darkblue;
+        border: 2px;
+        /* border-color: #eca72c; */
         border-top-left-radius: 150px;  /* 100px of height + 10px of border */
         border-top-right-radius: 150px; /* 100px of height + 10px of border */
         border-bottom-left-radius: 150px;  /* 100px of height + 10px of border */
@@ -197,7 +198,7 @@ h1 {
               width: 10px;
               height: 25px;
               display: inline-block;
-              background-color: darkblue;
+              background-color: white;
               margin-top: 12px;
         }
 
@@ -205,12 +206,12 @@ h1 {
     #stopCircle{
       width: 50px;
       height: 50px;
-      background-color:white;
+      background-color: #eca72c;
       text-align: center;
       display: inline-block;
       margin-top: -130px;
       margin-bottom: 50px;
-      border: 2px solid darkblue;
+      border: 2px;
       border-top-left-radius: 150px;  /* 100px of height + 10px of border */
       border-top-right-radius: 150px; /* 100px of height + 10px of border */
       border-bottom-left-radius: 150px;  /* 100px of height + 10px of border */
@@ -221,7 +222,7 @@ h1 {
             width: 25px;
             height: 25px;
             display: inline-block;
-            background-color: darkblue;
+            background-color: white;
             margin-top: 12px;
       }
 
