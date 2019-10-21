@@ -188,7 +188,7 @@ def serialComms():
                 print(dataElements)
                 # print(dataElements)
                 latitudes = dataElements[1::5]
-                latFloat = itemgetter(0)(latitudes)
+                latFloat = [float(i) for i in latitudes]
                 print("Latitude:")
                 print(latFloat)
                 longitudes = dataElements[3::5]
