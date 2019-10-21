@@ -178,14 +178,14 @@ def serialComms():
             sleep(5)
             try:
                 ser.read()
-                serData = (ser.readline().decode("utf8"))
+                serData = (ser.readline().decode("utf-8"))
                 print("Reading data...")
 
                 # print(serData)
                 dataElements = [x.strip() for x in serData.split(',')]
                 print(dataElements)
                 # print(dataElements)
-                latitudes = dataElements[1::9]
+                latitudes = dataElements[1::5]
                 print("Latitude:")
                 print(latitudes)
                 longitudes = dataElements[3::5]
