@@ -63,10 +63,10 @@ void loop()
       latdeg=GPS.latitudeDegrees;
       longdeg=GPS.longitudeDegrees;
       Serial.print("lat: ");
-      Serial.print(latdeg,8);
+      Serial.print(latdeg);
       Serial.print(", ");
       Serial.print("lng: ");
-      Serial.print(longdeg,8);
+      Serial.print(longdeg);
       Serial.println(",");
     }
   }
