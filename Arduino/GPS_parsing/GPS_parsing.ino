@@ -67,6 +67,6 @@ void loop()
       Serial.print(", ");
       Serial.print("lng: ");
       Serial.print(longdeg);
-      Serial.println("}");
+//      Serial.println("}");
     }
   }
