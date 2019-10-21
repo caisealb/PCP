@@ -186,12 +186,14 @@ def serialComms():
                 dataElements = [x.strip() for x in serData.split(',')]
                 print(dataElements)
                 # print(dataElements)
-                latitudes = float(dataElements[1::5])
+                latitudes = dataElements[1::5]
+                latFloat = [float(i) for i in latitudes]
                 print("Latitude:")
-                print(latitudes)
-                longitudes = float(dataElements[3::5])
+                print(latFloat)
+                longitudes = dataElements[3::5]
+                longFloat = [float(i) for i in longitudes]
                 print("Longitude:")
-                print(longitudes)
+                print(longFloat)
                 try:
                     socketio.emit('latitude', '{"latitude": "%s"}' % str(latitudes), broadcast=True)
                     socketio.emit('longitude', '{"longitude": "%s"}' % str(longitudes), broadcast=True)
