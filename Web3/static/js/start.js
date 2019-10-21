@@ -10,6 +10,12 @@ function hoverOutFunction(){
 function startFunction(){
   document.getElementById("playButton").style.visibility = "hidden";
   document.getElementById("del-countdown").style.display = "block";
+
+  for (var i=3; i > 0; i--){
+    var timerText = document.getElementById("clock");
+    timerText.innerHTML = (i);
+    setTimeout(1000);
+  }
 }
 
 //
@@ -24,26 +30,27 @@ function startFunction(){
 //   };
 // }
 
-window.onload = startTimer();
-
-function startTimer(){
-    for (var i=3; i > 0; i--){
-      var timerText = document.getElementById("clock");
-      timerText.innerHTML = (i);
-      setTimeout(1000);
-    }
-  }
-
-
-function animateClock(span){
-  span.className = "turn";
-  setTimeout(function(){
-    span.className = "";
-  },700);
-}
+// window.onload = startTimer();
+//
+// function startTimer(){
+//     for (var i=3; i > 0; i--){
+//       var timerText = document.getElementById("clock");
+//       timerText.innerHTML = (i);
+//       setTimeout(1000);
+//     }
+//   }
 
 
 
+
+
+
+// function animateClock(span){
+//   span.className = "turn";
+//   setTimeout(function(){
+//     span.className = "";
+//   },700);
+// }
 
 // function startTimer(id, deadline){
 //   var timerInterval = setInterval(function(){

@@ -86,7 +86,7 @@ letter-spacing: 10px;
 }
 
 /* "numbers counting"  */
-#clock span{
+#clock {
   display: inline-block;
   /* float: left; */
   text-align: center;
@@ -97,23 +97,24 @@ letter-spacing: 10px;
   padding: 20px;
   width: 20%;
   margin-top: 20px;
+  margin-bottom: 20px;
   border-radius: 20px;
   box-sizing: border-box;
 }
 
 /* putting text after the clock content inline with it */
-#clock:after{
+/* #clock:after{
   content: "";
   display: block;
   clear: both;
-}
+} */
 
 /* text "seconds" styling */
-#units span{
-  display: inline-block;
+#units {
+  /* display: inline-block; */
   width: 25%;
   text-align: center;
-  margin-top: 10px;
+  margin: 0 auto;
   color: #ddd;
   text-transform: uppercase;
   font-size: 13px;
@@ -121,11 +122,12 @@ letter-spacing: 10px;
   text-shadow: 1px 1px 1px rgba(10,10,10, 0.7);
 }
 
-span.turn{
+
+/* span.turn{
   animation: turn 0.7s ease forwards;
 }
 
 @keyframes turn{
   0%{transform: rotateX(0deg)}
   100%{transform: rotateX(360deg)}
-}
+} */
