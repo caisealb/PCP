@@ -78,7 +78,7 @@ def handle_distance_data(handle, value_bytes):
     try:
        socketio.emit('distance', '{"distance": "%s"}' % str(distVal), broadcast=True)
     except:
-       print("No socket?")
+       print("No socket - distance")
     return distVal
 
 def handle_speed_data(handle, value_bytes):
@@ -93,7 +93,7 @@ def handle_speed_data(handle, value_bytes):
     try:
        socketio.emit('speed', '{"speed": "%s"}' % str(speedVal), broadcast=True)
     except:
-       print("No socket?")
+       print("No socket - speed")
     return speedVal
 
 
@@ -182,6 +182,11 @@ def serialComms():
                 longitudes = dataElements[3::5]
                 print("Longitude:")
                 print(longitudes)
+                try:
+                    socketio.emit('latitude', '{"latitude": "%s"}' % str(latitudes), broadcast=True)
+                    socketio.emit('longitude', '{"longitude": "%s"}' % str(longitudes), broadcast=True)
+                except:
+                    print("No socket - lat/long")
             except:
                 print("Unexpected error:", sys.exc_info()[0])
                 raise
