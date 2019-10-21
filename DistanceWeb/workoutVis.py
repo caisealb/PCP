@@ -177,9 +177,11 @@ def serialComms():
                 dataElements = [x.strip() for x in serData.split(',')]
                 # print(dataElements)
                 latitudes = dataElements[1::9]
-                print(("Latitude:") + latitudes)
+                print("Latitude:")
+                print(latitudes)
                 longitudes = dataElements[3::5]
-                print(("Longitude:") + longitudes)
+                print("Longitude:")
+                print(longitudes)
             except:
                 print("Unexpected error:", sys.exc_info()[0])
                 raise
