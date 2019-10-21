@@ -179,7 +179,7 @@ def serialComms():
                 for x in dataElements:
                     if (x == "lat:"):
                         print(x+1)
-                    else if (x == "lng:"):
+                    elif (x == "lng:"):
                         print(x+1)
                 # latitude = dataElements[1]
                 # longitude = dataElements[3]
