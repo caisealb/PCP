@@ -272,7 +272,7 @@
                   radius: 3
                 })
 
-              locations.push(center);
+              // locations.push(center);
 
             function updatePosition(){
                 loc = {lat:currentLat,lng:currentLong};
@@ -286,7 +286,9 @@
                   strokeOpacity: 1.0,
                   strokeWeight: 2
                 })
+                if ((currentLat != 0) && (currentLong != 0)){
                 path.setMap(map);
+              }
             }
 
             // function moveToLocation(currenLat, currentLong){
