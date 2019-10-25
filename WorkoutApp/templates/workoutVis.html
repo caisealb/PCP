@@ -140,8 +140,8 @@
                 // function setLong(){
                 //   var longtext = document.getElementById("longText");
                 //   longtext.innerHTML = (longDisplay);
-                if (currentLat !== 0){
                 function initMap() {
+                  if (currentLat !== 0){
                     center = {lat:currentLat, lng:currentLong};
                     var map = new google.maps.Map(document.getElementById('map'), {
                     zoom: 15,
