@@ -110,14 +110,14 @@
         });
 
         var dot = new google.maps.Circle({
-          strokeColor: '#FF0000',
+          strokeColor: '#ad343e',
           strokeOpacity: 0.8,
           strokeWeight: 1,
-          fillColor: '#FF0000',
+          fillColor: '#ad343e',
           fillOpacity: 0.8,
           map:map,
           center: center,
-          radius: 7
+          radius: 10
         })
 
       locations.push(center);
@@ -135,9 +135,9 @@
         var path = new google.maps.Polyline({
           path: locations,
           geodesic: true,
-          strokeColor: '#FF0000',
+          strokeColor: '#ad343e',
           strokeOpacity: 1.0,
-          strokeWeight: 1
+          strokeWeight: 2
         })
         path.setMap(map);
     }
