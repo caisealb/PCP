@@ -116,3 +116,11 @@ letter-spacing: 10px;
   letter-spacing: 2px;
   text-shadow: 1px 1px 1px rgba(10,10,10, 0.7);
 }
+
+
+#map {
+    width: 100%;
+    height: 400px;
+    background-color: grey;
+    top:200px;
+}

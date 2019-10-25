@@ -7,13 +7,13 @@ boolean usingInterrupt = false;
 float latdeg;
 float longdeg;
 
-void setup()  
+void setup()
 {
-     
+
   Serial.begin(115200);
 //  Serial.println("Adafruit GPS library basic Parsing test!");
   GPS.begin(9600);
-  
+
   GPS.sendCommand(PMTK_SET_NMEA_OUTPUT_RMCGGA);
   GPS.sendCommand(PMTK_SET_NMEA_UPDATE_1HZ);   // 1 Hz update rate
   GPS.sendCommand(PGCMD_ANTENNA);
@@ -27,7 +27,7 @@ SIGNAL(TIMER0_COMPA_vect) {
   // if you want to debug, this is a good time to do it!
 #ifdef UDR0
   if (GPSECHO)
-    if (c) UDR0 = c;  
+    if (c) UDR0 = c;
 #endif
 }
 
@@ -43,32 +43,32 @@ void useInterrupt(boolean v) {
 }
 
 uint32_t timer = millis();
-void loop()                     
+void loop()
 {
   if (! usingInterrupt) {
     char c = GPS.read();
     if (GPSECHO)
       if (c) Serial.print(c);
   }
- 
+
   if (GPS.newNMEAreceived()) {
     if (!GPS.parse(GPS.lastNMEA()))   // this also sets the newNMEAreceived() flag to false
       return;  // we can fail to parse a sentence in which case we should just wait for another
   }
-  
+
   if (timer > millis())  timer = millis();
 
-  if (millis() - timer > 1000) { 
+  if (millis() - timer > 1000) {
     timer = millis(); // reset the timer
       latdeg=GPS.latitudeDegrees;
       longdeg=GPS.longitudeDegrees;
       Serial.print("{lat: ");
       Serial.print(",");
-      Serial.print(latdeg);
+      Serial.print(latdeg,8);
       Serial.print(",");
       Serial.print("lng: ");
       Serial.print(",");
-      Serial.print(longdeg);
+      Serial.print(longdeg,8);
       Serial.print(",");
       Serial.println("}");
     }
