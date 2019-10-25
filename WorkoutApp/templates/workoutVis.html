@@ -140,7 +140,6 @@
                 // function setLong(){
                 //   var longtext = document.getElementById("longText");
                 //   longtext.innerHTML = (longDisplay);
-                if (currentLat>0){
                 function initMap() {
                     center = {lat:currentLat, lng:currentLong};
                     var map = new google.maps.Map(document.getElementById('map'), {
@@ -256,8 +255,10 @@
                 }
                 setInterval(updatePosition,1000);
               }
-
+              
+              if (currentLat>0){
               initMap();
+            }
 
           </script>
 
