@@ -134,14 +134,13 @@
                     longDisplay = currentLong.toString();
                     console.log(currentLong);
                     console.log(longDisplay);
-                    // setLong();
+                    initMap();
                     }
                   });
                 // function setLong(){
                 //   var longtext = document.getElementById("longText");
                 //   longtext.innerHTML = (longDisplay);
                 function initMap() {
-                  if (currentLat !== 0){
                     center = {lat:currentLat, lng:currentLong};
                     var map = new google.maps.Map(document.getElementById('map'), {
                     zoom: 15,
@@ -256,7 +255,6 @@
                 }
                 setInterval(updatePosition,1000);
               }
-            }
 
 
           </script>
