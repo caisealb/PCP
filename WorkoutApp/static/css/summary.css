@@ -1,0 +1,168 @@
+
+body{
+background: #282e3a;
+font-family: tahoma;
+}
+
+p {
+  text-align: center;
+  position: relative;
+  margin-top: 30px;
+  font: tahoma;
+  color: #282e3a;
+  font-size: 20px;
+  font-style: oblique;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+  font: helvetica;
+  font-size: 50px;
+}
+
+
+.subtext{
+  color: #282e3a;
+  position: relative;
+  font-size: 18px;
+  font-style: italic;
+}
+
+#container{
+  width:90%;
+  height:90%;
+  position: relative;
+  top: 250px;
+  /* background-color:white; */
+  margin: 0 auto;
+  text-align: center;
+  /* -webkit-transform-origin: top left; */
+  }
+
+/* left measure: time */
+      #time{
+      position: relative;
+      top: 60%;
+      width:30%;
+      height:30%;
+      text-align: center;
+      display: inline-block;
+      }
+
+      #timeCircle{
+        position: relative;
+        display: inline-block;
+        top: 8%;
+        width: 200px;
+        height: 200px;
+        background-color: #2dcb74;
+        box-shadow: 0px 0px 10px black;
+        border-top-left-radius: 100px;  /* 100px of height + 10px of border */
+        border-top-right-radius: 100px; /* 100px of height + 10px of border */
+        border-bottom-left-radius: 100px;  /* 100px of height + 10px of border */
+        border-bottom-right-radius: 100px; /* 100px of height + 10px of border */
+      }
+
+      #timeText{
+        position: relative;
+        font-size: 48px;
+        color: white;
+      }
+
+/* middle measure: speedometer */
+
+      #speed{
+      /* position: relative; */
+      width:30%;
+      height:30%;
+      text-align: center;
+      display: inline-block;
+      }
+
+
+#speedCircle{
+    position: relative;
+    display: inline-block;
+    /* top: 8%; */
+    width: 300px;
+    height: 300px;
+    box-shadow: 0px 0px 20px black;
+    background-color: #2dcb74;
+    border-top-left-radius: 200px;  /* 100px of height + 10px of border */
+    border-top-right-radius: 200px; /* 100px of height + 10px of border */
+    border-bottom-left-radius: 200px;  /* 100px of height + 10px of border */
+    border-bottom-right-radius: 200px; /* 100px of height + 10px of border */
+}
+
+      #speedText{
+        position: relative;
+        display: inline-block;
+        font-size: 100px;
+        color: white;
+      }
+
+/* right measure: distance */
+
+    #distance{
+    position: relative;
+    top: 100%;
+    width:30%;
+    height:30%;
+    text-align: center;
+    display: inline-block;
+    }
+
+    #distanceCircle{
+      position: relative;
+      display: inline-block;
+      box-shadow: 0px 0px 10px black;
+      top: 8%;
+      width: 200px;
+      height: 200px;
+      background-color: white;
+      border-top-left-radius: 100px;  /* 100px of height + 10px of border */
+      border-top-right-radius: 100px; /* 100px of height + 10px of border */
+      border-bottom-left-radius: 100px;  /* 100px of height + 10px of border */
+      border-bottom-right-radius: 100px; /* 100px of height + 10px of border */
+      background-color: #2dcb74;
+    }
+
+    #distanceText{
+      position: relative;
+      font-size: 48px;
+      color: white;
+    }
+
+
+  #options {
+    position: relative;
+    top:20px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+
+    #newCircle{
+      width: 50px;
+      height: 50px;
+      background-color: #eca72c;
+      text-align: center;
+      display: inline-block;
+      margin-bottom: 50px;
+      border: 2px;
+      border-top-left-radius: 150px;  /* 100px of height + 10px of border */
+      border-top-right-radius: 150px; /* 100px of height + 10px of border */
+      border-bottom-left-radius: 150px;  /* 100px of height + 10px of border */
+      border-bottom-right-radius: 150px; /* 100px of height + 10px of border */
+    }
+
+    #newTriangle{
+      width: 0;
+      height: 0;
+      margin-top: 30%;
+      border-style: solid;
+      border-width: 10px 0 10px 20px;
+      border-color: transparent transparent transparent white;
+      display: inline-block;
+      }
