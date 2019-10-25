@@ -1,12 +1,13 @@
-// color palette:
-// grey: #282e3a
-// yellow/orange: #eca72c
-// Green: #2dcb74
-// red: #ad343e
-// Lightgrey: #bcabae
-
-
-
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+</style>
+<script>
+function redraw()
+{
+	draw(document.getElementById("myList").value);
+}
 function draw(speed)
 {
       var  canvas = document.getElementById("myCanvas");
@@ -17,11 +18,11 @@ function draw(speed)
       var radius = canvas.height / 2 - 20;
 
       context.beginPath();
-      context.arc(centerX, centerY, radius, Math.PI, Math.PI*-1.1, true);
+      context.arc(centerX, centerY, radius, Math.PI*0.10, Math.PI*-1.1, true);
 
       var gradience = context.createRadialGradient(centerX, centerY, radius-radius/2, centerX, centerY, radius-radius/8);
-       gradience.addColorStop(0, '#282e3a');
-       gradience.addColorStop(1, '#bcabae');
+       gradience.addColorStop(0, '#ff9000');
+       gradience.addColorStop(1, '#000000');
 
        context.fillStyle = gradience;
        context.fill();
@@ -29,9 +30,9 @@ function draw(speed)
        context.restore();
 
 	context.beginPath();
-	context.strokeStyle = '#ad343e';
+	context.strokeStyle = '#ffff00';
 	context.translate(centerX,centerY);
-	var increment = 1;
+	var increment = 5;
 	context.font="15px Helvetica";
 	for (var i=-18; i<=18; i++)
 	{
@@ -40,7 +41,7 @@ function draw(speed)
 		cosAngle = -Math.cos(angle);
 
 		if (i % 5 == 0) {
-		context.lineWidth = 5;
+		context.lineWidth = 8;
 		iPointX = sineAngle *(radius -radius/4);
 		iPointY = cosAngle *(radius -radius/4);
 		oPointX = sineAngle *(radius -radius/7);
@@ -64,7 +65,6 @@ function draw(speed)
 		context.stroke();
 		context.closePath();
 	}
-
 	var numOfSegments = speed/increment;
 	numOfSegments = numOfSegments -18;
 	angle = Math.PI/30*numOfSegments;
@@ -73,36 +73,36 @@ function draw(speed)
 	pointX = sineAngle *(3/4*radius);
 	pointY = cosAngle *(3/4*radius);
 
-}
+	context.beginPath();
+	context.strokeStyle = '#000000';
+	context.arc(0, 0, 19, 0, 2*Math.PI, true);
+	context.fill();
+        context.closePath();
 
-
-function pauseFunction(){
-  document.getElementById("overlay").style.visibility = "visible";
+	context.beginPath();
+	context.lineWidth=6;
+	context.moveTo(0,0);
+        context.lineTo(pointX,pointY);
+        context.stroke();
+        context.closePath();
+        context.restore();
+        context.translate(-centerX,-centerY);
 }
-
-function continueFunction(){
-  document.getElementById("overlay").style.visibility = "hidden";
-}
-
-//stop button
-function hoverFunction(){
-  document.getElementById("stopCircle").style.opacity = "0.5";
-}
-
-function hoverOutFunction(){
-  document.getElementById("stopCircle").style.opacity = "1";
-}
-
-//pausebutton
-function hoverPause(){
-  document.getElementById('pauseCircle').style.opacity = "0.5";
-}
-
-function hoverOutPause(){
-  document.getElementById('pauseCircle').style.opacity = "1"
-}
-
-function redraw()
-{
-	draw(document.getElementById("myList").value);
-}
+</script>
+</head>
+<body onload="draw(120);">
+<div>
+Change the speed in the dropdown to see the dial position change
+<select id="myList" onchange="redraw();">
+  <option value="120">Speed = 120</option>
+  <option value="30">Speed = 30</option>
+  <option value="50">Speed = 50</option>
+  <option value="60">Speed = 60</option>
+  <option value="140">Speed = 140</option>
+  <option value="160">Speed = 160</option>
+</select>
+</div>
+<canvas class="canvas" id="myCanvas" width="600" height="600">
+Your browser does not support the HTML5 canvas tag.</canvas>
+</body>
+</html>
