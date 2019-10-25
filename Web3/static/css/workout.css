@@ -66,9 +66,15 @@ h1 {
       }
 
 /* middle measure: speedometer */
+#myCanvas{
+    position: relative;
+    display: inline-block;
+    text-align: center;
+
+}
 
       #speed{
-      /* position: relative; */
+      position: relative;
       top: -100px;
       width:30%;
       height:30%;
@@ -78,17 +84,17 @@ h1 {
 
 
       #needle {
-        position: relative;
+        position: absolute;
         width: 10px;
         height: 100px;
         top: 40px;
+        left: 50%;
         background: #eca72c;
         border-bottom-left-radius: 5px;
         border-bottom-right-radius: 5px;
         border-top-left-radius: 100%;
         border-top-right-radius: 100%;
         display: inline-block;
-        position: absolute;
         -webkit-animation: move 5s infinite;
         transform: rotate(45deg);
         transform-origin: bottom;
@@ -118,20 +124,18 @@ h1 {
     border-bottom-right-radius: 200px; /* 100px of height + 10px of border */
 }
 
-#halfCircle{
-    width: 260px;
-    height: 150px; /* as the half of the width */
+
     background-color: transparent;
     border-top-left-radius: 200px;  /* 100px of height + 10px of border */
     border-top-right-radius: 200px; /* 100px of height + 10px of border */
-    border: 20px solid white;
+    border: 10px solid white;
     border-bottom: 0;
     border-style: dashed;
     position: relative;
     /* left: -10px; */
     display: inline-block;
     text-align: center;
-}
+} */
 
       #speedText{
         position: relative;
