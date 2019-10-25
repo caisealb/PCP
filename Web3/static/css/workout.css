@@ -24,7 +24,7 @@ h1 {
   width:100%;
   height:100%;
   position: relative;
-  top: 150px;
+  top: 200px;
   text-align: center;
   }
 
@@ -32,6 +32,8 @@ h1 {
       #time{
         position: relative;
         display: inline-block;
+        top: 80px;
+        left: 65px;
         width:30%;
         height:30%;
         text-align: center;
@@ -41,8 +43,8 @@ h1 {
         position: relative;
         display: inline-block;
         top: 8%;
-        width: 200px;
-        height: 200px;
+        width: 180px;
+        height: 180px;
         background-color: #bcabae;
         box-shadow: 0px 0px 10px black;
         border-top-left-radius: 100px;  /* 100px of height + 10px of border */
@@ -51,24 +53,30 @@ h1 {
         border-bottom-right-radius: 100px; /* 100px of height + 10px of border */
       }
 
-      #timeText{
+      #timeContainer{
         position: relative;
         display: inline-block;
-        font-size: 48px;
+        text-align: center;
+        top:-180px;
+      }
+
+      #timeText{
+        position: relative;
+        font-size: 35px;
         top: 50px;
         color: white;
       }
 
       #timeTextMeasure{
         position: relative;
-        display: inline-block;
-        font-size: 24px;
+        font-size: 20px;
         color: white;
       }
 
 
       #speed{
         position: relative;
+        top:50px;
         display: inline-block;
         width:30%;
         height:30%;
@@ -87,7 +95,7 @@ h1 {
         width: 10px;
         height: 100px;
         top: 40px;
-        left: 50%;
+        left: 48%;
         background: #eca72c;
         border-bottom-left-radius: 5px;
         border-bottom-right-radius: 5px;
@@ -103,7 +111,6 @@ h1 {
 #speedCircle{
     position: relative;
     display: inline-block;
-    /* top: 8%; */
     width: 300px;
     height: 300px;
     box-shadow: 0px 0px 20px black;
@@ -114,38 +121,36 @@ h1 {
     border-bottom-right-radius: 200px; /* 100px of height + 10px of border */
 }
 
-
-    background-color: transparent;
-    border-top-left-radius: 200px;  /* 100px of height + 10px of border */
-    border-top-right-radius: 200px; /* 100px of height + 10px of border */
-    border: 10px solid white;
-    border-bottom: 0;
-    border-style: dashed;
-    position: relative;
-    /* left: -10px; */
-    display: inline-block;
-    text-align: center;
-} */
+#textContainer{
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  top:-140px;
+}
 
       #speedText{
         position: relative;
-        font-size: 48px;
+        display: inline-block;
+        font-size: 35px;
         color: white;
       }
 
       #speedTextMeasure{
         position: relative;
-        top: -50px;
-        font-size: 24px;
+        display: inline-block;
+        font-size: 20px;
         color: white;
+        top:-15px;
       }
 
 
-/* right measure: distance */
 
+/* right indicator: distance */
     #distance{
       position: relative;
       display: inline-block;
+      top:80px;
+      right: 65px;
       width:30%;
       height:30%;
       text-align: center;
@@ -156,8 +161,8 @@ h1 {
       display: inline-block;
       box-shadow: 0px 0px 10px black;
       top: 8%;
-      width: 200px;
-      height: 200px;
+      width: 180px;
+      height: 180px;
       background-color: white;
       border-top-left-radius: 100px;  /* 100px of height + 10px of border */
       border-top-right-radius: 100px; /* 100px of height + 10px of border */
@@ -166,25 +171,39 @@ h1 {
       background-color: #bcabae;
     }
 
+
+    #distContainer{
+      position: relative;
+      display: inline-block;
+      text-align: center;
+      top:-180px;
+    }
+
+
     #distanceText{
       position: relative;
-      font-size: 48px;
+      font-size: 35px;
       top: 50px;
       color: white;
     }
 
     #distanceTextMeasure{
       position: relative;
-      font-size: 24px;
+      font-size: 20px;
       color: white;
     }
 
+
+
+
+/* //pause and stop buttons// */
   #options {
     position: relative;
     top:20px;
     margin: 0 auto;
     text-align: center;
   }
+
 
       #pauseCircle{
         width: 50px;
