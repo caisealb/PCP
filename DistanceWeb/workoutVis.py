@@ -181,12 +181,11 @@ def serialComms():
                 ser.read()
                 serData = (ser.readline().decode())
                 print("Reading data...")
-                print(serData)
+                # print(serData)
 
                 # print(serData)
                 dataElements = [x.strip() for x in serData.split(',')]
                 print(dataElements)
-                # print(dataElements)
                 # latitudes = dataElements[1::5]
                 latFloat = float(dataElements[1])
                 print("Latitude:")
@@ -205,18 +204,11 @@ def serialComms():
                 raise
 
 # ==== ==== ===== == =====  Run ==== ==== ===== == =====
-# thread1 = Thread(target = connect_bluetooth)
-# thread1.start()
+
 connect_bluetooth()
-# serialComms()
 thread = Thread(target = serialComms)
 thread.start()
 
 if __name__ == '__main__':
     #Run socketIO app
     socketio.run(app, host = '0.0.0.0')
-
-
-#
-# if __name__ == '__main__':
-#     # app.run(host='0.0.0.0')
