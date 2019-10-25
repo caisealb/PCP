@@ -59,13 +59,13 @@
             var disDisplay = 0;
 
             //GPS latitude & longitude
-            var currentLat=0;
+            var currentLat;
             var latDisplay;
-            var currentLong=0;
+            var currentLong;
             var longDisplay;
             var loc = {};
             var locations = [];
-            window.map = undefined;
+            //window.map = undefined;
 
             socket.on('connect', function() {
               // socket.emit('json', {data: 'I\'m connected!'});
@@ -140,7 +140,7 @@
                 // function setLong(){
                 //   var longtext = document.getElementById("longText");
                 //   longtext.innerHTML = (longDisplay);
-                
+
 
                 var map = function initMap() {
                     center = {lat:currentLat, lng:currentLong};
