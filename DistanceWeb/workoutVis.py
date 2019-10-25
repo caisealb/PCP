@@ -200,7 +200,7 @@ def serialComms():
                     #     socketio.emit('longitude', '{"longitude": "%s"}' % str(longFloat), broadcast=True)
                     # except:
                     #     print("No socket - lat/long")
-                else
+                else:
                     print("Problem with GPS data")
             except:
                 print("Unexpected error:", sys.exc_info()[0])
