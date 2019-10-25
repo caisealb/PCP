@@ -188,11 +188,11 @@ def serialComms():
                 print(dataElements)
                 # # latitudes = dataElements[1::5]
                 if (len(dataElements) > 2):
-                    latFloat = float(dataElements[1])
+                    latFloat = float(dataElements[0])
                     print("Latitude:")
                     print(latFloat)
                     # # longitudes = dataElements[3::5]
-                    longFloat = float(dataElements[3])
+                    longFloat = float(dataElements[1])
                     print("Longitude:")
                     print(longFloat)
                     try:
