@@ -110,12 +110,9 @@
                     latDisplay = currentLat.toString();
                     console.log(currentLat);
                     console.log(latDisplay);
-                    // setLat();
+                    // do stuff with latitude here
                     }
                   });
-                // function setLat(){
-                //   var lattext = document.getElementById("latText");
-                //   speedtext.innerHTML = (latDisplay); }
 
             socket.on('longitude', function(long_obj) {
                 const json = JSON.parse(long_obj);
@@ -127,12 +124,9 @@
                     longDisplay = currentLong.toString();
                     console.log(currentLong);
                     console.log(longDisplay);
-                    // setLong();
+                    // do stuff with longitude here
                     }
                   });
-                // function setLong(){
-                //   var longtext = document.getElementById("longText");
-                //   longtext.innerHTML = (longDisplay);
 
           </script>
           <script type="text/javascript" charset="utf-8">

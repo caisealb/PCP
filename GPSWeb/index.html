@@ -16,8 +16,8 @@
     var i=0;
     //var lat;
     //var lng;
-    var lat = [52,52.1,52.1];
-    var lng = [4.1,4,4.3];
+    var lat = [52,52];
+    var lng = [2,2.1];
     var center;
     var loc = {};
     var locations = [];
@@ -25,7 +25,7 @@
     function initMap() {
         center = {lat:lat[0], lng:lng[0]};
         var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 7,
+        zoom:15,
         center: center,
         styles: [
             {elementType: 'geometry', stylers: [{color: '#242f3e'}]},
@@ -110,14 +110,14 @@
         });
 
         var dot = new google.maps.Circle({
-          strokeColor: '#FF0000',
+          strokeColor: '#ad343e',
           strokeOpacity: 0.8,
           strokeWeight: 1,
-          fillColor: '#FF0000',
+          fillColor: '#ad343e',
           fillOpacity: 0.8,
           map:map,
           center: center,
-          radius: 7
+          radius: 10
         })
 
       locations.push(center);
@@ -135,9 +135,9 @@
         var path = new google.maps.Polyline({
           path: locations,
           geodesic: true,
-          strokeColor: '#FF0000',
+          strokeColor: '#ad343e',
           strokeOpacity: 1.0,
-          strokeWeight: 1
+          strokeWeight: 2
         })
         path.setMap(map);
     }

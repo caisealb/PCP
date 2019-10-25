@@ -99,3 +99,16 @@ To do:
 - Wire up BNO and GPS sensors concurrently to feather
   - Read GPS directly from feather serial, process and send as another GATT characteristic to python
 - Investigate issue with co-ordinate array and google maps API
+
+______________________________________________________________________________________________________________________
+
+
+21/10/19
+
+- Functional serial comms (between GPS/arduino mega and RPi) simultaneously with BLE comms (feather), using threading
+- New web interface with workout countdown and pause overlay + buttons
+- Improved GPS plotting - live updating of co-ordinates, with one point plotted per second
+
+To do:
+- Get GPS plotting on google maps API - pass co-ords from HTML to correct variables
+- Refine web interface 
