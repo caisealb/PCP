@@ -191,9 +191,9 @@ def serialComms():
                 print("Latitude:")
                 print(latFloat)
                 # # longitudes = dataElements[3::5]
-                # longFloat = float(dataElements[3])
-                # print("Longitude:")
-                # print(longFloat)
+                longFloat = float(dataElements[3])
+                print("Longitude:")
+                print(longFloat)
                 # try:
                 #     socketio.emit('latitude', '{"latitude": "%s"}' % str(latFloat), broadcast=True)
                 #     socketio.emit('longitude', '{"longitude": "%s"}' % str(longFloat), broadcast=True)
