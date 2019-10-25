@@ -19,7 +19,7 @@ function draw(speed)
       context.beginPath();
       context.arc(centerX, centerY, radius, Math.PI, Math.PI*-1.1, true);
 
-      var gradience = context.createRadialGradient(centerX, centerY, radius-radius/2, centerX, centerY, radius-radius/8);
+      var gradience = context.createRadialGradient(centerX, centerY, radius, centerX, centerY, radius-radius/8);
        gradience.addColorStop(0, '#282e3a');
        gradience.addColorStop(1, '#bcabae');
 
@@ -29,13 +29,15 @@ function draw(speed)
        context.restore();
 
 	context.beginPath();
-	context.strokeStyle = '#ad343e';
+	context.strokeStyle = '#FFFFFF';
 	context.translate(centerX,centerY);
+  // context.transform.rotate(-90deg);
+  // context.transform(0);
 	var increment = 1;
 	context.font="15px Helvetica";
-	for (var i=-18; i<=18; i++)
+	for (var i=-5; i<=5; i++)
 	{
-		angle = Math.PI/30*i;
+		angle = Math.PI/10*i;
 		sineAngle = Math.sin(angle);
 		cosAngle = -Math.cos(angle);
 
@@ -48,7 +50,7 @@ function draw(speed)
 
 		wPointX = sineAngle *(radius -radius/2.5);
 		wPointY = cosAngle *(radius -radius/2.5);
-		context.fillText((i+18)*increment,wPointX-2,wPointY+4);
+		context.fillText((i+5)*increment,wPointX-2,wPointY+4);
 		}
 		else
 		{
