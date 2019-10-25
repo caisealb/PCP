@@ -30,12 +30,11 @@ h1 {
 
 /* left measure: time */
       #time{
-      position: relative;
-      top: 60%;
-      width:30%;
-      height:30%;
-      text-align: center;
-      display: inline-block;
+        position: relative;
+        display: inline-block;
+        width:30%;
+        height:30%;
+        text-align: center;
       }
 
       #timeCircle{
@@ -54,6 +53,7 @@ h1 {
 
       #timeText{
         position: relative;
+        display: inline-block;
         font-size: 48px;
         top: 50px;
         color: white;
@@ -61,27 +61,26 @@ h1 {
 
       #timeTextMeasure{
         position: relative;
+        display: inline-block;
         font-size: 24px;
         color: white;
       }
 
-/* middle measure: speedometer */
-#myCanvas{
-    position: relative;
-    display: inline-block;
-    text-align: center;
-
-}
 
       #speed{
-      position: relative;
-      top: -100px;
-      width:30%;
-      height:30%;
-      text-align: center;
-      display: inline-block;
+        position: relative;
+        display: inline-block;
+        width:30%;
+        height:30%;
+        text-align: center;
       }
 
+      /* middle measure: speedometer */
+      #myCanvas{
+          position: relative;
+          /* display: inline-block; */
+          text-align: center;
+      }
 
       #needle {
         position: absolute;
@@ -94,24 +93,15 @@ h1 {
         border-bottom-right-radius: 5px;
         border-top-left-radius: 100%;
         border-top-right-radius: 100%;
-        display: inline-block;
+        /* display: inline-block; */
         -webkit-animation: move 5s infinite;
         transform: rotate(45deg);
         transform-origin: bottom;
       }
 
-      /* #speedCircle{
-        position: relative;
-        top: 10%;
-        background: white;
-        width: 80%;
-        height: 80%;
-        border-radius: 50%;
-        display: inline-block;
-      } */
 
 #speedCircle{
-    /* position: relative; */
+    position: relative;
     display: inline-block;
     /* top: 8%; */
     width: 300px;
@@ -154,12 +144,11 @@ h1 {
 /* right measure: distance */
 
     #distance{
-    position: relative;
-    top: 100%;
-    width:30%;
-    height:30%;
-    text-align: center;
-    display: inline-block;
+      position: relative;
+      display: inline-block;
+      width:30%;
+      height:30%;
+      text-align: center;
     }
 
     #distanceCircle{
