@@ -187,9 +187,9 @@ def serialComms():
                 dataElements = [x.strip() for x in serData.split(',')]
                 print(dataElements)
                 # # latitudes = dataElements[1::5]
-                # latFloat = float(dataElements[1])
-                # print("Latitude:")
-                # print(latFloat)
+                latFloat = float(dataElements[1])
+                print("Latitude:")
+                print(latFloat)
                 # # longitudes = dataElements[3::5]
                 # longFloat = float(dataElements[3])
                 # print("Longitude:")
