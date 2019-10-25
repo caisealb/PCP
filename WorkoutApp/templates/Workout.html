@@ -177,7 +177,7 @@
             function initMap() {
                 center = {lat:currentLat, lng:currentLong};
                 var map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 15,
+                zoom: 17,
                 center: center,
                 styles: [
                     {elementType: 'geometry', stylers: [{color: '#242f3e'}]},
@@ -269,7 +269,7 @@
                   fillOpacity: 0.8,
                   map:map,
                   center: center,
-                  radius: 10
+                  radius: 3
                 })
 
               locations.push(center);
