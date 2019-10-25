@@ -187,18 +187,21 @@ def serialComms():
                 dataElements = [x.strip() for x in serData.split(',')]
                 print(dataElements)
                 # # latitudes = dataElements[1::5]
-                latFloat = float(dataElements[1])
-                print("Latitude:")
-                print(latFloat)
-                # # longitudes = dataElements[3::5]
-                longFloat = float(dataElements[3])
-                print("Longitude:")
-                print(longFloat)
-                # try:
-                #     socketio.emit('latitude', '{"latitude": "%s"}' % str(latFloat), broadcast=True)
-                #     socketio.emit('longitude', '{"longitude": "%s"}' % str(longFloat), broadcast=True)
-                # except:
-                #     print("No socket - lat/long")
+                if (len(dataElements) > 2):
+                    latFloat = float(dataElements[1])
+                    print("Latitude:")
+                    print(latFloat)
+                    # # longitudes = dataElements[3::5]
+                    longFloat = float(dataElements[3])
+                    print("Longitude:")
+                    print(longFloat)
+                    # try:
+                    #     socketio.emit('latitude', '{"latitude": "%s"}' % str(latFloat), broadcast=True)
+                    #     socketio.emit('longitude', '{"longitude": "%s"}' % str(longFloat), broadcast=True)
+                    # except:
+                    #     print("No socket - lat/long")
+                else
+                    print("Problem with GPS data")
             except:
                 print("Unexpected error:", sys.exc_info()[0])
                 raise
