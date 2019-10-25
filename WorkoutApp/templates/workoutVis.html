@@ -59,19 +59,13 @@
             var disDisplay = 0;
 
             //GPS latitude & longitude
-<<<<<<< HEAD
-            var currentLat;
+            var currentLat=0;
             var latDisplay;
-            var currentLong;
-=======
-            var currentLat = 0;
-            var latDisplay;
-            var currentLong = 0;
->>>>>>> 2aa8abedb1624116cad98128347bb7562b9676d9
+            var currentLong=0;
             var longDisplay;
-            var center;
             var loc = {};
             var locations = [];
+            window.map = undefined;
 
             socket.on('connect', function() {
               // socket.emit('json', {data: 'I\'m connected!'});
@@ -140,12 +134,13 @@
                     longDisplay = currentLong.toString();
                     console.log(currentLong);
                     console.log(longDisplay);
+                    // setLong();
                     }
                   });
                 // function setLong(){
                 //   var longtext = document.getElementById("longText");
                 //   longtext.innerHTML = (longDisplay);
-                if (currentLat != 0){
+
                 function initMap() {
                     center = {lat:currentLat, lng:currentLong};
                     var map = new google.maps.Map(document.getElementById('map'), {
@@ -259,8 +254,17 @@
                     })
                     path.setMap(map);
                 }
+
+                function moveToLocation(currenLat, currentLong){
+                  const center = {lat:currentLat, lng: currentLong};
+                  // using global variable:
+                  window.map.panTo(center);
+                }
+
                 setInterval(updatePosition,1000);
+                setInterval(moveToLocation,1000);
               }
+
 
 
           </script>
