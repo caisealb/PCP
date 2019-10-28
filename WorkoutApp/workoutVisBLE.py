@@ -63,7 +63,7 @@ def speed():
 def summary():
     sendReset = 1
     return render_template('summary.html')
-    
+
 
 
 @socketio.on('json')
@@ -158,12 +158,10 @@ def connect_bluetooth():
         print("subscribed!")
 
         if (sendReset == 1):
-            try:
-                print("Sending reset msg...")
-                wheel.char_write(GATT_CHARACTERISTIC_RESET, byte(0xFF))
-            except:
-                print("Couldn't send reset msg!")
-        elif (sendReset == 0):
+            print("Sending reset msg...")
+            wheel.char_write(GATT_CHARACTERISTIC_RESET, byte(0xFF))
+            # print("Couldn't send reset msg!")
+        else :
             print("Not on summary page")
     except:
         print("Not connected")
