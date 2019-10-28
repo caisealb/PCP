@@ -194,7 +194,7 @@
             function initMap() {
                 center = {lat:currentLat, lng:currentLong};
                 var map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 17,
+                zoom: 15,
                 center: center,
                 styles: [
                     {elementType: 'geometry', stylers: [{color: '#242f3e'}]},
@@ -362,6 +362,7 @@
         localStorage.setItem('Hours', hours);
         localStorage.setItem('Minutes', minutes);
         localStorage.setItem('Seconds', seconds);
+        localStorage.setItem('locations',locations);
         summaryFunction();
       }
       </script>
