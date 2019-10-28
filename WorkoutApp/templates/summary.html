@@ -65,15 +65,21 @@ var distance=localStorage.getItem('Totaldistance');
 var hours = localStorage.getItem('Hours');
 var minutes = localStorage.getItem('Minutes');
 var seconds = localStorage.getItem('Seconds');
+var totalSeconds = ((hours*3600)+(minutes*60)+seconds);
+var averageSpeedMS = (distance/totalSeconds);
+var averageSpeedKMH = (averageSpeedMS*3.6);
 var distanceString = String(distance);
 var timeString = String(hours + ':' + minutes + ':' + seconds);
 var distanceText = document.getElementById("distanceText");
 var timeText = document.getElementById("timeText");
+var speedText = document.getElementById("speedText");
 distanceText.innerHTML = (distanceString);
 timeText.innerHTML = (timeString);
+speedText.innerHTML = (averageSpeedKMH);
 
 console.log(distance);
 console.log(distanceString);
+console.log(averageSpeedKMH);
 </script>
 
   </body>
