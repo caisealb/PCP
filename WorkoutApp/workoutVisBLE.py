@@ -18,7 +18,7 @@ from flask_socketio import SocketIO, emit, send
 # Serial comms
 port = "/dev/ttyACM0"
 
-# Bluetooth device mac address
+# Bluetooth
 load_dotenv()
 BLUETOOTH_DEVICE_MAC = os.environ['BLUETOOTH_DEVICE_MAC']
 
@@ -32,6 +32,15 @@ ADDRESS_TYPE = pygatt.BLEAddressType.random
 
 distVal = 0
 speedVal = 0
+
+# Bluetooth connection
+print("Starting Bluetooth...")
+
+bleAdapter = pygatt.GATTToolBackend()
+bleAdapter.start()
+wheel = bleAdapter.connect(BLUETOOTH_DEVICE_MAC, address_type=ADDRESS_TYPE)
+
+# print("connecting to Bluetooth device...")
 
 # ==== ==== ===== == =====  Web server ==== ==== ===== == =====
 
@@ -139,16 +148,8 @@ def keyboard_interrupt_handler(signal_num, frame):
     exit(0)
 
 def connect_bluetooth():
-    print("Starting Bluetooth...")
-    # Start a BLE adapter
-    bleAdapter = pygatt.GATTToolBackend()
-    bleAdapter.start()
-
-    print("connecting to Bluetooth device...")
     # Use the BLE adapter to connect to our device
     try:
-        wheel = bleAdapter.connect(BLUETOOTH_DEVICE_MAC, address_type=ADDRESS_TYPE)
-
         print("subscribing...")
         # Subscribe to the GATT service
         wheel.subscribe(GATT_CHARACTERISTIC_DISTANCE, callback=handle_distance_data)
@@ -160,7 +161,7 @@ def connect_bluetooth():
 
 def sendResetMSG():
         print("Sending reset msg...")
-        wheel.char_write(GATT_CHARACTERISTIC_RESET, byte(0xFF))
+        wheel.char_write(GATT_CHARACTERISTIC_RESET, bytearray([0xFF]))
 
         # print("Can't send msg")
 
