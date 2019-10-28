@@ -274,6 +274,7 @@
               // locations.push(center);
 
             function updatePosition(){
+              if ((currentLat != 0) && (currentLong != 0)){
                 loc = {lat:currentLat,lng:currentLong};
                 locations.push(loc);
                 console.log(loc);
@@ -285,7 +286,6 @@
                   strokeOpacity: 1.0,
                   strokeWeight: 2
                 })
-                if ((currentLat != 0) && (currentLong != 0)){
                 path.setMap(map);
               }
             }
