@@ -61,6 +61,7 @@ def speed():
 def summary():
     return render_template('summary.html')
 
+
 @socketio.on('json')
 def handle_json(json):
     print('received json: ' + str(json))

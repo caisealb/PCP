@@ -53,7 +53,6 @@
   <div id="distanceCircle">
   <p> Total distance </p>
       <div id="distanceText">
-        100
       </div>
       <div id="distanceTextMeasure" class="subtext">
          meters
@@ -63,6 +62,8 @@
 
 <script type="text/javascript" charset="utf-8">
 var distance=localStorage.getItem('Totaldistance');
+var distanceText = document.getElementById("distanceText");
+distText.innerHTML = (distance);
 console.log(distance);
 </script>
 
