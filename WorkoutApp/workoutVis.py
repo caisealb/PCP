@@ -48,7 +48,7 @@ def hello_world():
 @app.route('/start')
 def start():
     return render_template('start.html')
-    
+
 @app.route('/workout')
 def distance():
     totalDis = distVal
@@ -191,7 +191,7 @@ def serialComms():
                 dataElements = [x.strip() for x in serData.split(',')]
                 print(dataElements)
                 # # latitudes = dataElements[1::5]
-                if (len(dataElements) > 2):
+                if (len(dataElements) > 3):
                     latFloat = float(dataElements[1])
                     print("Latitude:")
                     print(latFloat)
