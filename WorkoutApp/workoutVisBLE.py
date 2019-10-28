@@ -158,8 +158,9 @@ def connect_bluetooth():
         print("Not connected")
 
 def sendBLE():
-    wheel.char_write(GATT_CHARACTERISTIC_RESET, byte(0xFF))
     print("Sending reset msg...")
+    wheel.char_write(GATT_CHARACTERISTIC_RESET, byte(0xFF))
+
 
 
 # Register our Keyboard handler to exit
