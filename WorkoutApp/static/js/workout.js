@@ -5,10 +5,49 @@
 // red: #ad343e
 // Lightgrey: #bcabae
 
-
-
 function draw(speed)
 {
+//Draws a Blue gradient circle for the time(right), purely for aesthetics//
+    var  canvasTime = document.getElementById("canvasTime");
+    var  contextTime = canvasTime.getContext("2d");
+    contextTime.clearRect(0,0,canvasTime.width, canvasTime.height);
+    var centerX = canvasTime.width / 2;
+    var centerY = canvasTime.height / 2;
+    var radius = canvasTime.height / 2 - 20;
+
+    contextTime.beginPath();
+    contextTime.arc(centerX, centerY, radius, Math.PI, Math.PI*-1.1, true);
+
+    var gradienceTime = contextTime.createRadialGradient(centerX, centerY, radius, centerX, centerY, radius-radius/8);
+     gradienceTime.addColorStop(0, '#282e3a');
+     gradienceTime.addColorStop(1, '#bcabae');
+
+     contextTime.fillStyle = gradienceTime;
+     contextTime.fill();
+     contextTime.closePath();
+     contextTime.restore();
+
+ //Draws a Blue gradient circle for the distance(right), purely for aesthetics//
+      var  canvasDist = document.getElementById("myDist");
+      var  contextDist = canvasDist.getContext("2d");
+      contextDist.clearRect(0,0,canvasDist.width, canvasDist.height);
+      var centerX = canvasDist.width / 2;
+      var centerY = canvasDist.height / 2;
+      var radius = canvasDist.height / 2 - 20;
+
+      contextDist.beginPath();
+      contextDist.arc(centerX, centerY, radius, Math.PI, Math.PI*-1.1, true);
+
+      var gradienceDist = contextDist.createRadialGradient(centerX, centerY, radius, centerX, centerY, radius-radius/8);
+       gradienceDist.addColorStop(0, '#282e3a');
+       gradienceDist.addColorStop(1, '#bcabae');
+
+       contextDist.fillStyle = gradienceDist;
+       contextDist.fill();
+       contextDist.closePath();
+       contextDist.restore();
+
+//Draws a Blue gradient circle for the speed(center), purely for aesthetics//
       var  canvas = document.getElementById("myCanvas");
       var  context = canvas.getContext("2d");
       context.clearRect(0,0,canvas.width, canvas.height);
@@ -19,7 +58,7 @@ function draw(speed)
       context.beginPath();
       context.arc(centerX, centerY, radius, Math.PI, Math.PI*-1.1, true);
 
-      var gradience = context.createRadialGradient(centerX, centerY, radius-radius/2, centerX, centerY, radius-radius/8);
+      var gradience = context.createRadialGradient(centerX, centerY, radius, centerX, centerY, radius-radius/8);
        gradience.addColorStop(0, '#282e3a');
        gradience.addColorStop(1, '#bcabae');
 
@@ -28,14 +67,17 @@ function draw(speed)
        context.closePath();
        context.restore();
 
+//draws the text and dashes in an arch//
 	context.beginPath();
-	context.strokeStyle = '#ad343e';
+	context.strokeStyle = '#FFFFFF';
 	context.translate(centerX,centerY);
+  // context.transform.rotate(-90deg);
+  // context.transform(0);
 	var increment = 1;
 	context.font="15px Helvetica";
-	for (var i=-18; i<=18; i++)
+	for (var i=-5; i<=5; i++)
 	{
-		angle = Math.PI/30*i;
+		angle = Math.PI/10*i;
 		sineAngle = Math.sin(angle);
 		cosAngle = -Math.cos(angle);
 
@@ -48,7 +90,7 @@ function draw(speed)
 
 		wPointX = sineAngle *(radius -radius/2.5);
 		wPointY = cosAngle *(radius -radius/2.5);
-		context.fillText((i+18)*increment,wPointX-2,wPointY+4);
+		context.fillText((i+5)*increment,wPointX-2,wPointY+4);
 		}
 		else
 		{
@@ -76,6 +118,7 @@ function draw(speed)
 }
 
 
+//pause and stop buttons//
 function pauseFunction(){
   document.getElementById("overlay").style.visibility = "visible";
 }
