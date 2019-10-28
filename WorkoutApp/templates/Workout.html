@@ -37,34 +37,45 @@
 
     <div id="time">
       <div id="timeCircle">
-          <div id="timeText">
-            03:05
-          </div>
-          <div id="timeTextMeasure">
-          </br></br>
-           min:sec
+        <canvas class="canvasTime" id="canvasTime" width="180" height="180">
+        </canvas>
+        <div id="timeContainer">
+            <div id="timeText">
+              03:05
+            </div>
+            <div id="timeTextMeasure">
+            </br></br>
+             min:sec
+            </div>
           </div>
         </div>
     </div>
 
     <div id="speed">
       <div id="speedCircle">
-        <canvas class="canvas" id="myCanvas" width="300" height="300">
-        Your browser does not support the HTML5 canvas tag.</canvas>
-        <div id="needle">
-        </div>
-        </div>
-          <div id="speedText">
-            25
-          </div>
-          <div id="speedTextMeasure">
-          </br></br>
-           km/h
-          </div>
+          <canvas class="canvas" id="myCanvas" width="250" height="250">
+        Your browser does not support the HTML5 canvas tag.
+          </canvas>
+              <div id="needle">
+              </div>
+                <div id="textContainer">
+                      <div id="speedText">
+                        25
+                      </div>
+                        </br></br>
+                      <div id="speedTextMeasure">
+                        km/h
+                      </div>
+                </div>
+      </div>
+
         </div>
 
     <div id="distance">
       <div id="distanceCircle">
+        <canvas class="canvas" id="myDist" width="180" height="180">
+        </canvas>
+        <div id="distContainer" >
           <div id="distanceText">
             100
           </div>
@@ -73,10 +84,12 @@
            meters
           </div>
         </div>
-    </div>
-    <div id="map"></div>
+      </div>
     </div>
 
+
+    </div>
+    <div id="map"></div>
     <div id="overlay", onclick="continueFunction()">
     </div>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDujaeWrLEEsvjjXTAXrACL0AjP9iAKQRk&libraries=drawing&callback=initMap" async defer></script>
