@@ -32,7 +32,7 @@ ADDRESS_TYPE = pygatt.BLEAddressType.random
 
 distVal = 0
 speedVal = 0
-wheel 
+wheel
 
 # ==== ==== ===== == =====  Web server ==== ==== ===== == =====
 
@@ -162,6 +162,7 @@ def connect_bluetooth():
 def sendResetMSG():
     try:
         print("Sending reset msg...")
+        print(wheel)
         wheel.char_write(GATT_CHARACTERISTIC_RESET, byte(0xFF))
     except:
         print("Can't send msg")
