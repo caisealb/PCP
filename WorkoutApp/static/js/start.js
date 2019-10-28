@@ -37,7 +37,7 @@ function startTimer() {
 function checkSecond(sec) {
   if (sec < 10 && sec >= 0) {sec = "0" + sec}; // add zero in front of numbers < 10
   if (sec == 0) {
-    window.location.href = "Workout";
+    window.location.href = "workout";
   };
   return sec;
 }
