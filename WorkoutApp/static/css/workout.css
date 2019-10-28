@@ -85,7 +85,7 @@ h1 {
 
       /* middle measure: speedometer */
       #myCanvas{
-          position: relative;
+          position: static;
           /* display: inline-block; */
           text-align: center;
       }
@@ -307,4 +307,12 @@ h1 {
     height: 400px;
     background-color: grey;
     top:200px;
+}
+
+#canvasTime {
+    position: static;
+}
+
+#myDist {
+    position: static;
 }
