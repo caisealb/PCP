@@ -338,9 +338,9 @@
           var currentTime = Date.now();
           var difference = currentTime - startTime;
 
-          var hours = pad((difference / hour) | 0);
-          var minutes = pad(((difference % hour) / minute) | 0);
-          var seconds = pad(((difference % minute) / second) | 0);
+          hours = pad((difference / hour) | 0);
+          minutes = pad(((difference % hour) / minute) | 0);
+          seconds = pad(((difference % minute) / second) | 0);
 
           container.innerHTML = hours + ':' + minutes + ':' + seconds;
         // This only represents time between renders. Actual time rendered is based
