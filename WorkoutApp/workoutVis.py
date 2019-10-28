@@ -45,6 +45,10 @@ socketio = SocketIO(app)
 def hello_world():
     return 'Hello, World!'
 
+@app.route('/start')
+def start():
+    return render_template('start.html')
+    
 @app.route('/workout')
 def distance():
     totalDis = distVal
