@@ -136,6 +136,10 @@ function hoverOutFunction(){
   document.getElementById("stopCircle").style.opacity = "1";
 }
 
+function summaryFunction() {
+  window.location.href = "summary";
+}
+
 //pausebutton
 function hoverPause(){
   document.getElementById('pauseCircle').style.opacity = "0.5";
