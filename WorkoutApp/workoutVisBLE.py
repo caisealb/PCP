@@ -62,6 +62,7 @@ def speed():
 @app.route('/summary')
 def summary():
     sendReset = 1
+    sendResetMSG()
     return render_template('summary.html')
 
 
@@ -157,16 +158,16 @@ def connect_bluetooth():
         wheel.subscribe(GATT_CHARACTERISTIC_SPEED, callback=handle_speed_data)
         print("subscribed!")
 
-        if (sendReset == 1):
-            print("Sending reset msg...")
-            wheel.char_write(GATT_CHARACTERISTIC_RESET, byte(0xFF))
-            # print("Couldn't send reset msg!")
-        else :
-            print("Not on summary page")
     except:
         print("Not connected")
 
-
+def sendResetMSC():
+    if (sendReset == 1):
+        print("Sending reset msg...")
+        wheel.char_write(GATT_CHARACTERISTIC_RESET, byte(0xFF))
+        # print("Couldn't send reset msg!")
+    else :
+        print("Not on summary page")
 
 
 # Register our Keyboard handler to exit
