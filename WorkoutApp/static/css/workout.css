@@ -2,6 +2,7 @@
 body{
 background: #282e3a;
 font-family: tahoma;
+text-align: center;
 }
 
 p {
@@ -17,6 +18,7 @@ h1 {
   text-align: center;
   font: helvetica;
   font-size: 50px;
+  top: 100px;
   position: fixed;
 }
 
@@ -24,8 +26,8 @@ h1 {
 #container{
   width:100%;
   height:100%;
-  position: relative;
-  top: 200px;
+  position: fixed;
+  top: 400px;
   text-align: center;
   }
 
@@ -200,7 +202,7 @@ h1 {
 /* //pause and stop buttons// */
   #options {
     position: relative;
-    top:20px;
+    top:-200px;
     margin: 0 auto;
     text-align: center;
   }
