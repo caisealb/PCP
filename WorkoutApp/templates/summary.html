@@ -62,9 +62,16 @@
 
 <script type="text/javascript" charset="utf-8">
 var distance=localStorage.getItem('Totaldistance');
+var hours = localStorage.getItem('Hours');
+var minutes = localStorage.getItem('Minutes');
+var seconds = localStorage.getItem('Seconds');
 var distanceString = String(distance);
+var timeString = String(hours + ':' + minutes + ':' + seconds);
 var distanceText = document.getElementById("distanceText");
+var timeText = document.getElementById("timeText");
 distanceText.innerHTML = (distanceString);
+timeText.innerHTML = (timeString);
+
 console.log(distance);
 console.log(distanceString);
 </script>
