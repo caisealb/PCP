@@ -84,7 +84,7 @@
       </div>
     </div>
 
-    <div id="stopCircle" onmouseover="hoverFunction()" onmouseout="hoverOutFunction()" onclick="summaryFunction()">
+    <div id="stopCircle" onmouseover="hoverFunction()" onmouseout="hoverOutFunction()" onclick="saveMsg">
       <div id="stopTriangle">
       </div>
     </div>
@@ -348,7 +348,12 @@
         window.onload = showTime();
         </script>
       <!-- <button type="button" onclick="stopTimer()">Stop</button> -->
-
-
+    <script type="text/javascript" charset="utf-8">
+      function saveMsg(){
+        //localStorage.setItem('time', difference);
+        localStorage.setItem('Totaldistance', totalDis);
+        summaryFunction();
+      }
+      </script>
   </body>
 </html>
