@@ -27,7 +27,7 @@ function draw(speed){
      contextTime.restore();
 
  //Draws a Blue gradient circle for the distance(right), purely for aesthetics//
-      var  canvasDist = document.getElementById("myDist");
+      var  canvasDist = document.getElementById("canvasDist");
       var  contextDist = canvasDist.getContext("2d");
       contextDist.clearRect(0,0,canvasDist.width, canvasDist.height);
       var centerX = canvasDist.width / 2;
@@ -47,7 +47,7 @@ function draw(speed){
        contextDist.restore();
 
 //Draws a Blue gradient circle for the speed(center), purely for aesthetics//
-      var  canvas = document.getElementById("myCanvas");
+      var  canvas = document.getElementById("canvasSpeed");
       var  context = canvas.getContext("2d");
       context.clearRect(0,0,canvas.width, canvas.height);
       var centerX = canvas.width / 2;
