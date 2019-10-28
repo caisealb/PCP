@@ -4,7 +4,7 @@
         <title>My Workout</title>
         <link rel="stylesheet" type="text/css"
         href="{{ url_for('static', filename='css/workout.css') }}">
-        <script type="text/javascript" charset="utf-8"></script>
+        <!-- <script type="text/javascript" charset="utf-8"></script> -->
         <script src="{{ url_for('static', filename='js/workout.js') }}" language="JavaScript"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"
                     integrity="sha256-yr4fRk/GU1ehYJPAs8P4JlTgu0Hdsp4ZKrx8bDEDC3I="
@@ -37,8 +37,6 @@
 
     <div id="time">
       <div id="timeCircle">
-        <canvas class="canvasTime" id="canvasTime" width="180" height="180">
-        </canvas>
         <div id="timeContainer">
             <div id="timeText">
               03:05
@@ -48,6 +46,8 @@
              min:sec
             </div>
           </div>
+          <canvas class="canvasTime" id="canvasTime" width="180" height="180">
+          </canvas>
         </div>
     </div>
 
@@ -86,12 +86,13 @@
         </div>
       </div>
     </div>
+  </div>
 
-
+    <div id="map">
     </div>
-    <div id="map"></div>
     <div id="overlay", onclick="continueFunction()">
     </div>
+
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDujaeWrLEEsvjjXTAXrACL0AjP9iAKQRk&libraries=drawing&callback=initMap" async defer></script>
     <script type="text/javascript" charset="utf-8">
         var socket = io();
