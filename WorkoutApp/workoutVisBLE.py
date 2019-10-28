@@ -61,8 +61,9 @@ def speed():
 
 @app.route('/summary')
 def summary():
+    sendReset = 1
     return render_template('summary.html')
-sendReset = 1
+    
 
 
 @socketio.on('json')
