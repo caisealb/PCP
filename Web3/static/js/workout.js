@@ -5,8 +5,7 @@
 // red: #ad343e
 // Lightgrey: #bcabae
 
-function draw(speed)
-{
+function draw(speed){
 //Draws a Blue gradient circle for the time(right), purely for aesthetics//
     var  canvasTime = document.getElementById("canvasTime");
     var  contextTime = canvasTime.getContext("2d");

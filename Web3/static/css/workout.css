@@ -19,7 +19,6 @@ h1 {
   font-size: 50px;
 }
 
-
 #container{
   width:100%;
   height:100%;
@@ -32,7 +31,6 @@ h1 {
       #time{
         position: relative;
         display: inline-block;
-        top: 80px;
         left: 50px;
         width:30%;
         height:30%;
@@ -42,7 +40,6 @@ h1 {
       #timeCircle{
         position: relative;
         display: inline-block;
-        top: 8%;
         width: 180px;
         height: 180px;
         background-color: #bcabae;
@@ -57,13 +54,11 @@ h1 {
         position: relative;
         display: inline-block;
         text-align: center;
-        top:-180px;
       }
 
       #timeText{
         position: relative;
         font-size: 35px;
-        top: 50px;
         color: white;
       }
 
@@ -73,10 +68,8 @@ h1 {
         color: white;
       }
 
-
       #speed{
         position: relative;
-        top:50px;
         display: inline-block;
         width:250px;
         height:250px;
@@ -85,10 +78,17 @@ h1 {
 
       /* middle measure: speedometer */
       #myCanvas{
-          position: relative;
+          position: static;
           /* display: inline-block; */
           text-align: center;
       }
+
+      #canvasTime{
+          position: static;
+          /* display: inline-block; */
+          text-align: center;
+      }
+
 
       #needle {
         position: absolute;
@@ -125,7 +125,6 @@ h1 {
   position: relative;
   display: inline-block;
   text-align: center;
-  top:-140px;
 }
 
       #speedText{
@@ -140,7 +139,6 @@ h1 {
         display: inline-block;
         font-size: 20px;
         color: white;
-        top:-15px;
       }
 
 
@@ -149,7 +147,6 @@ h1 {
     #distance{
       position: relative;
       display: inline-block;
-      top:80px;
       right: 50px;
       width:30%;
       height:30%;
@@ -160,7 +157,6 @@ h1 {
       position: relative;
       display: inline-block;
       box-shadow: 0px 0px 10px black;
-      top: 8%;
       width: 180px;
       height: 180px;
       background-color: white;
@@ -176,14 +172,12 @@ h1 {
       position: relative;
       display: inline-block;
       text-align: center;
-      top:-180px;
     }
 
 
     #distanceText{
       position: relative;
       font-size: 35px;
-      top: 50px;
       color: white;
     }
 
@@ -196,16 +190,114 @@ h1 {
 
 
 
-/* //pause and stop buttons// */
-  #options {
-    position: relative;
-    top:20px;
-    margin: 0 auto;
-    text-align: center;
-  }
+/* OVERLAYING TEXTBOX */
+
+    #textInput{
+      width:100%;
+      height:100%;
+      position: relative;
+      text-align: center;
+      }
+
+      #timeInputBox{
+        position: relative;
+        display: inline-block;
+        top: 80px;
+        left: 50px;
+        width:30%;
+        height:30%;
+        text-align: center;
+      }
+
+      #speedInputBox{
+        position: relative;
+        top:50px;
+        display: inline-block;
+        width:250px;
+        height:250px;
+        text-align: center;
+      }
+
+      #distInputBox{
+        position: relative;
+        display: inline-block;
+        top: 80px;
+        right: 50px;
+        width:30%;
+        height:30%;
+        text-align: center;
+      }
 
 
-      #pauseCircle{
+
+
+
+
+
+
+
+
+                      @-webkit-keyframes move {
+                        0% {
+                          transform: rotate(-90deg);
+                        }
+                        50% {
+                          transform: rotate(90deg);
+                        }
+                        100% {
+                          transform: rotate(-90deg);
+                        }
+                      }
+
+                      #overlay{
+                        position: fixed;
+                        width: 200%;
+                        height: 2000px;
+                        margin-top: -1000px;
+                        margin-left: -200px;
+                        background-color: white;
+                        text-align: center;
+                        visibility: hidden;
+                        opacity: 0.5;
+                      }
+
+
+
+  /* //pause and stop buttons// */
+    #options {
+      position: relative;
+      top:20px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+
+        #pauseCircle{
+          width: 50px;
+          height: 50px;
+          background-color: #eca72c;
+          text-align: center;
+          display: inline-block;
+          margin-top: -130px;
+          margin-bottom: 50px;
+          /* border: 2px; */
+          /* border-color: #eca72c; */
+          border-top-left-radius: 150px;  /* 100px of height + 10px of border */
+          border-top-right-radius: 150px; /* 100px of height + 10px of border */
+          border-bottom-left-radius: 150px;  /* 100px of height + 10px of border */
+          border-bottom-right-radius: 150px; /* 100px of height + 10px of border */
+        }
+
+        #pauseStripe{
+                width: 10px;
+                height: 25px;
+                display: inline-block;
+                background-color: white;
+                margin-top: 12px;
+          }
+
+
+      #stopCircle{
         width: 50px;
         height: 50px;
         background-color: #eca72c;
@@ -213,90 +305,17 @@ h1 {
         display: inline-block;
         margin-top: -130px;
         margin-bottom: 50px;
-        /* border: 2px; */
-        /* border-color: #eca72c; */
+        border: 2px;
         border-top-left-radius: 150px;  /* 100px of height + 10px of border */
         border-top-right-radius: 150px; /* 100px of height + 10px of border */
         border-bottom-left-radius: 150px;  /* 100px of height + 10px of border */
         border-bottom-right-radius: 150px; /* 100px of height + 10px of border */
       }
 
-      #pauseStripe{
-              width: 10px;
+      #stopTriangle{
+              width: 25px;
               height: 25px;
               display: inline-block;
               background-color: white;
               margin-top: 12px;
         }
-
-
-    #stopCircle{
-      width: 50px;
-      height: 50px;
-      background-color: #eca72c;
-      text-align: center;
-      display: inline-block;
-      margin-top: -130px;
-      margin-bottom: 50px;
-      border: 2px;
-      border-top-left-radius: 150px;  /* 100px of height + 10px of border */
-      border-top-right-radius: 150px; /* 100px of height + 10px of border */
-      border-bottom-left-radius: 150px;  /* 100px of height + 10px of border */
-      border-bottom-right-radius: 150px; /* 100px of height + 10px of border */
-    }
-
-    #stopTriangle{
-            width: 25px;
-            height: 25px;
-            display: inline-block;
-            background-color: white;
-            margin-top: 12px;
-      }
-
-
-@-webkit-keyframes move {
-  0% {
-    transform: rotate(-90deg);
-  }
-  50% {
-    transform: rotate(90deg);
-  }
-  100% {
-    transform: rotate(-90deg);
-  }
-}
-
-#overlay{
-  position: fixed;
-  width: 200%;
-  height: 2000px;
-  margin-top: -1000px;
-  margin-left: -200px;
-  background-color: white;
-  text-align: center;
-  visibility: hidden;
-  opacity: 0.5;
-}
-
-#continueButton{
-  position: static;
-  width: 300px;
-  height: 300px;
-  background-color:yellow;
-  border-top-left-radius: 150px;
-  border-top-right-radius: 150px;
-  border-bottom-left-radius: 150px;
-  border-bottom-right-radius: 150px;
-  visibility: hidden;
-}
-
-#continueTriangle{
-        width: 0;
-        height: 0;
-        border-top: 50px solid transparent;
-        border-left: 100px solid red;
-        border-bottom: 50px solid transparent;
-        display: inline-block;
-        margin-top: 100px;
-        visibility: hidden;
-}
