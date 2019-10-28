@@ -162,6 +162,8 @@ def connect_bluetooth():
                 wheel.char_write(GATT_CHARACTERISTIC_RESET, byte(0xFF))
             except:
                 print("Couldn't send reset msg!")
+        elif (sendReset == 0):
+            print("Not on summary page")
     except:
         print("Not connected")
 
