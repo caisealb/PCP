@@ -14,25 +14,11 @@
 
   <body onload="draw(120);">
 
+
         <div id="map">
+        </div>
 
         <h1> My Workout </h1>
-
-        <div id="options" >
-
-          <div id="pauseCircle" onmouseover="hoverPause()" onmouseout="hoverOutPause()" onclick="pauseFunction()">
-            <div id="pauseStripe">
-            </div>
-            <div id="pauseStripe">
-            </div>
-          </div>
-
-          <div id="stopCircle" onmouseover="hoverFunction()" onmouseout="hoverOutFunction()"> <a href="http://localhost:5000/summary">
-            <div id="stopTriangle">
-            </div>
-            </a>
-          </div>
-        </div>
 
   <div id="container", class = "span">
 
@@ -88,8 +74,24 @@
       </div>
     </div>
   </div>
-    <div id="overlay", onclick="continueFunction()">
+
+  <div id="options">
+
+    <div id="pauseCircle" onmouseover="hoverPause()" onmouseout="hoverOutPause()" onclick="pauseFunction()">
+      <div id="pauseStripe">
+      </div>
+      <div id="pauseStripe">
+      </div>
     </div>
+
+    <div id="stopCircle" onmouseover="hoverFunction()" onmouseout="hoverOutFunction()"> <a href="http://localhost:5000/summary">
+      <div id="stopTriangle">
+      </div>
+      </a>
+    </div>
+  </div>
+
+    <div id="overlay", onclick="continueFunction()">
     </div>
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDujaeWrLEEsvjjXTAXrACL0AjP9iAKQRk&libraries=drawing&callback=initMap" async defer></script>
