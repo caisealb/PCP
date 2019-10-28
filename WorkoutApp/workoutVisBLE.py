@@ -32,7 +32,6 @@ ADDRESS_TYPE = pygatt.BLEAddressType.random
 
 distVal = 0
 speedVal = 0
-wheel
 
 # ==== ==== ===== == =====  Web server ==== ==== ===== == =====
 
