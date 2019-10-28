@@ -32,6 +32,7 @@ ADDRESS_TYPE = pygatt.BLEAddressType.random
 
 distVal = 0
 speedVal = 0
+sendReset = 0
 
 
 # ==== ==== ===== == =====  Web server ==== ==== ===== == =====
@@ -61,7 +62,7 @@ def speed():
 @app.route('/summary')
 def summary():
     return render_template('summary.html')
-    sendBLE()
+    sendReset = 1
 
 
 @socketio.on('json')
@@ -154,12 +155,16 @@ def connect_bluetooth():
         wheel.subscribe(GATT_CHARACTERISTIC_DISTANCE, callback=handle_distance_data)
         wheel.subscribe(GATT_CHARACTERISTIC_SPEED, callback=handle_speed_data)
         print("subscribed!")
+
+        if (sendReset == 1):
+            try:
+                print("Sending reset msg...")
+                wheel.char_write(GATT_CHARACTERISTIC_RESET, byte(0xFF))
+            except:
+                print("Couldn't send reset msg!")
     except:
         print("Not connected")
 
-def sendBLE():
-    print("Sending reset msg...")
-    wheel.char_write(GATT_CHARACTERISTIC_RESET, byte(0xFF))
 
 
 
