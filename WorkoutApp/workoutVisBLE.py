@@ -32,7 +32,6 @@ ADDRESS_TYPE = pygatt.BLEAddressType.random
 
 distVal = 0
 speedVal = 0
-sendReset = 0
 
 
 # ==== ==== ===== == =====  Web server ==== ==== ===== == =====
@@ -61,7 +60,6 @@ def speed():
 
 @app.route('/summary')
 def summary():
-    sendReset = 1
     sendResetMSG()
     return render_template('summary.html')
 
@@ -162,12 +160,12 @@ def connect_bluetooth():
         print("Not connected")
 
 def sendResetMSG():
-    if (sendReset == 1):
+    try:
         print("Sending reset msg...")
         wheel.char_write(GATT_CHARACTERISTIC_RESET, byte(0xFF))
         # print("Couldn't send reset msg!")
-    else :
-        print("Not on summary page")
+    except:
+        print("Can't send msg")
 
 
 # Register our Keyboard handler to exit
