@@ -20,21 +20,28 @@
 
         <h1> My Workout </h1>
 
-  <div id="container", class = "span">
+        <div id="options" >
+
+          <div id="pauseCircle" onmouseover="hoverPause()" onmouseout="hoverOutPause()" onclick="pauseFunction()">
+            <div id="pauseStripe">
+            </div>
+            <div id="pauseStripe">
+            </div>
+          </div>
+
+          <div id="stopCircle" onmouseover="hoverFunction()" onmouseout="hoverOutFunction()"> <a href="http://localhost:5000/summary">
+            <div id="stopTriangle">
+            </div>
+            </a>
+          </div>
+        </div>
+
+  <div id="container">
 
     <div id="time">
       <div id="timeCircle">
         <canvas class="canvasTime" id="canvasTime" width="180" height="180">
         </canvas>
-        <div id="timeContainer">
-            <div id="timeText">
-              03:05
-            </div>
-            <div id="timeTextMeasure">
-            </br></br>
-             min:sec
-            </div>
-          </div>
         </div>
     </div>
 
@@ -45,50 +52,47 @@
           </canvas>
               <div id="needle">
               </div>
-                <div id="textContainer">
-                      <div id="speedText">
-                        25
-                      </div>
-                        </br></br>
-                      <div id="speedTextMeasure">
-                        km/h
-                      </div>
-                </div>
-      </div>
-
+              </div>
         </div>
 
     <div id="distance">
       <div id="distanceCircle">
         <canvas class="canvas" id="myDist" width="180" height="180">
         </canvas>
-        <div id="distContainer" >
-          <div id="distanceText">
-            100
-          </div>
-          <div id="distanceTextMeasure">
-          </br></br>
-           meters
-          </div>
-        </div>
       </div>
     </div>
+
   </div>
 
-  <div id="options">
+            <div id="textInput">
 
-    <div id="pauseCircle" onmouseover="hoverPause()" onmouseout="hoverOutPause()" onclick="pauseFunction()">
-      <div id="pauseStripe">
-      </div>
-      <div id="pauseStripe">
-      </div>
-    </div>
+                  <div id="timeInputBox">
+                      <div id="timeText">
+                        03:05
+                      </div>
+                      <div id="timeTextMeasure">
+                       min:sec
+                      </div>
+                  </div>
 
-    <div id="stopCircle" onmouseover="hoverFunction()" onmouseout="hoverOutFunction()" onclick="saveMsg()">
-      <div id="stopTriangle">
-      </div>
-    </div>
-  </div>
+                  <div id="speedInputBox">
+                      <div id="speedText">
+                        25
+                      </div>
+                      <div id="speedTextMeasure">
+                        km/h
+                      </div>
+                  </div>
+
+                  <div id="distInputBox">
+                      <div id="distanceText">
+                        100
+                      </div>
+                      <div id="distanceTextMeasure">
+                       meters
+                      </div>
+                  </div>
+            </div>
 
     <div id="overlay", onclick="continueFunction()">
     </div>
