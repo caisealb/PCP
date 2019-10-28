@@ -161,7 +161,7 @@ def connect_bluetooth():
     except:
         print("Not connected")
 
-def sendResetMSC():
+def sendResetMSG():
     if (sendReset == 1):
         print("Sending reset msg...")
         wheel.char_write(GATT_CHARACTERISTIC_RESET, byte(0xFF))
