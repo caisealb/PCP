@@ -64,14 +64,14 @@ h1 {
 
       #timeText{
         position: relative;
-        font-size: 35px;
+        font-size: 10px;
         top: 50px;
         color: white;
       }
 
       #timeTextMeasure{
         position: relative;
-        font-size: 20px;
+        font-size: 5px;
         color: white;
       }
 
