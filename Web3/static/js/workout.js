@@ -5,11 +5,6 @@
 // red: #ad343e
 // Lightgrey: #bcabae
 
-
-
-
-
-
 function draw(speed)
 {
 //Draws a Blue gradient circle for the time(right), purely for aesthetics//
