@@ -16,10 +16,9 @@
 
     <div id="options" >
 
-      <div id="newCircle" onmouseover="hoverFunction()" onmouseout="hoverOutFunction()"> <a href="http://localhost:5000/start">
+      <div id="newCircle" onmouseover="hoverFunction()" onmouseout="hoverOutFunction()" onClick="startPage()">
         <div id="newTriangle">
         </div>
-        </a>
       </div>
     </div>
 
@@ -54,13 +53,28 @@
   <div id="distanceCircle">
   <p> Total distance </p>
       <div id="distanceText">
-        100
       </div>
       <div id="distanceTextMeasure" class="subtext">
          meters
       </div>
   </div>
 </div>
+
+<script type="text/javascript" charset="utf-8">
+var distance=localStorage.getItem('Totaldistance');
+var hours = localStorage.getItem('Hours');
+var minutes = localStorage.getItem('Minutes');
+var seconds = localStorage.getItem('Seconds');
+var distanceString = String(distance);
+var timeString = String(hours + ':' + minutes + ':' + seconds);
+var distanceText = document.getElementById("distanceText");
+var timeText = document.getElementById("timeText");
+distanceText.innerHTML = (distanceString);
+timeText.innerHTML = (timeString);
+
+console.log(distance);
+console.log(distanceString);
+</script>
 
   </body>
 </html>

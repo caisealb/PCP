@@ -4,8 +4,7 @@
         <title>My Workout</title>
         <link rel="stylesheet" type="text/css"
         href="{{ url_for('static', filename='css/workout.css') }}">
-
-        <script type="text/javascript" charset="utf-8"></script>
+        <!-- <script type="text/javascript" charset="utf-8"></script> -->
         <script src="{{ url_for('static', filename='js/workout.js') }}" language="JavaScript"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"
                     integrity="sha256-yr4fRk/GU1ehYJPAs8P4JlTgu0Hdsp4ZKrx8bDEDC3I="
@@ -15,57 +14,55 @@
 
   <body onload="draw(120);">
 
-        <h1> My Workout </h1>
 
-        <div id="options" >
-
-          <div id="pauseCircle" onmouseover="hoverPause()" onmouseout="hoverOutPause()" onclick="pauseFunction()">
-            <div id="pauseStripe">
-            </div>
-            <div id="pauseStripe">
-            </div>
-          </div>
-
-          <div id="stopCircle" onmouseover="hoverFunction()" onmouseout="hoverOutFunction()"> <a href="http://localhost:5000/summary">
-            <div id="stopTriangle">
-            </div>
-            </a>
-          </div>
+        <div id="map">
         </div>
 
+        <h1> My Workout </h1>
 
   <div id="container", class = "span">
 
     <div id="time">
       <div id="timeCircle">
-          <div id="timeText">
-            03:05
-          </div>
-          <div id="timeTextMeasure">
-          </br></br>
-           min:sec
+        <canvas class="canvasTime" id="canvasTime" width="180" height="180">
+        </canvas>
+        <div id="timeContainer">
+            <div id="timeText">
+              03:05
+            </div>
+            <div id="timeTextMeasure">
+            </br></br>
+             min:sec
+            </div>
           </div>
         </div>
     </div>
 
     <div id="speed">
       <div id="speedCircle">
-        <canvas class="canvas" id="myCanvas" width="300" height="300">
-        Your browser does not support the HTML5 canvas tag.</canvas>
-        <div id="needle">
-        </div>
-        </div>
-          <div id="speedText">
-            25
-          </div>
-          <div id="speedTextMeasure">
-          </br></br>
-           km/h
-          </div>
+          <canvas class="canvas" id="myCanvas" width="250" height="250">
+        Your browser does not support the HTML5 canvas tag.
+          </canvas>
+              <div id="needle">
+              </div>
+                <div id="textContainer">
+                      <div id="speedText">
+                        25
+                      </div>
+                        </br></br>
+                      <div id="speedTextMeasure">
+                        km/h
+                      </div>
+                </div>
+      </div>
+
         </div>
 
     <div id="distance">
       <div id="distanceCircle">
+        <canvas class="canvas" id="myDist" width="180" height="180">
+        </canvas>
+        <div id="distContainer" >
           <div id="distanceText">
             100
           </div>
@@ -74,12 +71,28 @@
            meters
           </div>
         </div>
+      </div>
     </div>
-    <div id="map"></div>
+  </div>
+
+  <div id="options">
+
+    <div id="pauseCircle" onmouseover="hoverPause()" onmouseout="hoverOutPause()" onclick="pauseFunction()">
+      <div id="pauseStripe">
+      </div>
+      <div id="pauseStripe">
+      </div>
     </div>
+
+    <div id="stopCircle" onmouseover="hoverFunction()" onmouseout="hoverOutFunction()" onclick="saveMsg()">
+      <div id="stopTriangle">
+      </div>
+    </div>
+  </div>
 
     <div id="overlay", onclick="continueFunction()">
     </div>
+
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDujaeWrLEEsvjjXTAXrACL0AjP9iAKQRk&libraries=drawing&callback=initMap" async defer></script>
     <script type="text/javascript" charset="utf-8">
         var socket = io();
@@ -275,6 +288,7 @@
               // locations.push(center);
 
             function updatePosition(){
+              if ((currentLat != 0) && (currentLong != 0)){
                 loc = {lat:currentLat,lng:currentLong};
                 locations.push(loc);
                 console.log(loc);
@@ -286,7 +300,6 @@
                   strokeOpacity: 1.0,
                   strokeWeight: 2
                 })
-                if ((currentLat != 0) && (currentLong != 0)){
                 path.setMap(map);
               }
             }
@@ -301,7 +314,6 @@
             // setInterval(moveToLocation,1000);
           }
 
-
       </script>
 
       <script type="text/javascript" charset="utf-8">
@@ -309,6 +321,9 @@
         var second = 1000;
         var minute = second * 60;
         var hour = minute * 60;
+        var seconds = 0;
+        var minutes = 0;
+        var hours = 0;
         var container = document.getElementById('timeText');
 
         function stopTimer() {
@@ -323,9 +338,9 @@
           var currentTime = Date.now();
           var difference = currentTime - startTime;
 
-          var hours = pad((difference / hour) | 0);
-          var minutes = pad(((difference % hour) / minute) | 0);
-          var seconds = pad(((difference % minute) / second) | 0);
+          hours = pad((difference / hour) | 0);
+          minutes = pad(((difference % hour) / minute) | 0);
+          seconds = pad(((difference % minute) / second) | 0);
 
           container.innerHTML = hours + ':' + minutes + ':' + seconds;
         // This only represents time between renders. Actual time rendered is based
@@ -336,7 +351,15 @@
         window.onload = showTime();
         </script>
       <!-- <button type="button" onclick="stopTimer()">Stop</button> -->
-
-
+    <script type="text/javascript" charset="utf-8">
+      function saveMsg(){
+        //localStorage.setItem('time', difference);
+        localStorage.setItem('Totaldistance', totalDis);
+        localStorage.setItem('Hours', hours);
+        localStorage.setItem('Minutes', minutes);
+        localStorage.setItem('Seconds', seconds);
+        summaryFunction();
+      }
+      </script>
   </body>
 </html>
