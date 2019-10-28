@@ -52,10 +52,10 @@ def start():
 @app.route('/workout')
 def distance():
     totalDis = distVal
-    return render_template('Workout.html', totalDis=totalDis)
+    return render_template('workout.html', totalDis=totalDis)
 def speed():
     currentSpeed = speedVal
-    return render_template('Workout.html', currentSpeed=currentSpeed)
+    return render_template('workout.html', currentSpeed=currentSpeed)
 
 @socketio.on('json')
 def handle_json(json):
