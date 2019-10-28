@@ -261,18 +261,18 @@
                   ]
                 });
 
-                var dot = new google.maps.Circle({
-                  strokeColor: '#ad343e',
-                  strokeOpacity: 0.8,
-                  strokeWeight: 1,
-                  fillColor: '#ad343e',
-                  fillOpacity: 0.8,
-                  map:map,
-                  center: center,
-                  radius: 3
-                })
+                // var dot = new google.maps.Circle({
+                //   strokeColor: '#ad343e',
+                //   strokeOpacity: 0.8,
+                //   strokeWeight: 1,
+                //   fillColor: '#ad343e',
+                //   fillOpacity: 0.8,
+                //   map:map,
+                //   center: center,
+                //   radius: 3
+                // })
 
-              locations.push(center);
+              // locations.push(center);
 
             function updatePosition(){
                 loc = {lat:currentLat,lng:currentLong};
@@ -286,7 +286,9 @@
                   strokeOpacity: 1.0,
                   strokeWeight: 2
                 })
+                if ((currentLat != 0) && (currentLong != 0)){
                 path.setMap(map);
+              }
             }
 
             // function moveToLocation(currenLat, currentLong){
