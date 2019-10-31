@@ -131,7 +131,7 @@ void setup() {
 
 ////LOOP////
 void loop(void) {
-
+  ble.update();
   sensors_event_t event;
   bno.getEvent(&event);
   float axis_value = event.orientation.x;   // replace this with whatever axis you're tracking
@@ -140,7 +140,6 @@ void loop(void) {
   calcDist();
   calcSpeed();
 
-  ble.update(100);
   //Check if command executed
   if (!ble.waitForOK()) {
     error(F("Failed to get response!"));
@@ -261,6 +260,7 @@ void BleGattRX(int32_t chars_id, uint8_t data, uint16_t len) {
 
   if (chars_id == charid_reset) {
     Serial.println("Received on reset characteristic: ");
+    Serial.write(data);
     Serial.println(data);
   }
 }

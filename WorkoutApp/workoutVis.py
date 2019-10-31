@@ -40,7 +40,7 @@ app = Flask(__name__)
 app.config['SECRET KEY'] = 'secret!'
 socketio = SocketIO(app)
 
-
+# App routes - functions and templates for various addresses
 @app.route('/')
 def hello_world():
     return 'Hello, World!'
@@ -61,7 +61,7 @@ def speed():
 def summary():
     return render_template('summary.html')
 
-
+# Websocket functions - broadcast various data to all instances of web app
 @socketio.on('json')
 def handle_json(json):
     print('received json: ' + str(json))
@@ -84,6 +84,7 @@ def handle_speed(json):
     print(float(json['longitude']))
 
 
+# Handle distance data received via BLE from Feather
 def handle_distance_data(handle, value_bytes):
     #handle -- integer, characteristic read handle the data was received on
     #value_bytes -- bytearray, the data returned in the notification
@@ -99,6 +100,7 @@ def handle_distance_data(handle, value_bytes):
        print("No socket - distance")
     return distVal
 
+# Handle speed data received via BLE from Feather
 def handle_speed_data(handle, value_bytes):
     #handle -- integer, characteristic read handle the data was received on
     #value_bytes -- bytearray, the data returned in the notification
@@ -114,6 +116,7 @@ def handle_speed_data(handle, value_bytes):
        print("No socket - speed")
     return speedVal
 
+
 # ==== ==== ===== == =====  Bluetooth ==== ==== ===== == =====
 
 def discover_characteristic(device):
@@ -123,7 +126,6 @@ def discover_characteristic(device):
             print("Read UUID" + str(uuid) + "   " + str(device.char_read(uuid)))
         except:
             print("Something wrong with " + str(uuid))
-
 
 def read_characteristic(device, characteristic_id):
     #Read a characteristic
@@ -161,46 +163,29 @@ signal.signal(signal.SIGINT, keyboard_interrupt_handler)
 # ==== ==== ===== == =====  Serial comms ==== ==== ===== == =====
 #Run serial comms
 def serialComms():
-    # print("test1")
-    # while not connected:
-    #     connected = True
-    #
-    #     while True:
-    #         print("test2")
-    #         reading = ser.readLine().decode()
-    #         print(reading)
     ser = Serial(port, 115200, timeout = 1)
     print(ser.name)
 
     if (ser.isOpen() == False):
         try:
             ser.open()
-            print("port opened")
+            print("Serial port open!")
         except:
-             # print("Can't open serial connection :(")
-            print("Unexpected error:", sys.exc_info()[0])
+            print("Unexpected serial error:", sys.exc_info()[0])
             raise
-    print("Serial port open!")
     while True:
-        # if ser.inWaiting()>0:
-            # inputValue = ser.read()
-            # print(inputValue)
             sleep(5)
             try:
                 ser.read()
                 serData = (ser.readline().decode())
                 print("Reading data...")
-                # print(serData)
-
-                # print(serData)
                 dataElements = [x.strip() for x in serData.split(',')]
                 print(dataElements)
-                # # latitudes = dataElements[1::5]
+
                 if (len(dataElements) > 3):
                     latFloat = float(dataElements[1])
                     print("Latitude:")
                     print(latFloat)
-                    # # longitudes = dataElements[3::5]
                     longFloat = float(dataElements[3])
                     print("Longitude:")
                     print(longFloat)
@@ -212,12 +197,13 @@ def serialComms():
                 else:
                     print("Problem with GPS data")
             except:
-                print("Unexpected error:", sys.exc_info()[0])
+                print("Unexpected serial error:", sys.exc_info()[0])
                 raise
 
 # ==== ==== ===== == =====  Run ==== ==== ===== == =====
 
 connect_bluetooth()
+# Run serial comms in separate thread to allow serial and BLE simultaneously (non-blocking)
 thread = Thread(target = serialComms)
 thread.start()
 

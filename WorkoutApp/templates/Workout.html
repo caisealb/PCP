@@ -2,9 +2,7 @@
 <html lang="en">
   <head>
         <title>My Workout</title>
-        <link rel="stylesheet" type="text/css"
-        href="{{ url_for('static', filename='css/workout.css') }}">
-        <!-- <script type="text/javascript" charset="utf-8"></script> -->
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/workout.css') }}">
         <script src="{{ url_for('static', filename='js/workout.js') }}" language="JavaScript"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"
                     integrity="sha256-yr4fRk/GU1ehYJPAs8P4JlTgu0Hdsp4ZKrx8bDEDC3I="
@@ -141,7 +139,6 @@
         socket.on('speed', function(speed_obj) {
             const json = JSON.parse(speed_obj);
             console.log(json);
-            //console.log(json.distance);
 
             if (json.speed !== undefined) {
                 currentSpeed = parseFloat(json.speed);
@@ -151,6 +148,7 @@
                 setSpeed();
                 }
             });
+
           function setSpeed(){
             var speedtext = document.getElementById("speedText");
             speedtext.innerHTML = (speedDisplay);
@@ -159,19 +157,14 @@
         socket.on('latitude', function(lat_obj) {
             const json = JSON.parse(lat_obj);
             console.log(json);
-            //console.log(json.distance);
 
             if (json.latitude !== undefined) {
                 currentLat = parseFloat(json.latitude);
                 latDisplay = currentLat.toString();
                 console.log(currentLat);
                 console.log(latDisplay);
-                // setLat();
                 }
               });
-            // function setLat(){
-            //   var lattext = document.getElementById("latText");
-            //   speedtext.innerHTML = (latDisplay); }
 
         socket.on('longitude', function(long_obj) {
             const json = JSON.parse(long_obj);
@@ -308,14 +301,7 @@
               }
             }
 
-            // function moveToLocation(currenLat, currentLong){
-            //   const center = {lat:currentLat, lng: currentLong};
-            //   // using global variable:
-            //   window.map.panTo(center);
-            // }
-
             setInterval(updatePosition,1000);
-            // setInterval(moveToLocation,1000);
           }
 
       </script>
@@ -354,7 +340,7 @@
       }
         window.onload = showTime();
         </script>
-      <!-- <button type="button" onclick="stopTimer()">Stop</button> -->
+        
     <script type="text/javascript" charset="utf-8">
       function saveMsg(){
         //localStorage.setItem('time', difference);
