@@ -64,13 +64,18 @@
          </div>
          <div class="card">
            <h2> About Us  </h2>
-             <div id="pictureContainer">
+             <div id="pictureContainer"><br>
                <img src="pcp_images/cais.jpg"/>
+               <br>
                   <div class ="p2"> Caiseal Beardow - DFI </div>
+                  <br><br>
                <img src="pcp_images/yu.jpg"/>
+               <br>
                   <div class ="p2"> Yu Zhang - IPD </div>
+                  <br><br>
                <img src="pcp_images/kiki.jpg"/>
                   <div class ="p2"> Kiki Deurvorst- DFI </div>
+                  <br><br>
              </div>
          </div>
        </div>
