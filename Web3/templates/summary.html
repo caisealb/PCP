@@ -15,7 +15,7 @@
         <h1> My Workout Summary </h1>
 
         <div id="options" >
-          <div id="newCircle" onmouseover="hoverPause()" onmouseout="hoverOutPause()">
+          <div id="newCircle" onmouseover="hoverPause()" onmouseout="hoverOutPause()" onClick="startPage()">
             <div id="newTriangle">
             </div>
             </a>
@@ -37,8 +37,6 @@
                 <canvas class="canvas" id="canvasSpeed" width="250" height="250">
               Your browser does not support the HTML5 canvas tag.
                 </canvas>
-                    <div id="needle">
-                    </div>
                     </div>
               </div>
 
@@ -54,11 +52,11 @@
                   <div id="textInput">
 
                         <div id="timeInputBox">
-                          <div id="timeTotal">
+                          <div id="timeTotal" class = "totalText">
                             Total Time
                           </div>
                             <div id="timeText">
-                              03:05
+                              1
                             </div>
                             <div id="timeTextMeasure">
                              min:sec
@@ -66,7 +64,7 @@
                         </div>
 
                         <div id="speedInputBox">
-                          <div id="speedTotal">
+                          <div id="speedTotal" class = "totalText">
                             Average Speed
                           </div>
                             <div id="speedText">
@@ -78,7 +76,7 @@
                         </div>
 
                         <div id="distInputBox">
-                          <div id="distTotal">
+                          <div id="distTotal" class = "totalText">
                             Total Distance
                           </div>
                             <div id="distanceText">

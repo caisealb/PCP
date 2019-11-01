@@ -21,16 +21,8 @@ h1 {
   font-size: 50px;
 }
 
+/* //new workout button// */
 
-.subtext{
-  color: #282e3a;
-  position: relative;
-  font-size: 18px;
-  font-style: italic;
-}
-
-
-/* //pause and stop buttons// */
   #options {
     position: relative;
     top:20px;
@@ -68,202 +60,179 @@ h1 {
         }
 
 
-        #container{
-          top: 230px;
-          width:100%;
-          height:100%;
-          position: relative;
-          text-align: center;
-          }
-
-        /* left measure: time */
-            #time{
-              position: relative;
-              display: inline-block;
-              left: 50px;
-              width:30%;
-              height:30%;
-              text-align: center;
-            }
-            #timeCircle{
-              position: relative;
-              display: inline-block;
-              width: 180px;
-              height: 180px;
-              background-color: #bcabae;
-              box-shadow: 0px 0px 10px black;
-              border-top-left-radius: 100px;  /* 100px of height + 10px of border */
-              border-top-right-radius: 100px; /* 100px of height + 10px of border */
-              border-bottom-left-radius: 100px;  /* 100px of height + 10px of border */
-              border-bottom-right-radius: 100px; /* 100px of height + 10px of border */
-            }
-            #canvasTime{
-                position: static;
-                /* display: inline-block; */
-                text-align: center;
+/* container with the three circles */
+          #container{
+            width:100%;
+            height:100%;
+            position: relative;
+            top: 200px;
+            text-align: center;
             }
 
-
-            #speed{
-              position: relative;
-              top: 20px;
-              display: inline-block;
-              width:250px;
-              height:250px;
-              text-align: center;
-            }
-            #speedCircle{
+      /* left circle: time */
+              #time{
                 position: relative;
                 display: inline-block;
-                width: 250px;
-                height: 250px;
-                box-shadow: 0px 0px 20px black;
-                background-color: #bcabae;
-                border-top-left-radius: 200px;  /* 100px of height + 10px of border */
-                border-top-right-radius: 200px; /* 100px of height + 10px of border */
-                border-bottom-left-radius: 200px;  /* 100px of height + 10px of border */
-                border-bottom-right-radius: 200px; /* 100px of height + 10px of border */
-            }
-            #canvasSpeed{
-                position: static;
-                /* display: inline-block; */
+                left: 50px;
+                width:30%;
+                height:30%;
                 text-align: center;
-            }
+              }
+              #timeCircle{
+                position: relative;
+                display: inline-block;
+                width: 180px;
+                height: 180px;
+                background-color: #bcabae;
+                box-shadow: 0px 0px 10px black;
+                border-top-left-radius: 100px;  /* 100px of height + 10px of border */
+                border-top-right-radius: 100px; /* 100px of height + 10px of border */
+                border-bottom-left-radius: 100px;  /* 100px of height + 10px of border */
+                border-bottom-right-radius: 100px; /* 100px of height + 10px of border */
+              }
+              #canvasTime{
+                  position: static;
+                  /* display: inline-block; */
+                  text-align: center;
+              }
 
+/* middle circle: speed */
+              #speed{
+                position: relative;
+                display: inline-block;
+                width:250px;
+                height:250px;
+                text-align: center;
+              }
+              #speedCircle{
+                  position: relative;
+                  display: inline-block;
+                  width: 250px;
+                  height: 250px;
+                  box-shadow: 0px 0px 20px black;
+                  background-color: #bcabae;
+                  border-top-left-radius: 200px;  /* 100px of height + 10px of border */
+                  border-top-right-radius: 200px; /* 100px of height + 10px of border */
+                  border-bottom-left-radius: 200px;  /* 100px of height + 10px of border */
+                  border-bottom-right-radius: 200px; /* 100px of height + 10px of border */
+              }
+              #canvasSpeed{
+                  position: static;
+                  /* display: inline-block; */
+                  text-align: center;
+              }
 
-        /* right indicator: distance */
-          #distance{
-            position: relative;
-            display: inline-block;
-            right: 50px;
-            width:30%;
-            height:30%;
-            text-align: center;
-          }
-          #distanceCircle{
-            position: relative;
-            display: inline-block;
-            box-shadow: 0px 0px 10px black;
-            width: 180px;
-            height: 180px;
-            background-color: white;
-            border-top-left-radius: 100px;  /* 100px of height + 10px of border */
-            border-top-right-radius: 100px; /* 100px of height + 10px of border */
-            border-bottom-left-radius: 100px;  /* 100px of height + 10px of border */
-            border-bottom-right-radius: 100px; /* 100px of height + 10px of border */
-            background-color: #bcabae;
-          }
-          #canvasDist{
-              position: static;
-              /* display: inline-block; */
-              text-align: center;
-          }
-
-
-        /* OVERLAYING TEXTBOX */
-    #textInput{
-      width:100%;
-      height:100%;
-      position: relative;
-      text-align: center;
-      }
-
-            #timeInputBox{
+    /* right circle: distance */
+            #distance{
               position: relative;
               display: inline-block;
-              top: 80px;
-              left: 50px;
-              width:30%;
-              height:30%;
-              text-align: center;
-            }
-            #timeTotal{
-              font-size: 12px;
-              color:#282e3a;
-            }
-            #timeText{
-              position: relative;
-              font-size: 35px;
-              color: #282e3a;
-            }
-            #timeTextMeasure{
-              position: relative;
-              font-size: 12px;
-              color: #282e3a;
-            }
-
-
-        /* speed text  */
-            #speedInputBox{
-              position: relative;
-              top:80px;
-              display: inline-block;
-              width:250px;
-              height:250px;
-              text-align: center;
-            }
-            #speedTotal{
-              font-size: 12px;
-              color:#282e3a;
-            }
-            #speedText{
-                  font-size: 50px;
-                  color: #282e3a;
-                  }
-            #speedTextMeasure{
-                    font-size: 12px;
-                    color: #282e3a;
-                  }
-
-
-        /* distance text  */
-
-
-            #distInputBox{
-              position: relative;
-              display: inline-block;
-              top: 80px;
               right: 50px;
               width:30%;
               height:30%;
               text-align: center;
             }
-
-            #distTotal{
-              font-size: 12px;
-              color:#282e3a;
+            #distanceCircle{
+              position: relative;
+              display: inline-block;
+              box-shadow: 0px 0px 10px black;
+              width: 180px;
+              height: 180px;
+              background-color: white;
+              border-top-left-radius: 100px;  /* 100px of height + 10px of border */
+              border-top-right-radius: 100px; /* 100px of height + 10px of border */
+              border-bottom-left-radius: 100px;  /* 100px of height + 10px of border */
+              border-bottom-right-radius: 100px; /* 100px of height + 10px of border */
+              background-color: #bcabae;
             }
 
-            #distanceText{
-              font-size: 35px;
-              color: #282e3a;
+            #canvasDist{
+                position: static;
+                /* display: inline-block; */
+                text-align: center;
             }
 
-            #distanceTextMeasure{
-              font-size: 12px;
-              color: #282e3a;
-            }
 
-                              @-webkit-keyframes move {
-                                0% {
-                                  transform: rotate(-90deg);
-                                }
-                                50% {
-                                  transform: rotate(90deg);
-                                }
-                                100% {
-                                  transform: rotate(-90deg);
-                                }
-                              }
+        /* OVERLAYING TEXTBOX - it is an overlay so there is no disrubtion with the js code for the blue gradient circles below*/
+        /* color of the top text (avere/total) */
+        .totalText{
+          font-size: 15px;
+          color: white;
+        }
 
-                              #overlay{
-                                position: fixed;
-                                width: 200%;
-                                height: 2000px;
-                                margin-top: -1000px;
-                                margin-left: -200px;
-                                background-color: white;
-                                text-align: center;
-                                visibility: hidden;
-                                opacity: 0.5;
-                              }
+            #textInput{
+              width:100%;
+              height:100%;
+              position: relative;
+              text-align: center;
+              top: -20px;
+              }
+
+              #timeInputBox{
+                position: relative;
+                display: inline-block;
+                top: 80px;
+                left: 50px;
+                width:30%;
+                height:30%;
+                text-align: center;
+              }
+
+              #timeText{
+                position: relative;
+                font-size:45px;
+                color: white;
+              }
+
+              #timeTextMeasure{
+                position: relative;
+                font-size: 20px;
+                color: white;
+              }
+
+
+        /* speed text  */
+              #speedInputBox{
+                position: relative;
+                top:50px;
+                display: inline-block;
+                width:250px;
+                height:250px;
+                text-align: center;
+              }
+
+              #speedText{
+                    position: relative;
+                    display: inline-block;
+                    font-size: 45px;
+                    color: white;
+                    }
+
+              #speedTextMeasure{
+                      position: relative;
+                      font-size: 20px;
+                      color: white;
+                    }
+
+
+        /* distance text  */
+              #distInputBox{
+                position: relative;
+                display: inline-block;
+                top: 80px;
+                right: 50px;
+                width:30%;
+                height:30%;
+                text-align: center;
+              }
+
+              #distanceText{
+                position: relative;
+                font-size: 45px;
+                color: white;
+              }
+
+              #distanceTextMeasure{
+                position: relative;
+                font-size: 20px;
+                color: white;
+              }
