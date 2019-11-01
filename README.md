@@ -6,7 +6,7 @@
   <body>
 
      <div class="header">
-       <h1>    Group 3  </h1>
+       <h1 style="color:white;">   Group 3  </h1>
        <h3>   Caiseal Beardow, Yu Zhang & Kiki Deurvorst </h3>
      </div>
 
