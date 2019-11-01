@@ -17,7 +17,6 @@ function startFunction() {
   document.getElementById('clock').innerHTML =
     00 + ":" + 6;
   startTimer();
-
 }
 
 function startTimer() {

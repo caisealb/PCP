@@ -1,8 +1,16 @@
 
+function changeTimeValue(){
+  var text = getElementById("timeText");
+  var i;
+  for (i = 0; i < 100; i++) {
+  text = i;
+  }
+}
+
+
 function startPage(){
   window.location.href = "start";
 }
-
 
 function draw(speed)
 {
