@@ -174,7 +174,7 @@ def serialComms():
             print("Unexpected serial error:", sys.exc_info()[0])
             raise
     while True:
-            sleep(5)
+            sleep(1)
             try:
                 ser.read()
                 serData = (ser.readline().decode())
