@@ -149,7 +149,7 @@ function hoverOutPause(){
   document.getElementById('pauseCircle').style.opacity = "1"
 }
 
-function redraw()
-{
-	draw(document.getElementById("myList").value);
-}
+// function redraw()
+// {
+// 	draw(document.getElementById("myList").value);
+// }
