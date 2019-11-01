@@ -11,6 +11,33 @@
        <h3 style="font-size:50%">   Group 3: Caiseal Beardow, Yu Zhang & Kiki Deurvorst </h3>
      </div>
 
+     <div class="rightcolumn">
+       <div class="card" height="300">
+         <h2> TU Delft Master Elective  </h2>
+       <div class ="p2"> PCP stands for Prototyping connected products, an elective from the Industrial Design Engineering master at TU Delft. The elective is an introduction to prototyping IoT connected products. </div>
+         <br>
+         <img src="pcp_images/TUDelft.png" height="50%" width="50%"/>
+       </div>
+       <div class="card">
+         <h2> About Us  </h2>
+           <div id="pictureContainer"><br>
+             <img src="pcp_images/cais.jpg"/>
+             <br>
+                <div class ="p2"> Caiseal Beardow - DFI </div>
+                <br><br>
+             <img src="pcp_images/yu.jpg"/>
+             <br>
+                <div class ="p2"> Yu Zhang - IPD </div>
+                <br><br>
+             <img src="pcp_images/kiki.jpg"/>
+                <div class ="p2"> Kiki Deurvorst- DFI </div>
+                <br><br>
+           </div>
+       </div>
+     </div>
+
+
+
      <div class="row">
        <div class="leftcolumn">
          <div class="card" height="300">
@@ -51,32 +78,6 @@
             <br><br>
             The Python script running on the Pi parses these data and packages them in a format that is usable by the JavaScript files implemented in our web application. Using a websocket, data is visualised in real-time and updated accordingly as the user moves with their wheelchair.
           </p>
-         </div>
-       </div>
-
-
-       <div class="rightcolumn">
-         <div class="card" height="300">
-           <h2> TU Delft Master Elective  </h2>
-         <div class ="p2"> PCP stands for Prototyping connected products, an elective from the Industrial Design Engineering master at TU Delft. The elective is an introduction to prototyping IoT connected products. </div>
-           <br>
-           <img src="pcp_images/TUDelft.png" height="50%" width="50%"/>
-         </div>
-         <div class="card">
-           <h2> About Us  </h2>
-             <div id="pictureContainer"><br>
-               <img src="pcp_images/cais.jpg"/>
-               <br>
-                  <div class ="p2"> Caiseal Beardow - DFI </div>
-                  <br><br>
-               <img src="pcp_images/yu.jpg"/>
-               <br>
-                  <div class ="p2"> Yu Zhang - IPD </div>
-                  <br><br>
-               <img src="pcp_images/kiki.jpg"/>
-                  <div class ="p2"> Kiki Deurvorst- DFI </div>
-                  <br><br>
-             </div>
          </div>
        </div>
 
