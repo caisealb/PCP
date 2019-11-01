@@ -17,7 +17,7 @@
            <h2> Our Project </h2>
            <h5>A connected wheelchair to track live workout data</h5>
            <p> Our project aims to support manual wheelchair users in maintaining an active lifestyle. We envision our project as a workout tracker, similar to existing commercial examples, such as NikeRun or FitBit, but adapted specifically to the physical properties of a manual wheelchair and the practicalities of its use. Using sensors, microprocessors and a Raspberry Pi, we connect the physical components of our system to a visual interface that shows users their workout progress and statistics in real-time. </p>
-           <img src="pcp_images/wheelchair.jpg" ></img> 
+           <img src="pcp_images/wheelchair.jpg"/> 
          </div>
          <div class="card">
            <h2> Design Brief </h2>
