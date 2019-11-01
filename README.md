@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
   <head>
         <title> PCP group 3 </title>
@@ -19,16 +18,8 @@
 
 
 
-
-
-
-
-
-
-
 IP adress Raspberry Pi: 145.94.173.147
 
-TESTING
 
 Prototyping Connected Products
 
