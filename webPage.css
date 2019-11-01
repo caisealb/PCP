@@ -34,10 +34,17 @@ h3{
 }
 
 p{
-  font-size: 16px;
+  font-size: 15px;
   text-align: justify;
-  color: #bcabae;
+  color: black;
 }
+
+h5{
+  font-size: 17px;
+  color: #282e3a;
+  font-style: italic;
+}
+
 /* Create two unequal columns that floats next to each other */
 /* Left column */
 .leftcolumn {
