@@ -1,11 +1,10 @@
 body {
-  background-color: powderblue;
+  background-color: #282e3a;
+    text-align: center;
 }
 h1 {
-  text-align: center;
   color: blue;
 }
 p {
   color: red;
-  text-align: center;
 }
