@@ -33,19 +33,22 @@
          </div>
          <div class="card">
            <h2> Components </h2>
-          <p> The core of our connected system is a Raspberry Pi. The Pi runs a central Python script that receives data from sensors, processes it, initialises a server and websocket application, and sends processed data to this websocket. <br>
-            Associated HTML, CSS and JavaScript files are combined to produce an interactive web-based application that visualises users’ workout data in real-time.<br>
-            We use two sensors to receive relevant data:
+          <p> The core of our connected system is a Raspberry Pi. The Pi runs a central Python script that receives data from sensors, processes it, initialises a server and websocket application, and sends processed data to this websocket.
             <br>
+            <br>
+            Associated HTML, CSS and JavaScript files are combined to produce an interactive web-based application that visualises users’ workout data in real-time.
+            <br><br>
+            We use two sensors to receive relevant data:
+            <br><br>
             Adafruit BNO055 Absolute Orientation Sensor;
             <br>
             Adafruit Ultimate GPS Breakout.
-            <br>
+            <br><br>
             When mounted on the wheelchair’s wheel axle, the BNO sensor provides us with rotation data that is then used to calculate cumulative distance travelled and, in combination with time elapsed,
             a user’s current speed. This data is sent to the Pi via Bluetooth using GATT commands.
-            <br>
+            <br><br>
             The GPS sensor is connected to an Arduino Mega that collects and formats coordinates, then sends them to the Pi via serial communication.
-            <br>
+            <br><br>
             The Python script running on the Pi parses these data and packages them in a format that is usable by the JavaScript files implemented in our web application. Using a websocket, data is visualised in real-time and updated accordingly as the user moves with their wheelchair.
           </p>
          </div>
