@@ -17,7 +17,7 @@
            <h2> Our Project </h2>
            <h5>A connected wheelchair to track live workout data</h5>
            <p> Our project aims to support manual wheelchair users in maintaining an active lifestyle. We envision our project as a workout tracker, similar to existing commercial examples, such as NikeRun or FitBit, but adapted specifically to the physical properties of a manual wheelchair and the practicalities of its use. Using sensors, microprocessors and a Raspberry Pi, we connect the physical components of our system to a visual interface that shows users their workout progress and statistics in real-time. </p>
-           <img src="pcp_images/wheelchair.jpg"/> 
+           <img src="pcp_images/wheelchair.jpg"/>
          </div>
          <div class="card">
            <h2> Design Brief </h2>
@@ -26,12 +26,17 @@
                 Building upon this brief, we envision our target user group as (either full- or part-time) manual wheelchair users aiming to work towards or maintain a healthier, more active lifestyle. Features of our connected product include location, distance and activity tracking (via GPS and accelerometer sensors), visualised through a UX interface, with the intention of developing a mobile app-based product.
            </p>
          </div>
+         <div class="card">
+           <h2> System Architecture </h2>
+           <h5> A sytematic overview of the architecture used for the prototype </h5>
+           <img src="pcp_images/SYSTEM_ARCHITECTURE.jpg"/>
+         </div>
        </div>
 
        <div class="rightcolumn">
          <div class="card">
            <h2> TU Delft Master Elective  </h2>
-           <p>PCP stands for Prototyping connected products, an elective from the Indstrial Design Engineering master at TU Delft. The elective is an introduction to prototyping IoT connected products. </p>
+           <p>PCP stands for Prototyping connected products, an elective from the Industrial Design Engineering master at TU Delft. The elective is an introduction to prototyping IoT connected products. </p>
          </div>
          <div class="card">
            <h2>Popular Post</h2>
