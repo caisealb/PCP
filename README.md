@@ -56,8 +56,6 @@
          <div class="card">
            <h2>Popular Post</h2>
            <div class="fakeimg">Image</div><br>
-           <div class="fakeimg">Image</div><br>
-           <div class="fakeimg">Image</div>
          </div>
          <div class="card">
            <h2>Follow Me</h2>
@@ -65,11 +63,11 @@
          </div>
        </div>
 
-     <div class="footer">
-       <h2>Footer</h2>
-     </div>
-
     </div>
+
+    <!-- <div class="footer">
+      <h2>Footer</h2>
+    </div> -->
 
   </body>
 </html>
