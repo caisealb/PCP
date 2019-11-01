@@ -209,4 +209,5 @@ thread.start()
 
 if __name__ == '__main__':
     #Run socketIO app
+    socketio.set('origins', '*:*');
     socketio.run(app, host = '0.0.0.0')
