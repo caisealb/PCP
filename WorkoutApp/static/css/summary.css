@@ -29,112 +29,8 @@ h1 {
   font-style: italic;
 }
 
-#container{
-  width:90%;
-  height:90%;
-  position: relative;
-  top: 250px;
-  /* background-color:white; */
-  margin: 0 auto;
-  text-align: center;
-  /* -webkit-transform-origin: top left; */
-  }
 
-/* left measure: time */
-      #time{
-      position: relative;
-      top: 60%;
-      width:30%;
-      height:30%;
-      text-align: center;
-      display: inline-block;
-      }
-
-      #timeCircle{
-        position: relative;
-        display: inline-block;
-        top: 8%;
-        width: 200px;
-        height: 200px;
-        background-color: #2dcb74;
-        box-shadow: 0px 0px 10px black;
-        border-top-left-radius: 100px;  /* 100px of height + 10px of border */
-        border-top-right-radius: 100px; /* 100px of height + 10px of border */
-        border-bottom-left-radius: 100px;  /* 100px of height + 10px of border */
-        border-bottom-right-radius: 100px; /* 100px of height + 10px of border */
-      }
-
-      #timeText{
-        position: relative;
-        font-size: 48px;
-        color: white;
-      }
-
-/* middle measure: speedometer */
-
-      #speed{
-      /* position: relative; */
-      width:30%;
-      height:30%;
-      text-align: center;
-      display: inline-block;
-      }
-
-
-#speedCircle{
-    position: relative;
-    display: inline-block;
-    /* top: 8%; */
-    width: 300px;
-    height: 300px;
-    box-shadow: 0px 0px 20px black;
-    background-color: #2dcb74;
-    border-top-left-radius: 200px;  /* 100px of height + 10px of border */
-    border-top-right-radius: 200px; /* 100px of height + 10px of border */
-    border-bottom-left-radius: 200px;  /* 100px of height + 10px of border */
-    border-bottom-right-radius: 200px; /* 100px of height + 10px of border */
-}
-
-      #speedText{
-        position: relative;
-        display: inline-block;
-        font-size: 100px;
-        color: white;
-      }
-
-/* right measure: distance */
-
-    #distance{
-    position: relative;
-    top: 100%;
-    width:30%;
-    height:30%;
-    text-align: center;
-    display: inline-block;
-    }
-
-    #distanceCircle{
-      position: relative;
-      display: inline-block;
-      box-shadow: 0px 0px 10px black;
-      top: 8%;
-      width: 200px;
-      height: 200px;
-      background-color: white;
-      border-top-left-radius: 100px;  /* 100px of height + 10px of border */
-      border-top-right-radius: 100px; /* 100px of height + 10px of border */
-      border-bottom-left-radius: 100px;  /* 100px of height + 10px of border */
-      border-bottom-right-radius: 100px; /* 100px of height + 10px of border */
-      background-color: #2dcb74;
-    }
-
-    #distanceText{
-      position: relative;
-      font-size: 48px;
-      color: white;
-    }
-
-
+/* //pause and stop buttons// */
   #options {
     position: relative;
     top:20px;
@@ -142,30 +38,236 @@ h1 {
     text-align: center;
   }
 
+      #newCircle{
+        width: 50px;
+        height: 50px;
+        background-color: #eca72c;
+        text-align: center;
+        display: inline-block;
+        margin-top: -130px;
+        margin-bottom: 50px;
+        /* border: 2px; */
+        /* border-color: #eca72c; */
+        border-top-left-radius: 150px;  /* 100px of height + 10px of border */
+        border-top-right-radius: 150px; /* 100px of height + 10px of border */
+        border-bottom-left-radius: 150px;  /* 100px of height + 10px of border */
+        border-bottom-right-radius: 150px; /* 100px of height + 10px of border */
+      }
 
-    #newCircle{
-      width: 50px;
-      height: 50px;
-      background-color: #eca72c;
+      #newTriangle{
+        width: 0;
+        height: 0;
+        border-top: 15px solid transparent;
+        border-left: 30px solid white;
+        border-bottom: 15px solid transparent;
+        display: inline-block;
+        margin-top:9px;
+        margin-left: 5px;
+        /* margin-top: 100px; */
+        /* visibility: hidden; */
+        }
+
+
+        #container{
+          top: 230px;
+          width:100%;
+          height:100%;
+          position: relative;
+          text-align: center;
+          }
+
+        /* left measure: time */
+            #time{
+              position: relative;
+              display: inline-block;
+              left: 50px;
+              width:30%;
+              height:30%;
+              text-align: center;
+            }
+            #timeCircle{
+              position: relative;
+              display: inline-block;
+              width: 180px;
+              height: 180px;
+              background-color: #bcabae;
+              box-shadow: 0px 0px 10px black;
+              border-top-left-radius: 100px;  /* 100px of height + 10px of border */
+              border-top-right-radius: 100px; /* 100px of height + 10px of border */
+              border-bottom-left-radius: 100px;  /* 100px of height + 10px of border */
+              border-bottom-right-radius: 100px; /* 100px of height + 10px of border */
+            }
+            #canvasTime{
+                position: static;
+                /* display: inline-block; */
+                text-align: center;
+            }
+
+
+            #speed{
+              position: relative;
+              top: 20px;
+              display: inline-block;
+              width:250px;
+              height:250px;
+              text-align: center;
+            }
+            #speedCircle{
+                position: relative;
+                display: inline-block;
+                width: 250px;
+                height: 250px;
+                box-shadow: 0px 0px 20px black;
+                background-color: #bcabae;
+                border-top-left-radius: 200px;  /* 100px of height + 10px of border */
+                border-top-right-radius: 200px; /* 100px of height + 10px of border */
+                border-bottom-left-radius: 200px;  /* 100px of height + 10px of border */
+                border-bottom-right-radius: 200px; /* 100px of height + 10px of border */
+            }
+            #canvasSpeed{
+                position: static;
+                /* display: inline-block; */
+                text-align: center;
+            }
+
+
+        /* right indicator: distance */
+          #distance{
+            position: relative;
+            display: inline-block;
+            right: 50px;
+            width:30%;
+            height:30%;
+            text-align: center;
+          }
+          #distanceCircle{
+            position: relative;
+            display: inline-block;
+            box-shadow: 0px 0px 10px black;
+            width: 180px;
+            height: 180px;
+            background-color: white;
+            border-top-left-radius: 100px;  /* 100px of height + 10px of border */
+            border-top-right-radius: 100px; /* 100px of height + 10px of border */
+            border-bottom-left-radius: 100px;  /* 100px of height + 10px of border */
+            border-bottom-right-radius: 100px; /* 100px of height + 10px of border */
+            background-color: #bcabae;
+          }
+          #canvasDist{
+              position: static;
+              /* display: inline-block; */
+              text-align: center;
+          }
+
+
+        /* OVERLAYING TEXTBOX */
+    #textInput{
+      width:100%;
+      height:100%;
+      position: relative;
       text-align: center;
-      display: inline-block;
-      margin-bottom: 50px;
-      border: 2px;
-      border-top-left-radius: 150px;  /* 100px of height + 10px of border */
-      border-top-right-radius: 150px; /* 100px of height + 10px of border */
-      border-bottom-left-radius: 150px;  /* 100px of height + 10px of border */
-      border-bottom-right-radius: 150px; /* 100px of height + 10px of border */
-    }
+      }
 
-    #newTriangle{
-      width: 0;
-      height: 0;
-      margin-top: 30%;
-      border-style: solid;
-      border-width: 10px 0 10px 20px;
-      border-color: transparent transparent transparent white;
-      display: inline-block;
-    }
+            #timeInputBox{
+              position: relative;
+              display: inline-block;
+              top: 80px;
+              left: 50px;
+              width:30%;
+              height:30%;
+              text-align: center;
+            }
+            #timeTotal{
+              font-size: 12px;
+              color:#282e3a;
+            }
+            #timeText{
+              position: relative;
+              font-size: 35px;
+              color: #282e3a;
+            }
+            #timeTextMeasure{
+              position: relative;
+              font-size: 12px;
+              color: #282e3a;
+            }
+
+
+        /* speed text  */
+            #speedInputBox{
+              position: relative;
+              top:80px;
+              display: inline-block;
+              width:250px;
+              height:250px;
+              text-align: center;
+            }
+            #speedTotal{
+              font-size: 12px;
+              color:#282e3a;
+            }
+            #speedText{
+                  font-size: 50px;
+                  color: #282e3a;
+                  }
+            #speedTextMeasure{
+                    font-size: 12px;
+                    color: #282e3a;
+                  }
+
+
+        /* distance text  */
+
+
+            #distInputBox{
+              position: relative;
+              display: inline-block;
+              top: 80px;
+              right: 50px;
+              width:30%;
+              height:30%;
+              text-align: center;
+            }
+
+            #distTotal{
+              font-size: 12px;
+              color:#282e3a;
+            }
+
+            #distanceText{
+              font-size: 35px;
+              color: #282e3a;
+            }
+
+            #distanceTextMeasure{
+              font-size: 12px;
+              color: #282e3a;
+            }
+
+                              @-webkit-keyframes move {
+                                0% {
+                                  transform: rotate(-90deg);
+                                }
+                                50% {
+                                  transform: rotate(90deg);
+                                }
+                                100% {
+                                  transform: rotate(-90deg);
+                                }
+                              }
+
+                              #overlay{
+                                position: fixed;
+                                width: 200%;
+                                height: 2000px;
+                                margin-top: -1000px;
+                                margin-left: -200px;
+                                background-color: white;
+                                text-align: center;
+                                visibility: hidden;
+                                opacity: 0.5;
+                              }
+
 
     #map {
         width: 100%;
