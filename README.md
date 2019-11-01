@@ -50,18 +50,18 @@
        <div class="rightcolumn">
          <div class="card">
            <h2> TU Delft Master Elective  </h2>
-           <p>PCP stands for Prototyping connected products, an elective from the Industrial Design Engineering master at TU Delft. The elective is an introduction to prototyping IoT connected products. </p>
+           <p2>PCP stands for Prototyping connected products, an elective from the Industrial Design Engineering master at TU Delft. The elective is an introduction to prototyping IoT connected products. </p2>
            <img src="pcp_images/TUDelft.png" height="50%" width="50%"/>
          </div>
          <div class="card">
            <h2> About Us  </h2>
              <div id="pictureContainer">
                <img src="pcp_images/wheelies.jpg"/>
-                  <p> Caiseal Beardow - DFI </p>
+                  <p2> Caiseal Beardow - DFI </p2>
                <img src="pcp_images/TUDelft.jpg"/>
-                  <p> Yu Zhang - IPD </p>
+                  <p2> Yu Zhang - IPD </p2>
                <img src="pcp_images/kiki.jpg"/>
-                  <p> Kiki Deurvorst- DFI </p>
+                  <p2> Kiki Deurvorst- DFI </p2>
              </div>
          </div>
        </div>
