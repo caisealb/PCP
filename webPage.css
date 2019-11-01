@@ -11,7 +11,6 @@ Lightgrey: #bcabae
 body {
   font-family: Helvetica;
   padding: 20px;
-  height: 400px;
   background: #282e3a;
 }
 
@@ -19,6 +18,7 @@ body {
 .header {
   padding: 30px;
   font-size: 40px;
+  height: 400px;
   text-align: center;
   background: url(pcp_images/web4.jpg);
   background-repeat: repeat;
