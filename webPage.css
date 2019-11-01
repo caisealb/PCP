@@ -11,7 +11,8 @@ Lightgrey: #bcabae
 body {
   font-family: Helvetica;
   padding: 20px;
-  background: url(pcp_images/iot.jpg);
+  background: url(pcp_images/web.jpg);
+  background-repeat: repeat-y;
 }
 
 /* Header/Blog Title */
