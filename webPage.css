@@ -11,7 +11,7 @@ Lightgrey: #bcabae
 body {
   font-family: Helvetica;
   padding: 20px;
-  background: #282e3a;
+  background: url(pcp_images/iot.jpg);
 }
 
 /* Header/Blog Title */
@@ -19,7 +19,7 @@ body {
   padding: 30px;
   font-size: 40px;
   text-align: center;
-  background: url(pcp_images/iot.jpg);
+  background: #282e3a;
   visibility: 0.2;
 }
 
