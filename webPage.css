@@ -23,6 +23,10 @@ body {
   visibility: 0.2;
 }
 
+
+h1{
+  color: #eca72c;
+}
 h2{
   color: #282e3a;
   font-size: 30px;
@@ -33,17 +37,19 @@ h3{
   font-size: 20px;
 }
 
+h5{
+  font-size: 17px;
+  color: #282e3a;
+  font-style: italic;
+}
+
 p{
   font-size: 15px;
   text-align: justify;
   color: black;
 }
 
-h5{
-  font-size: 17px;
-  color: #282e3a;
-  font-style: italic;
-}
+
 
 /* Create two unequal columns that floats next to each other */
 /* Left column */
