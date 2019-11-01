@@ -45,8 +45,6 @@
           The Python script running on the Pi parses these data and packages them in a format that is usable by the JavaScript files implemented in our web application. Using a websocket, data is visualised in real-time and updated accordingly as the user moves with their wheelchair.
         </p>
        </div>
-     </div>
-
 
        <div class="rightcolumn">
          <div class="card">
@@ -69,6 +67,8 @@
      <div class="footer">
        <h2>Footer</h2>
      </div>
+
+    </div>
 
   </body>
 </html>
