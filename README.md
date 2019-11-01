@@ -54,12 +54,21 @@
            <img src="pcp_images/TUDelft.png"/>
          </div>
          <div class="card">
-           <h2>Popular Post</h2>
-           <div class="fakeimg">Image</div><br>
-         </div>
-         <div class="card">
-           <h2>Follow Me</h2>
-           <p>Some text..</p>
+           <h2> About Us  </h2>
+           <div id="pictureContainer">
+             <img src="pcp_images/wheelies.jpg"/>
+             <img src="pcp_images/TUDelft.jpg"/>
+             <img src="pcp_images/iot.jpg"/>
+           </div>
+           <div id="pictureNames">
+           <p> Caiseal Beardow - DFI </p>
+           <p> Yu Zhang - IPD </p>
+           <p> Kiki Deurvorst- DFI </p>
+           </div>
+
+
+
+           <img src="pcp_images/TUDelft.png"/>
          </div>
        </div>
 
