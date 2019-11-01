@@ -6,7 +6,7 @@
   <body>
 
      <div class="header">
-       <h2>    PCP - Group 3  </h2>
+       <h1>    PCP - Group 3  </h1>
        <h3>   Caiseal Beardow, Yu & Kiki Deurvorst </h3>
      </div>
 
@@ -20,9 +20,8 @@
          </div>
          <div class="card">
            <h2>TITLE HEADING</h2>
-           <h5>Title description, Sep 2, 2017</h5>
-           <div class="fakeimg" style="height:200px;">Image</div>
-           <p>Some text..</p>
+           <h5>A connected wheelchair to track workout data</h5>
+           <p>We designed a wheelchair that tracks the physical activity of wheelchair users and shows your progress in the browser. </p>
          </div>
        </div>
        <div class="rightcolumn">
