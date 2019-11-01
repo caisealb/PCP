@@ -64,9 +64,9 @@ p{
   line-height: 1.5;
 }
 
-p2{
+.p2{
   font-size: 10px;
-  line-height: 2px;
+  line-height: 0.5;
 }
 
 

@@ -66,11 +66,11 @@
            <h2> About Us  </h2>
              <div id="pictureContainer">
                <img src="pcp_images/wheelies.jpg"/>
-                  <p2> Caiseal Beardow - DFI </p2>
+                  <p class ="p2"> Caiseal Beardow - DFI </p>
                <img src="pcp_images/TUDelft.jpg"/>
-                  <p2> Yu Zhang - IPD </p2>
+                  <p class ="p2"> Yu Zhang - IPD </p>
                <img src="pcp_images/kiki.jpg"/>
-                  <p2> Kiki Deurvorst- DFI </p2>
+                  <p class ="p2"> Kiki Deurvorst- DFI </p>
              </div>
          </div>
        </div>
