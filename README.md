@@ -14,7 +14,7 @@
        <div class="leftcolumn">
          <div class="card">
            <h2> Our Project </h2>
-           <h5>Title description, Dec 7, 2017</h5>
+           <h5>A connected wheelchair to track live workout data</h5>
            <div class="fakeimg" style="height:200px;">Image</div>
            <p>Some text..</p>
          </div>
