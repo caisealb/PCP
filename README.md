@@ -64,7 +64,7 @@
          </div>
          <div class="card">
            <h2> About Us  </h2>
-             <div id="pictureContainer"><br>
+             <div id="pictureContainer">
                <img src="pcp_images/cais.jpg"/>
                <br>
                   <div class ="p2"> Caiseal Beardow - DFI </div>
@@ -75,7 +75,7 @@
                   <br><br>
                <img src="pcp_images/kiki.jpg"/>
                   <div class ="p2"> Kiki Deurvorst- DFI </div>
-                  <br><br>
+                  <br>
              </div>
          </div>
        </div>
