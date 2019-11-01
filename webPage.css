@@ -66,12 +66,12 @@ p{
 
 .img{
   padding: 20px;
+  background-size: cover;
 }
 
 /* section 1: our project */
 #wheelchairImage{
   background: url(pcp_images/wheelchair.jpg);
-  background: cover;
 }
 
 
