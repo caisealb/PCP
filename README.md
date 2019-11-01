@@ -17,7 +17,7 @@
            <h2> Our Project </h2>
            <h5>A connected wheelchair to track live workout data</h5>
            <p> We created a connected wheelchair that accurately tracks the data of a workout, including speed, time, distance and gps location. It communicates the data to the user through a web interface. </p>
-           <div id="wheelchairImage" class="img"> </div>
+           <div id="wheelchairImage" class="img"> image </div>
          </div>
          <div class="card">
            <h2> Design Brief </h2>

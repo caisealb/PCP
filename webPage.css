@@ -63,10 +63,18 @@ p{
   color: black;
 }
 
+
+.img{
+  padding: 20px;
+}
+
 /* section 1: our project */
 #wheelchairImage{
   background: url(pcp_images/wheelchair.jpg);
 }
+
+
+
 
 
 /* Create two unequal columns that floats next to each other */
