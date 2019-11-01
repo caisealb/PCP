@@ -19,9 +19,10 @@
            <p>Some text..</p>
          </div>
          <div class="card">
-           <h2>TITLE HEADING</h2>
-           <h5>A connected wheelchair to track workout data</h5>
-           <p>We designed a wheelchair that tracks the physical activity of wheelchair users and shows your progress in the browser. </p>
+           <h2>Design Brief </h2>
+           <h5>Connecting a wheelchair</h5>
+           <p> While the population of wheelchair users is growing worldwide, it becomes urgent to design supportive technologies that fit their needs. We aim to develop products for improvement of the wheelchair users’ wellbeing. This design is a connected product that collects data from sensors, processes it in order to actuate user interactions embedded in the wheelchair.
+           Building upon this brief, we envision our target user group as (either full- or part-time) manual wheelchair users aiming to work towards or maintain a healthier, more active lifestyle. Features of our connected product will include distance and activity tracking (such as GPS and accelerometer), with sensory feedback and a web-based UX interface.</p>
          </div>
        </div>
        <div class="rightcolumn">
