@@ -11,6 +11,7 @@ Lightgrey: #bcabae
 body {
   font-family: Helvetica;
   padding: 20px;
+  height: 400px;
   background: #282e3a;
 }
 
