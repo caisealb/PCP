@@ -51,7 +51,7 @@
          <div class="card">
            <h2> TU Delft Master Elective  </h2>
            <p>PCP stands for Prototyping connected products, an elective from the Industrial Design Engineering master at TU Delft. The elective is an introduction to prototyping IoT connected products. </p>
-           <img src="pcp_images/TUDelft.png" height="50%" height="50%"/>
+           <img src="pcp_images/TUDelft.png" height="50%" width="50%"/>
          </div>
          <div class="card">
            <h2> About Us  </h2>
