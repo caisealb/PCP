@@ -26,7 +26,7 @@
        </div>
        <div class="rightcolumn">
          <div class="card">
-           <h2>About the project</h2>
+           <h2> Master elective project </h2>
            <p>PCP stands for Prototyping connected products, an elective from the Indstrial Design Engineering master at TU Delft. In a group of three students, we have been working on prototyping a connected wheelchair over the course of 10 weeks. </p>
          </div>
          <div class="card">
