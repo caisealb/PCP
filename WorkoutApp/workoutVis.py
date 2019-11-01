@@ -209,4 +209,4 @@ thread.start()
 
 if __name__ == '__main__':
     #Run socketIO app
-    socketio.run(app, host = '0.0.0.0')
+    socketio.run(app,port=5000,host='0.0.0.0')
