@@ -57,9 +57,9 @@
            <h2> About Us  </h2>
              <div id="pictureContainer">
                <img src="pcp_images/wheelies.jpg"/>
-                <p> Caiseal Beardow - DFI </p>
+                  <p> Caiseal Beardow - DFI </p>
                <img src="pcp_images/TUDelft.jpg"/>
-                <p> Yu Zhang - IPD </p>
+                  <p> Yu Zhang - IPD </p>
                <img src="pcp_images/kiki.jpg"/>
                   <p> Kiki Deurvorst- DFI </p>
              </div>
