@@ -34,8 +34,7 @@
        </div>
        <div class="card">
          <h2> Components </h2>
-        <p>
-          The core of our connected system is a Raspberry Pi. The Pi runs a central Python script that receives data from sensors, processes it, initialises a server and websocket application, and sends processed data to this websocket. Associated HTML, CSS and JavaScript files are combined to produce an interactive web-based application that visualises users’ workout data in real-time.
+        <p> The core of our connected system is a Raspberry Pi. The Pi runs a central Python script that receives data from sensors, processes it, initialises a server and websocket application, and sends processed data to this websocket. Associated HTML, CSS and JavaScript files are combined to produce an interactive web-based application that visualises users’ workout data in real-time.
           We use two sensors to receive relevant data:
           Adafruit BNO055 Absolute Orientation Sensor;
           Adafruit Ultimate GPS Breakout.
@@ -66,7 +65,6 @@
            <p>Some text..</p>
          </div>
        </div>
-     </div>
 
      <div class="footer">
        <h2>Footer</h2>
