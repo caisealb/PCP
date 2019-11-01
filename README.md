@@ -6,9 +6,8 @@
   <body>
 
      <div class="header">
-       <h2>       PCP - Group 3
-          Caiseal Beardow, Yu & Kiki Deurvorst
-      </h2>
+       <h2>    PCP - Group 3  </h2>
+        <h3>   Caiseal Beardow, Yu & Kiki Deurvorst </h3>
      </div>
 
      <div class="row">

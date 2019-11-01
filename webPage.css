@@ -19,8 +19,18 @@ body {
   padding: 30px;
   font-size: 40px;
   text-align: center;
-  background: #bcabae;
+  background: white;
 }
+
+h2{
+  color: white;
+  font-size: 30px;
+}
+h3{
+  color: white;
+  font-size: 20px;
+}
+
 
 /* Create two unequal columns that floats next to each other */
 /* Left column */
