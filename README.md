@@ -28,7 +28,6 @@
        <div class="rightcolumn">
          <div class="card">
            <h2>About the project</h2>
-           <div class="fakeimg" style="height:100px;">Image</div>
            <p>PCP stands for Prototyping connected products, an elective from the Indstrial Design Engineering master at TU Delft. In a group of three students, we have been working on prototyping a connected wheelchair over the course of 10 weeks. </p>
          </div>
          <div class="card">
