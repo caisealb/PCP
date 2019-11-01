@@ -71,6 +71,7 @@ p{
 /* section 1: our project */
 #wheelchairImage{
   background: url(pcp_images/wheelchair.jpg);
+  height: auto;
 }
 
 

@@ -17,7 +17,7 @@
            <h2> Our Project </h2>
            <h5>A connected wheelchair to track live workout data</h5>
            <p> We created a connected wheelchair that accurately tracks the data of a workout, including speed, time, distance and gps location. It communicates the data to the user through a web interface. </p>
-           <div id="wheelchairImage" class="img"> image </div>
+           <div id="wheelchairImage" class="img">  </div>
          </div>
          <div class="card">
            <h2> Design Brief </h2>
@@ -26,6 +26,7 @@
            Building upon this brief, we envision our target user group as (either full- or part-time) manual wheelchair users aiming to work towards or maintain a healthier, more active lifestyle. Features of our connected product will include distance and activity tracking (such as GPS and accelerometer), with sensory feedback and a web-based UX interface.</p>
          </div>
        </div>
+
        <div class="rightcolumn">
          <div class="card">
            <h2> TU Delft Master Elective  </h2>
