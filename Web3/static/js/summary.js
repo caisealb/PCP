@@ -1,4 +1,8 @@
 
+function startPage(){
+  window.location.href = "start";
+}
+
 
 function draw(speed)
 {

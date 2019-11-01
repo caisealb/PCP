@@ -68,202 +68,206 @@ h1 {
         }
 
 
-        #container{
-          top: 230px;
-          width:100%;
-          height:100%;
-          position: relative;
+        body{
+        background: #282e3a;
+        font-family: tahoma;
+        }
+
+        p {
+          color: black;
           text-align: center;
-          }
+          font: helvetica;
+          font-size: 30px;
+          font-style: italic;
+        }
+
+        h1 {
+          color: white;
+          text-align: center;
+          font: helvetica;
+          font-size: 50px;
+        }
+
+          #container{
+            width:100%;
+            height:100%;
+            position: relative;
+            top: 200px;
+            text-align: center;
+            }
 
         /* left measure: time */
-            #time{
-              position: relative;
-              display: inline-block;
-              left: 50px;
-              width:30%;
-              height:30%;
-              text-align: center;
-            }
-            #timeCircle{
-              position: relative;
-              display: inline-block;
-              width: 180px;
-              height: 180px;
-              background-color: #bcabae;
-              box-shadow: 0px 0px 10px black;
-              border-top-left-radius: 100px;  /* 100px of height + 10px of border */
-              border-top-right-radius: 100px; /* 100px of height + 10px of border */
-              border-bottom-left-radius: 100px;  /* 100px of height + 10px of border */
-              border-bottom-right-radius: 100px; /* 100px of height + 10px of border */
-            }
-            #canvasTime{
-                position: static;
-                /* display: inline-block; */
-                text-align: center;
-            }
-
-
-            #speed{
-              position: relative;
-              top: 20px;
-              display: inline-block;
-              width:250px;
-              height:250px;
-              text-align: center;
-            }
-            #speedCircle{
+              #time{
                 position: relative;
                 display: inline-block;
-                width: 250px;
-                height: 250px;
-                box-shadow: 0px 0px 20px black;
-                background-color: #bcabae;
-                border-top-left-radius: 200px;  /* 100px of height + 10px of border */
-                border-top-right-radius: 200px; /* 100px of height + 10px of border */
-                border-bottom-left-radius: 200px;  /* 100px of height + 10px of border */
-                border-bottom-right-radius: 200px; /* 100px of height + 10px of border */
-            }
-            #canvasSpeed{
-                position: static;
-                /* display: inline-block; */
+                left: 50px;
+                width:30%;
+                height:30%;
                 text-align: center;
-            }
+              }
+              #timeCircle{
+                position: relative;
+                display: inline-block;
+                width: 180px;
+                height: 180px;
+                background-color: #bcabae;
+                box-shadow: 0px 0px 10px black;
+                border-top-left-radius: 100px;  /* 100px of height + 10px of border */
+                border-top-right-radius: 100px; /* 100px of height + 10px of border */
+                border-bottom-left-radius: 100px;  /* 100px of height + 10px of border */
+                border-bottom-right-radius: 100px; /* 100px of height + 10px of border */
+              }
+              #canvasTime{
+                  position: static;
+                  /* display: inline-block; */
+                  text-align: center;
+              }
 
+
+              #speed{
+                position: relative;
+                display: inline-block;
+                width:250px;
+                height:250px;
+                text-align: center;
+              }
+              #speedCircle{
+                  position: relative;
+                  display: inline-block;
+                  width: 250px;
+                  height: 250px;
+                  box-shadow: 0px 0px 20px black;
+                  background-color: #bcabae;
+                  border-top-left-radius: 200px;  /* 100px of height + 10px of border */
+                  border-top-right-radius: 200px; /* 100px of height + 10px of border */
+                  border-bottom-left-radius: 200px;  /* 100px of height + 10px of border */
+                  border-bottom-right-radius: 200px; /* 100px of height + 10px of border */
+              }
+              #canvasSpeed{
+                  position: static;
+                  /* display: inline-block; */
+                  text-align: center;
+              }
+              #needle {
+                position: absolute;
+                width: 10px;
+                height: 100px;
+                top: 40px;
+                left: 48%;
+                background: #eca72c;
+                border-bottom-left-radius: 5px;
+                border-bottom-right-radius: 5px;
+                border-top-left-radius: 100%;
+                border-top-right-radius: 100%;
+                /* display: inline-block; */
+                -webkit-animation: move 5s infinite;
+                transform: rotate(45deg);
+                transform-origin: bottom;
+              }
 
         /* right indicator: distance */
-          #distance{
-            position: relative;
-            display: inline-block;
-            right: 50px;
-            width:30%;
-            height:30%;
-            text-align: center;
-          }
-          #distanceCircle{
-            position: relative;
-            display: inline-block;
-            box-shadow: 0px 0px 10px black;
-            width: 180px;
-            height: 180px;
-            background-color: white;
-            border-top-left-radius: 100px;  /* 100px of height + 10px of border */
-            border-top-right-radius: 100px; /* 100px of height + 10px of border */
-            border-bottom-left-radius: 100px;  /* 100px of height + 10px of border */
-            border-bottom-right-radius: 100px; /* 100px of height + 10px of border */
-            background-color: #bcabae;
-          }
-          #canvasDist{
-              position: static;
-              /* display: inline-block; */
-              text-align: center;
-          }
-
-
-        /* OVERLAYING TEXTBOX */
-    #textInput{
-      width:100%;
-      height:100%;
-      position: relative;
-      text-align: center;
-      }
-
-            #timeInputBox{
+            #distance{
               position: relative;
               display: inline-block;
-              top: 80px;
-              left: 50px;
-              width:30%;
-              height:30%;
-              text-align: center;
-            }
-            #timeTotal{
-              font-size: 12px;
-              color:#282e3a;
-            }
-            #timeText{
-              position: relative;
-              font-size: 35px;
-              color: #282e3a;
-            }
-            #timeTextMeasure{
-              position: relative;
-              font-size: 12px;
-              color: #282e3a;
-            }
-
-
-        /* speed text  */
-            #speedInputBox{
-              position: relative;
-              top:80px;
-              display: inline-block;
-              width:250px;
-              height:250px;
-              text-align: center;
-            }
-            #speedTotal{
-              font-size: 12px;
-              color:#282e3a;
-            }
-            #speedText{
-                  font-size: 50px;
-                  color: #282e3a;
-                  }
-            #speedTextMeasure{
-                    font-size: 12px;
-                    color: #282e3a;
-                  }
-
-
-        /* distance text  */
-
-
-            #distInputBox{
-              position: relative;
-              display: inline-block;
-              top: 80px;
               right: 50px;
               width:30%;
               height:30%;
               text-align: center;
             }
-
-            #distTotal{
-              font-size: 12px;
-              color:#282e3a;
+            #distanceCircle{
+              position: relative;
+              display: inline-block;
+              box-shadow: 0px 0px 10px black;
+              width: 180px;
+              height: 180px;
+              background-color: white;
+              border-top-left-radius: 100px;  /* 100px of height + 10px of border */
+              border-top-right-radius: 100px; /* 100px of height + 10px of border */
+              border-bottom-left-radius: 100px;  /* 100px of height + 10px of border */
+              border-bottom-right-radius: 100px; /* 100px of height + 10px of border */
+              background-color: #bcabae;
+            }
+            #canvasDist{
+                position: static;
+                /* display: inline-block; */
+                text-align: center;
             }
 
-            #distanceText{
-              font-size: 35px;
-              color: #282e3a;
-            }
 
-            #distanceTextMeasure{
-              font-size: 12px;
-              color: #282e3a;
-            }
+        /* OVERLAYING TEXTBOX */
+            #textInput{
+              width:100%;
+              height:100%;
+              position: relative;
+              text-align: center;
+              }
 
-                              @-webkit-keyframes move {
-                                0% {
-                                  transform: rotate(-90deg);
-                                }
-                                50% {
-                                  transform: rotate(90deg);
-                                }
-                                100% {
-                                  transform: rotate(-90deg);
-                                }
-                              }
+              #timeInputBox{
+                position: relative;
+                display: inline-block;
+                top: 80px;
+                left: 50px;
+                width:30%;
+                height:30%;
+                text-align: center;
+              }
 
-                              #overlay{
-                                position: fixed;
-                                width: 200%;
-                                height: 2000px;
-                                margin-top: -1000px;
-                                margin-left: -200px;
-                                background-color: white;
-                                text-align: center;
-                                visibility: hidden;
-                                opacity: 0.5;
-                              }
+              #timeText{
+                position: relative;
+                font-size: 35px;
+                color: white;
+              }
+
+              #timeTextMeasure{
+                position: relative;
+                font-size: 20px;
+                color: white;
+              }
+
+
+        /* speed text  */
+              #speedInputBox{
+                position: relative;
+                top:80px;
+                display: inline-block;
+                width:250px;
+                height:250px;
+                text-align: center;
+              }
+
+              #speedText{
+                    position: relative;
+                    display: inline-block;
+                    font-size: 35px;
+                    color: white;
+                    }
+
+              #speedTextMeasure{
+                      position: relative;
+                      font-size: 20px;
+                      color: white;
+                    }
+
+
+        /* distance text  */
+              #distInputBox{
+                position: relative;
+                display: inline-block;
+                top: 80px;
+                right: 50px;
+                width:30%;
+                height:30%;
+                text-align: center;
+              }
+
+              #distanceText{
+                position: relative;
+                font-size: 35px;
+                color: white;
+              }
+
+              #distanceTextMeasure{
+                position: relative;
+                font-size: 20px;
+                color: white;
+              }
