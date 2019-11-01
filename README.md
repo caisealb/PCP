@@ -30,13 +30,13 @@
            <p>PCP stands for Prototyping connected products, an elective from the Indstrial Design Engineering master at TU Delft. The elective is an introduction to prototyping IoT connected products. </p>
          </div>
          <div class="card">
-           <h3>Popular Post</h3>
+           <h2>Popular Post</h2>
            <div class="fakeimg">Image</div><br>
            <div class="fakeimg">Image</div><br>
            <div class="fakeimg">Image</div>
          </div>
          <div class="card">
-           <h3>Follow Me</h3>
+           <h2>Follow Me</h2>
            <p>Some text..</p>
          </div>
        </div>
