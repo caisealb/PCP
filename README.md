@@ -39,7 +39,7 @@
             Associated HTML, CSS and JavaScript files are combined to produce an interactive web-based application that visualises users’ workout data in real-time.
             <br><br>
             We use two sensors to receive relevant data:
-            <br><br>
+            <br>
             Adafruit BNO055 Absolute Orientation Sensor;
             <br>
             Adafruit Ultimate GPS Breakout.
@@ -59,6 +59,7 @@
          <div class="card" height="300">
            <h2> TU Delft Master Elective  </h2>
            <p2>PCP stands for Prototyping connected products, an elective from the Industrial Design Engineering master at TU Delft. The elective is an introduction to prototyping IoT connected products. </p2>
+           <br>
            <img src="pcp_images/TUDelft.png" height="50%" width="50%"/>
          </div>
          <div class="card">
