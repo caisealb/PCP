@@ -1,39 +1,53 @@
 /*
 color palette:
-grey: #282e3a
+grey/blueish: #282e3a
 yellow/orange: #eca72c
 Green: #2dcb74
 red: #ad343e
 Lightgrey: #bcabae
 */
 
+/* url(pcp_images/web4.jpg) */
+
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto Regular'),
+       local('Roboto-Regular'),
+       url(http://themes.googleusercontent.com/static/fonts/roboto/v11/2UX7WLTfW3W8TclTUvlFyQ.woff)
+       format('woff');
+}
 
 body {
-  font-family: Helvetica;
+  font-family: 'Roboto';
   padding: 20px;
   background: #282e3a;
 }
 
 /* Header/Blog Title */
 .header {
-  padding: 30px;
+  /* padding: 30px; */
   font-size: 40px;
+  height: 400px;
   text-align: center;
-  background: white;
-  visibility: 0.2;
+  background: url(pcp_images/wheelies.jpg);
+  padding: 20px;
 }
-
 
 h1{
-  color: #eca72c;
+  color: #2dcb74;
+  font-size: 40px;
 }
+
 h2{
-  color: #282e3a;
-  font-size: 30px;
+  color: #2dcb74;
+  font-size: 20px;
 }
 
 h3{
-  color: #bcabae;
+  color: #282e3a;
   font-size: 20px;
 }
 
@@ -47,8 +61,13 @@ p{
   font-size: 15px;
   text-align: justify;
   color: black;
+  line-height: 1.5;
 }
 
+.p2{
+  font-size: 10px;
+  line-height: 1;
+}
 
 
 /* Create two unequal columns that floats next to each other */
@@ -65,18 +84,13 @@ p{
   padding-left: 20px;
 }
 
-/* Fake image */
-.fakeimg {
-  background-color: #aaa;
-  width: 100%;
-  padding: 20px;
-}
-
 /* Add a card effect for articles */
 .card {
   background-color: white;
   padding: 20px;
   margin-top: 20px;
+  box-shadow: 0px 0px 5px black;
+  height: 1000px;
 }
 
 /* Clear floats after the columns */
@@ -87,12 +101,12 @@ p{
 }
 
 /* Footer */
-.footer {
+/* .footer {
   padding: 20px;
   text-align: center;
   background: #ddd;
   margin-top: 20px;
-}
+} */
 
 /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 800px) {
