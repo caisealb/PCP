@@ -1,18 +1,12 @@
 <html lang="en">
   <head>
-        <title> PCP group 3 </title>
         <link rel="stylesheet" href="webPage.css">
-
   </head>
 
-
   <body>
-      <h1> Prototyping Connected Products </h1>
-     <h2> Group 3: Caiseal Beardow, Yu & Kiki Deurvorst </h2>
 
      <div class="header">
-       <h2> PCP - Group 3
-         <br></br>
+       <h2>       PCP - Group 3
           Caiseal Beardow, Yu & Kiki Deurvorst
       </h2>
      </div>
