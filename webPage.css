@@ -23,14 +23,14 @@ Lightgrey: #bcabae
 body {
   font-family: 'Roboto';
   padding: 20px;
-  background: #282e3a;
+  background: white;
 }
 
 /* Header/Blog Title */
 .header {
-  padding: 30px;
+  /* padding: 30px; */
   font-size: 40px;
-  height: 400px;
+  height: 800px;
   text-align: center;
   background: #bcabae;
   background-repeat: repeat;
@@ -88,6 +88,8 @@ p{
 /* Add a card effect for articles */
 .card {
   background-color: white;
+  stroke: #282e3a;
+  stroke-width: 2px;
   padding: 20px;
   margin-top: 20px;
 }
