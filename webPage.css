@@ -1,10 +1,21 @@
+/*
+color palette:
+grey: #282e3a
+yellow/orange: #eca72c
+Green: #2dcb74
+red: #ad343e
+Lightgrey: #bcabae
+*/
+
+
 body {
   background-color: #282e3a;
-    text-align: center;
+  text-align: center;
 }
+
 h1 {
-  color: blue;
+  color: white;
 }
-p {
-  color: red;
+h2 {
+  color: #bcabae;
 }
