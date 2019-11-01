@@ -71,9 +71,8 @@ p{
 /* section 1: our project */
 #wheelchairImage{
   background: url(pcp_images/wheelchair.jpg);
-  height: auto;
+  height: 800px;
 }
-
 
 
 /* Create two unequal columns that floats next to each other */
