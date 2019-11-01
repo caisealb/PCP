@@ -65,9 +65,9 @@
          <div class="card">
            <h2> About Us  </h2>
              <div id="pictureContainer">
-               <img src="pcp_images/wheelies.jpg"/>
+               <img src="pcp_images/cais.jpg"/>
                   <div class ="p2"> Caiseal Beardow - DFI </div>
-               <img src="pcp_images/TUDelft.jpg"/>
+               <img src="pcp_images/yu.jpg"/>
                   <div class ="p2"> Yu Zhang - IPD </div>
                <img src="pcp_images/kiki.jpg"/>
                   <div class ="p2"> Kiki Deurvorst- DFI </div>
