@@ -55,20 +55,14 @@
          </div>
          <div class="card">
            <h2> About Us  </h2>
-           <div id="pictureContainer">
-             <img src="pcp_images/wheelies.jpg"/>
-             <img src="pcp_images/TUDelft.jpg"/>
-             <img src="pcp_images/iot.jpg"/>
-           </div>
-           <div id="pictureNames">
-           <p> Caiseal Beardow - DFI </p>
-           <p> Yu Zhang - IPD </p>
-           <p> Kiki Deurvorst- DFI </p>
-           </div>
-
-
-
-           <img src="pcp_images/TUDelft.png"/>
+             <div id="pictureContainer">
+               <img src="pcp_images/wheelies.jpg"/>
+                <p> Caiseal Beardow - DFI </p>
+               <img src="pcp_images/TUDelft.jpg"/>
+                <p> Yu Zhang - IPD </p>
+               <img src="pcp_images/kiki.jpg"/>
+                  <p> Kiki Deurvorst- DFI </p>
+             </div>
          </div>
        </div>
 
