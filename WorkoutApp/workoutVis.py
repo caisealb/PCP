@@ -38,7 +38,7 @@ speedVal = 0
 app = Flask(__name__)
 
 app.config['SECRET KEY'] = 'secret!'
-socketio = SocketIO(app, cors_allowed_origins = "*")
+socketio = SocketIO(app)
 
 # App routes - functions and templates for various addresses
 @app.route('/')
@@ -209,4 +209,4 @@ thread.start()
 
 if __name__ == '__main__':
     #Run socketIO app
-    socketio.run(app,port=5000,host='0.0.0.0')
+    socketio.run(app, host='0.0.0.0')
