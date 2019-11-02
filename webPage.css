@@ -31,6 +31,7 @@ body {
   position: sticky;
   width: 100%;
   height: 50px;
+  opacity: 0.5;
   background: url(pcp_images/wheelies.jpg);
 }
 
