@@ -118,7 +118,8 @@
 <!-- step1 -->
   <p class="title"> Step 1: Read IMU data on feather </p>
           <p> The IMU (BNO055) along with the Feather is placed on the axle of one side of the wheelchair. It calculates the cumulative number of rotations made by the wheel, which is then processed to calculate cumulative distance travelled and current speed.
-              <img src="pcp_images/Feather_Wheel.JPG"/>
+            <br> <br>
+            <img src="pcp_images/Feather_Wheel.JPG"/>
             <br> <br>
             Connection of Feather to BNO055:<br>
             	3V 	----- 	VIN<br>
@@ -127,11 +128,13 @@
             	SCL 	----- 	SCL
             <br><br>
             BNO055 is a 9 degrees of freedom IMU. It contains a gyroscope, an accelerometer and a magnetometer. To run this sensor in Arduino, the Adafruit Sensor and Adafruit BNO055 library need to be included.
-            <br>
+            <br><br>
             <img src="pcp_images/axisvalue.JPG"/>
+            <br><br>
             After creating a sensor event, by calling the orientation function and specifying the axis (here is x from xyz), the Euler angle of the sensor position around that axis will be calculated. In the case of our wheelchair, the axis of the wheel overlaps with the x axis of the sensor, so the Euler angle of the sensor along the x-axis corresponds to the wheel’s rotation.
-            <br>
+            <br> <br>
             <img src="pcp_images/distspeed.JPG"/>
+            <br><br>
             Based on that, we can calculate cumulative total wheel rotations and multiply this by the circumference of the wheel to find distance travelled. Then the speed can be calculated at a set time interval.
             <br>
             For detailed information, go to https://datacentricdesign.org/docs/2019/04/30/sensors-orientation
@@ -141,32 +144,33 @@
   <p class="title"> Step 2: Feather to Pi (BLE) </p>
           <p>
                 In order to send data between the feather and the pi, we need to set up GATT characteristics and a GATT service on the feather.
+                <br><br>
                 <img src="pcp_images/gatt_feather.jpg"/>
-              <br><br>
+                <br><br>
           </p>
 
 <!-- step 3  -->
 <p class="title"> Step 3: Subscribe to GATT service </p>
           <p>
                 We define the characteristics in our python script using the same ID’s set in the arduino script.
-                <br>
+                <br><br>
                 <img src="pcp_images/subscribe_GATT.jpg"/>
-                <br>
+                <br><br>
                 We must then initialise the Bluetooth adapter using the pygatt library and use this library to subscribe to the characteristics.
-                <br>
+                <br><br>
                 <img src="pcp_images/import_pygatt.jpg"/>
-                <br>
+                <br><br>
                 <img src="pcp_images/gatt_subscribe.jpg"/>
-                <br>
+                <br><br>
           </p>
 
 <!-- step 4  -->
 <p class="title"> Step 4: Read GPS on arduino mega </p>
             <p>
                 An Adafruit Ultimate GPS is connected to Arduino Mega. It collects GPS data of its location automatically once it is turned on.
-                <br>
+                <br><br>
                 <img src="pcp_images/GPS_setup.jpg"/>
-                <br>
+                <br><br>
                   Connection of Mega to GPS:<br>
                 	5V 	----- 	VIN<br>
                 	GND	----- 	GND<br>
@@ -174,9 +178,9 @@
                   TX 	----- 	RX1
                   <br><br>
                 With an empty script running on the Mega, the GPS sends raw NMEA data including connected satellite, current time, latitude, longitude and altitude to the serial port. Since only the latitude and longitude is needed to define a location in the Google Maps API, the Mega needs to run a script that can parse the raw data and then output the latitude and longitude data. To run the whole script, the Adafruit GPS library needs to be included. The image below shows the loop function of the script. After parsing the NMEA data, the latitude (latdeg) and longitude (longdeg) needs to be printed and thus sent to the serial port. Here Serial.print(latdeg, 8) formats the latitude data as a float value with 8 decimals. If this is not specified, by default only 2 decimal places will be printed. Google Maps requires an 8 decimal float as its latitude and longitude input, so here it is needed to serial print 8 decimal places.
-                  <br>
+                  <br><br>
                   <img src="pcp_images/GPScode.jpg"/>
-                  <br>
+                  <br><br>
                   For detailed information, go to https://datacentricdesign.org/docs/2019/04/30/sensors-gps.
                   <br>
             </p>
@@ -185,9 +189,9 @@
 <p class="title"> Step 5: Read GPS data from serial, process in thread  </p>
             <p>
                   In python, we create a serial communication function that opens a connection with the serial port.
-                  <br>
+                  <br><br>
                   <img src="pcp_images/GPS_setup.jpg"/>
-                  <br>
+                  <br><br>
             </p>
 
 
