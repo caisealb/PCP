@@ -117,21 +117,21 @@
               Process data on feather  (distance and speed)<br>
               Create GATT characteristics for speed and distance <br>
               Create GATT service (using ID’s)
-              <p>
+              </p>
 
             <p class="title"> Subscribe to GATT service (WorkoutVis.py) </p>
               <p>
               Define characteristics in python script using ID’s  <br>
               Initialise Bluetooth adapter using pygatt library<br>
               Use PYGATT library to subscribe to characteristics set in arduino script
-              <p>
+              </p>
 
             <p class="title"> Read and print GPS data over serial (GPS_parsing.ino) </p>
               <p>
               Read longitude and latitude from gps sensor   <br>
               Parse using adafruit library <br>
               Printing it over serial
-              <p>
+              </p>
 
             <p class="title"> Read and process GPS data from serial (WorkoutVis.py) </p>
               <p>
@@ -140,14 +140,14 @@
               Place incoming data in an array and split by commas (strip and split functions)<br>
               Assign relevant index values to latitude and longitude variables <br>
               Place serial comms function inside thread - this separates out serial comms from the rest of the code and allows it to run concurrently. If we didn’t do this, serial comms would block the rest of the code as it includes a while loop.
-              <p>
+              </p>
 
               <p class="title"> Set up websocket (WorkoutVis.py) </p>
               <p>
               Set up websocket using flask and flask.io, creating routes for each app address (1 address = 1 HTML file)<br>
               Emit data as JSON objects, broadcasting to all instances of web page<br>
               Create websocket functions corresponding to each JSON object type
-              <p>
+              </p>
 
               <p class="title"> Actuate data through online webPage (html/css/js - start/workout/summary) </p>
               <p>
