@@ -169,7 +169,7 @@
             <p>
                 An Adafruit Ultimate GPS is connected to Arduino Mega. It collects GPS data of its location automatically once it is turned on.
                 <br><br>
-                <img src="pcp_images/GPS_setup.jpg"/>
+                <img src="pcp_images/GPS_setup.JPG"/>
                 <br><br>
                   Connection of Mega to GPS:<br>
                 	5V 	----- 	VIN<br>
