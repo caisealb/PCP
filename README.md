@@ -58,7 +58,7 @@
 
          <div class="card">
            <h2> Process Summary </h2>
-           <h5> For a detailed explanation of all the steps, refer to the technical aspects section below. </h5>
+           <h5> For a detailed explanation of all the steps, refer to the technical details below. </h5>
 
             <p class="title">  1. Read IMU data from feather </p>
               <p class="tab">
