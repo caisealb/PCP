@@ -68,7 +68,7 @@
             <br>
             For detailed information, go to https://datacentricdesign.org/docs/2019/04/30/sensors-orientation
             </p>
-            <br><br>
+  
 
             <p class="title"> Feather to Pi (BLE) </p>
             <p>
