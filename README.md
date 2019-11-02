@@ -118,7 +118,7 @@
 <!-- step1 -->
   <p class="title"> Step 1: Read IMU data on feather </p>
           <p> The IMU (BNO055) along with the Feather is placed on the axle of one side of the wheelchair. It calculates the cumulative number of rotations made by the wheel, which is then processed to calculate cumulative distance travelled and current speed.
-              <img src="pcp_images/Feather_Wheel.jpg"/>
+              <img src="pcp_images/Feather_Wheel.JPG"/>
             <br> <br>
             Connection of Feather to BNO055:<br>
             	3V 	----- 	VIN<br>
