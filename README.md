@@ -6,8 +6,9 @@
   <body>
 
      <div class="header">
-       <h1>   Prototyping Connected Products  </h1>
-       <h3 style="font-size:50%">   Group 3: Caiseal Beardow, Yu Zhang & Kiki Deurvorst </h3>
+       <h1>   Wheelchair Workout Tracker  </h1>
+       <h3 style="font-size:50%">   Prototyping Connected Products Group 3
+         <br> Caiseal Beardow, Yu Zhang & Kiki Deurvorst </h3>
      </div>
 
      <div class="row">
