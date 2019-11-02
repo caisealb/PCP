@@ -7,8 +7,10 @@
 
      <div class="header">
        <h1>   Wheelchair Workout Tracker  </h1>
-       <h3 style="font-size:50%">   Prototyping Connected Products Group 3
-         <br> Caiseal Beardow, Yu Zhang & Kiki Deurvorst </h3>
+       <h3 style="font-size:50%">   Prototyping Connected Products - Group 3 </h3>
+         <br>
+         <p>Caiseal Beardow, Yu Zhang & Kiki Deurvorst </p>
+
      </div>
 
      <div class="row">
