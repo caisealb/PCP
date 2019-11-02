@@ -56,7 +56,6 @@
          <div class="card">
            <h2> Technical Details </h2>
           <p class="title"> Connection of Feather to BNO055: </p>
-          <br>
             <p> The IMU (BNO055) along with the Feather is placed on the axle of one side of the wheelchair to calculate
               the distance of the wheelchair moves, the current speed of the wheelchair based on its rotation counts.
             <br> <br>
