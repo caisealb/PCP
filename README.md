@@ -68,7 +68,7 @@
             <br>
             For detailed information, go to https://datacentricdesign.org/docs/2019/04/30/sensors-orientation
             </p>
-  
+
 
             <p class="title"> Feather to Pi (BLE) </p>
             <p>
@@ -104,7 +104,62 @@
                   <br>
             </p>
          </div>
+
+
+         <div class="card">
+           <h2> Process Overview </h2>
+
+    <p class="title"> Read speed & distance data on BNO and prepare for broadcasting using GATT service (BNO_FEATHER_PI_BLE.ino) </p>
+      <p>
+      Read data from BNO with on feather <br>
+      Process data on feather  (distance and speed)<br>
+      Create GATT characteristics for speed and distance <br>
+      Create GATT service (using ID’s)
+      <p>
+
+          <p class="title"> Subscribe to GATT service (WorkoutVis.py) </p>
+            <p>
+            Define characteristics in python script using ID’s  <br>
+            Initialise Bluetooth adapter using pygatt library<br>
+            Use PYGATT library to subscribe to characteristics set in arduino script
+            <p>
+
+              <p class="title"> Read and print GPS data over serial (GPS_parsing.ino) </p>
+                <p>
+                Read longitude and latitude from gps sensor   <br>
+                Parse using adafruit library <br>
+                Printing it over serial
+                <p>
+
+                  <p class="title"> Read and process GPS data from serial (WorkoutVis.py) </p>
+                    <p>
+                    In python, we create a serial communication function that opens a connection with the serial port <br>
+                    Read incoming data and decode it (coming in as bytes <br>
+                    Place incoming data in an array and split by commas (strip and split functions)<br>
+                    Assign relevant index values to latitude and longitude variables <br>
+                    Place serial comms function inside thread - this separates out serial comms from the rest of the code and allows it to run concurrently. If we didn’t do this, serial comms would block the rest of the code as it includes a while loop.
+                    <p>
+
+                      <p class="title"> Set up websocket (WorkoutVis.py) </p>
+                        <p>
+                          Set up websocket using flask and flask.io, creating routes for each app address (1 address = 1 HTML file)<br>
+                          Emit data as JSON objects, broadcasting to all instances of web page<br>
+                          Create websocket functions corresponding to each JSON object type
+                        <p>
+
+                          <p class="title"> Actuate data through online webPage (html/css/js - start/workout/summary) </p>
+                            <p>
+                              Create web interface with HTML/CSS - three pages (start/workout/summary), link them together using Javascript <br>
+                              Create JS script that uses socket.io.js (JS file hosted online by socket.io developers) to receive JSON objects from Python script, parse JSON objects and assign the resulting data to variables<br>
+                              Use HTML DOM element objects to insert these variables into webpage structure (i.e. displayed text)<br>
+                              Use Google Maps API to use variables produced from GPS JSON objects as map coordinates <br>
+                              Create JS script that uses localStorage to keep track of accumulated user data in a session, then passes it to summary page HTML
+                              </p>
+         </div>
+
        </div>
+
+
 
 
        <div class="rightcolumn">
