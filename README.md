@@ -78,6 +78,19 @@
                   <div class ="p2"> Kiki Deurvorst- DFI </div>
              </div>
          </div>
+         <div class="card">
+           <h2> Components </h2>
+             <div id="pictureContainer">
+               <img src="pcp_images/IMU_setup.JPG"/>
+               <br>
+                  <div class ="p2"> The IMU and feather connected to the wheel of the wheelchair </div>
+                  <br>
+                  <br>
+               <img src="pcp_images/GPS_setup.JPG"/>
+               <br>
+                  <div class ="p2"> The GPS sensor on an Arduino Mega, connected to the Pi over serial.  </div>
+             </div>
+         </div>
        </div>
 
     </div>
