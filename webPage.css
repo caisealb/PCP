@@ -61,7 +61,7 @@ h5{
 
 p{
   font-size: 15px;
-  text-align: justify;
+  /* text-align: justify; */
   color: black;
   line-height: 1.5;
 }
