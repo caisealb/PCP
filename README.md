@@ -55,11 +55,11 @@
 
          <div class="card">
            <h2> Technical Details </h2>
-          <p> The IMU (BNO055) along with the Feather is placed on the axle of one side of the wheelchair to calculate the distance of the wheelchair moves, the current speed of the wheelchair based on its rotation counts.
-            <br>
-            <br>
-            Connection of Feather to BNO055:
-            <br>
+          <p class="title"> Connection of Feather to BNO055: </p>
+          <br>
+            <p> The IMU (BNO055) along with the Feather is placed on the axle of one side of the wheelchair to calculate
+              the distance of the wheelchair moves, the current speed of the wheelchair based on its rotation counts.
+            <br> <br>
             	3V 	----- 	VIN<br>
             	GND 	----- 	GND<br>
             	SDA 	----- 	SDA<br>
@@ -71,51 +71,40 @@
             </p>
             <br><br>
 
-            Feather to Pi (BLE)
-            <br><br>
-            When mounted on the wheelchair’s wheel axle, the BNO sensor provides us with rotation data that is then used to calculate cumulative distance travelled and, in combination with time elapsed,
-            a user’s current speed. This data is sent to the Pi via Bluetooth using GATT commands.
-            <br><br>
-            The GPS sensor is connected to an Arduino Mega that collects and formats coordinates, then sends them to the Pi via serial communication.
-            <br><br>
-            The Python script running on the Pi parses these data and packages them in a format that is usable by the JavaScript files implemented in our web application. Using a websocket, data is visualised in real-time and updated accordingly as the user moves with their wheelchair.
+            <p class="title"> Feather to Pi (BLE) </p>
+            <br>
+            <p>
+                  Read GPS on arduino mega<br>
+                  An Adafruit Ultimate GPS is connected to Arduino Mega. It collects GPS data of its location automatically once it is turned on.
+                <br><br>
+                  Connection of Mega to GPS:
+                	5V 	----- 	VIN
+                	GND	----- 	GND
+                	RX	----- 	TX1
+                	TX 	----- 	RX1
+                  <br><br>
+                  With an empty script running on Mega, the GPS sends raw NMEA data including connected satellite, current time, latitude, longitude, attitude to the serial port. Since only the latitude and longitude is needed to make a location in Google Map, Mega needs to run a script that can parse the raw data and only output the latitude and longitude data. To run the whole script, Adafruit GPS library needs to be added. Below shows the loop function of script, after parsing the NMEA data, the latitude (latdeg) and longitude (longdeg) needs to be printed and thus sent to the serial port. Here Serial.print(latdeg, 8) means in the serial port it prints out the latitude in a float with 8 decimals. If this is not specified, by default only 2 decimal float will be printed and sent by serial port. Google Map does require an 8 decimal float as its latitude and longitude input, so here it is needed to serial print 8 decimal.
+                  <br> For detailed information, go to https://datacentricdesign.org/docs/2019/04/30/sensors-gps.
+                  <br>
+            </p>
 
+            <p class="title"> Mega to Pi (serial) </p>
+            <br>
+            <p>
+                  Read GPS on arduino mega<br>
+                  An Adafruit Ultimate GPS is connected to Arduino Mega. It collects GPS data of its location automatically once it is turned on.
+                <br><br>
+                  Connection of Mega to GPS:
+                	5V 	----- 	VIN
+                	GND	----- 	GND
+                	RX	----- 	TX1
+                	TX 	----- 	RX1
+                  <br><br>
+                  With an empty script running on Mega, the GPS sends raw NMEA data including connected satellite, current time, latitude, longitude, attitude to the serial port. Since only the latitude and longitude is needed to make a location in Google Map, Mega needs to run a script that can parse the raw data and only output the latitude and longitude data. To run the whole script, Adafruit GPS library needs to be added. Below shows the loop function of script, after parsing the NMEA data, the latitude (latdeg) and longitude (longdeg) needs to be printed and thus sent to the serial port. Here Serial.print(latdeg, 8) means in the serial port it prints out the latitude in a float with 8 decimals. If this is not specified, by default only 2 decimal float will be printed and sent by serial port. Google Map does require an 8 decimal float as its latitude and longitude input, so here it is needed to serial print 8 decimal.
+                  <br> For detailed information, go to https://datacentricdesign.org/docs/2019/04/30/sensors-gps.
+                  <br>
+            </p>
          </div>
-
-
-
-
-
-
-
-         Feather to Pi (BLE)
-
-         Read GPS on arduino mega
-         An Adafruit Ultimate GPS is connected to Arduino Mega. It collects GPS data of its location automatically once it is turned on.
-
-         Connection of Mega to GPS:
-         	5V 	----- 	VIN
-         	GND	----- 	GND
-         	RX	----- 	TX1
-         	TX 	----- 	RX1
-
-         With an empty script running on Mega, the GPS sends raw NMEA data including connected satellite, current time, latitude, longitude, attitude to the serial port. Since only the latitude and longitude is needed to make a location in Google Map, Mega needs to run a script that can parse the raw data and only output the latitude and longitude data. To run the whole script, Adafruit GPS library needs to be added. Below shows the loop function of script, after parsing the NMEA data, the latitude (latdeg) and longitude (longdeg) needs to be printed and thus sent to the serial port. Here Serial.print(latdeg, 8) means in the serial port it prints out the latitude in a float with 8 decimals. If this is not specified, by default only 2 decimal float will be printed and sent by serial port. Google Map does require an 8 decimal float as its latitude and longitude input, so here it is needed to serial print 8 decimal.
-
-
-         For detailed information, go to https://datacentricdesign.org/docs/2019/04/30/sensors-gps.
-
-
-         Mega to Pi (serial)
-         Websocket/web app
-         Division of pages into html files
-         Start page with timer
-         JS in Workout.html that receives and updates data
-         Collecting and passing data to summary page
-
-
-
-
-
        </div>
 
 
