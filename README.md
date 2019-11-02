@@ -31,7 +31,7 @@
          <div class="card">
            <h2> System Architecture </h2>
            <h5> A sytematic overview of the architecture used for the prototype </h5>
-           <img src="pcp_images/SYSTEM_ARCHITECTURE.jpg"/>
+           <img src="pcp_images/systemArchitecture-100.jpg"/>
          </div>
 
          <div class="card">
