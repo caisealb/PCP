@@ -207,60 +207,64 @@
             </p>
 
 
-<!-- step 5  -->
-<p class="title"> Mega to Pi (serial) </p>
-                <p>
-                      Read GPS on arduino mega<br>
-                      An Adafruit Ultimate GPS is connected to Arduino Mega. It collects GPS data of its location automatically once it is turned on.
-                      <br><br>
-                      Connection of Mega to GPS:<br>
-                    	5V 	----- 	VIN<br>
-                    	GND	----- 	GND<br>
-                      RX	----- 	TX1<br>
-                      TX 	----- 	RX1
-                      <br><br>
-                      With an empty script running on Mega, the GPS sends raw NMEA data including connected satellite, current time, latitude, longitude, attitude to the serial port. Since only the latitude and longitude is needed to make a location in Google Map, Mega needs to run a script that can parse the raw data and only output the latitude and longitude data. To run the whole script, Adafruit GPS library needs to be added. Below shows the loop function of script, after parsing the NMEA data, the latitude (latdeg) and longitude (longdeg) needs to be printed and thus sent to the serial port. Here Serial.print(latdeg, 8) means in the serial port it prints out the latitude in a float with 8 decimals. If this is not specified, by default only 2 decimal float will be printed and sent by serial port. Google Map does require an 8 decimal float as its latitude and longitude input, so here it is needed to serial print 8 decimal.
-                      <br>
-                      <br>For detailed information, go to https://datacentricdesign.org/docs/2019/04/30/sensors-gps.
-                      <br>
-                </p>
-
 <!-- step 6  -->
-<p class="title"> Mega to Pi (serial) </p>
-                <p>
-                      Read GPS on arduino mega<br>
-                      An Adafruit Ultimate GPS is connected to Arduino Mega. It collects GPS data of its location automatically once it is turned on.
-                      <br><br>
-                      Connection of Mega to GPS:<br>
-                    	5V 	----- 	VIN<br>
-                    	GND	----- 	GND<br>
-                      RX	----- 	TX1<br>
-                      TX 	----- 	RX1
-                      <br><br>
-                      With an empty script running on Mega, the GPS sends raw NMEA data including connected satellite, current time, latitude, longitude, attitude to the serial port. Since only the latitude and longitude is needed to make a location in Google Map, Mega needs to run a script that can parse the raw data and only output the latitude and longitude data. To run the whole script, Adafruit GPS library needs to be added. Below shows the loop function of script, after parsing the NMEA data, the latitude (latdeg) and longitude (longdeg) needs to be printed and thus sent to the serial port. Here Serial.print(latdeg, 8) means in the serial port it prints out the latitude in a float with 8 decimals. If this is not specified, by default only 2 decimal float will be printed and sent by serial port. Google Map does require an 8 decimal float as its latitude and longitude input, so here it is needed to serial print 8 decimal.
-                      <br>
-                      <br>For detailed information, go to https://datacentricdesign.org/docs/2019/04/30/sensors-gps.
-                      <br>
-                </p>
+<p class="title"> Step 6: Websocket  </p>
+            <p>
+                  In order to display our continuously updating GPS, speed and distance data in a browser, we must set up a websocket. We do this using flask and flask_socketio, creating routes for each app address (1 address = 1 HTML file).
+                  <br><br>
+                  <img src="pcp_images/flask.jpg"/>
+                  <br><br>
+                  <img src="pcp_images/route.jpg"/>
+                  <br><br>
+                  The data is emitted as JSON objects, broadcasting to all instances of web page.We create websocket functions corresponding to each JSON object that we send.
+                  <br><br>
+                  <img src="pcp_images/json.jpg"/>
+                  <br><br>
+            </p>
+
 
 <!-- step 7  -->
-<p class="title"> Mega to Pi (serial) </p>
+<p class="title"> Step 7: WebApp </p>
                 <p>
-                      Read GPS on arduino mega<br>
-                      An Adafruit Ultimate GPS is connected to Arduino Mega. It collects GPS data of its location automatically once it is turned on.
+                      In order to display the data in the browser, we designed three HTML pages that correspond with each other. The “Start” page includes a countdown, directing the user to the workout overview in which a route is plotted using a Google Maps API (next section). It also shows the current speed, distance and time of the workout. Users can stop the workout which directs them to a summary page, containing an overview of their workout. Refer to workout/summary/start.html/js/css for details.
                       <br><br>
-                      Connection of Mega to GPS:<br>
-                    	5V 	----- 	VIN<br>
-                    	GND	----- 	GND<br>
-                      RX	----- 	TX1<br>
-                      TX 	----- 	RX1
+                      <img src="pcp_images/interfaceStart.jpg"/>
                       <br><br>
-                      With an empty script running on Mega, the GPS sends raw NMEA data including connected satellite, current time, latitude, longitude, attitude to the serial port. Since only the latitude and longitude is needed to make a location in Google Map, Mega needs to run a script that can parse the raw data and only output the latitude and longitude data. To run the whole script, Adafruit GPS library needs to be added. Below shows the loop function of script, after parsing the NMEA data, the latitude (latdeg) and longitude (longdeg) needs to be printed and thus sent to the serial port. Here Serial.print(latdeg, 8) means in the serial port it prints out the latitude in a float with 8 decimals. If this is not specified, by default only 2 decimal float will be printed and sent by serial port. Google Map does require an 8 decimal float as its latitude and longitude input, so here it is needed to serial print 8 decimal.
-                      <br>
-                      <br>For detailed information, go to https://datacentricdesign.org/docs/2019/04/30/sensors-gps.
-                      <br>
+                      <img src="pcp_images/interface.jpg"/>
+                      <br><br>
+                      We created a JS script that uses socket.io.js (JS file hosted online by socket.io developers) to receive JSON objects from the Python script, parse these JSON objects and assign the resulting data to variables. We make use of HTML DOM element objects to insert these variables into the webpage structure (getElementByID).
+                      <br><br>
+                      <img src="pcp_images/json_html.jpg"/>
+                      <br><br>
                 </p>
 
+
+<!-- step 8  -->
+<p class="title"> Step 8: Google Maps API </p>
+                <p>
+                  To implement a Google map in a webpage, a Google Maps Javascript API is needed. For information on how to implement this API, go to https://developers.google.com/maps/documentation/javascript/get-api-key.
+                  To actually activate your API key, you need to go to your Google Cloud Platform account page and fill in your credit card information - but don’t worry, using the API is free! In the Javascript file, add   <script src="https://maps.googleapis.com/maps/api/js?key=YOURAPIKEY&libraries=drawing&callback=initMap" async defer></script>.
+                  <br><br>
+                  Additionally, the function initMap needs to be called to initialize the map on the webpage. As shown, a map variable needs to be identified, its zoom in level, center and styles can be customized by you.
+                  <br><br>
+                  <img src="pcp_images/initmap.JPG"/>
+                  <br><br>
+                  To draw out the live route of the user while moving, the position of the user needs to be updated - in this case, once every second. As shown, when the new latitude and longitude come in over the websocket, we combine them as an object and they are added to the locations array. Then the Polyline function will draw out the route based on the locations array. Since we want to draw out a live route which changes all the time, we call the updatePosition function every second.
+                  <br><br>
+                  <img src="pcp_images/updateposition.JPG"/>
+                  <br><br>
+                  For more tutorials about this API, go to https://developers.google.com/maps/documentation/javascript/adding-a-google-map
+                  <br><br>
+                </p>
+
+<!-- step 9  -->
+<p class="title"> Step 9: Google Maps API </p>
+                <p>
+                When users press the stop button, all session data must be gathered in the summary page. We created a JS script that uses localStorage to keep track of accumulated user data in a session, then passes it to the summary page HTML.
+                <br><br>
+                <img src="pcp_images/localStorage.jpg"/>
+                <br><br>
+                </p>
 
          </div>
      </div>
