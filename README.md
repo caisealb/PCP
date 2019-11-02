@@ -4,7 +4,7 @@
   </head>
 
   <body>
-    
+
      <div class="header">
        <h1>   Prototyping Connected Products  </h1>
        <h3 style="font-size:50%">   Group 3: Caiseal Beardow, Yu Zhang & Kiki Deurvorst </h3>
@@ -110,7 +110,7 @@
          <div class="card">
            <h2> Process Overview </h2>
 
-            <p class="title"> 1. Read speed & distance data on BNO and prepare for broadcasting using GATT service (BNO_FEATHER_PI_BLE.ino) </p>
+            <p class="title"> 1. Read speed & distance data on BNO and prepare for broadcasting using GATT service (BNO_FEATHER_TO_PI.ino) </p>
               <p class="tab">
               Read data from BNO with on feather <br>
               Process data on feather  (distance and speed)<br>
