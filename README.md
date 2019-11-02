@@ -179,10 +179,10 @@
                   <br><br>
                 With an empty script running on the Mega, the GPS sends raw NMEA data including connected satellite, current time, latitude, longitude and altitude to the serial port. Since only the latitude and longitude is needed to define a location in the Google Maps API, the Mega needs to run a script that can parse the raw data and then output the latitude and longitude data. To run the whole script, the Adafruit GPS library needs to be included. The image below shows the loop function of the script. After parsing the NMEA data, the latitude (latdeg) and longitude (longdeg) needs to be printed and thus sent to the serial port. Here Serial.print(latdeg, 8) formats the latitude data as a float value with 8 decimals. If this is not specified, by default only 2 decimal places will be printed. Google Maps requires an 8 decimal float as its latitude and longitude input, so here it is needed to serial print 8 decimal places.
                   <br><br>
-                  <img src="pcp_images/GPScode.jpg"/>
+                  <img src="pcp_images/GPScode.JPG"/>
                   <br><br>
                   For detailed information, go to https://datacentricdesign.org/docs/2019/04/30/sensors-gps.
-                  <br>
+                  <br><br>
             </p>
 
 <!-- step 5  -->
@@ -190,7 +190,19 @@
             <p>
                   In python, we create a serial communication function that opens a connection with the serial port.
                   <br><br>
-                  <img src="pcp_images/GPS_setup.jpg"/>
+                  <img src="pcp_images/serial_py.jpg"/>
+                  <br><br>
+                  In order to use the incoming data, which is coming in as bytes, we need to decode it. We then place the incoming data in an array and split it by commas (strip and split functions). (In our preceding Arduino script, we printed latitude and longitude data with commas in between, to allow us to split the data in this way.)
+                  <br><br>
+                  <img src="pcp_images/decode_split.jpg"/>
+                  <br><br>
+                  We then assign data at relevant index values to latitude and longitude variables that can be sent through a websocket.
+                  <br><br>
+                  <img src="pcp_images/variablesSocket.jpg"/>
+                  <br><br>
+                  We also place the serial comms function inside a thread - this separates out serial comms from the rest of the code and allows it to run concurrently. If we didn’t do this, serial comms would block the rest of the code as it includes a while loop. Threading allows us to place serial comms in a separate flow of execution.
+                  <br><br>
+                  <img src="pcp_images/thread.jpg"/>
                   <br><br>
             </p>
 
