@@ -23,7 +23,8 @@ Lightgrey: #bcabae
 body {
   font-family: 'Roboto';
   padding: 20px;
-  background: white;
+  background: url(pcp_images/wheelies.jpg);
+  background-repeat: repeat;
 }
 
 
@@ -33,8 +34,8 @@ body {
   font-size: 40px;
   height: 400px;
   text-align: center;
-  background: url(pcp_images/wheelies.jpg);
   padding: 20px;
+  background: white;
   /* opacity: 0.5; */
 }
 
