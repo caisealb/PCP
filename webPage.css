@@ -27,11 +27,11 @@ body {
 }
 
 
-#ear{
+#backHeader{
   position: fixed;
   width: 100%;
   height: 50px;
-  background-color: #bcabae;
+  background: url(pcp_images/wheelies.jpg);
 }
 
 /* Header/Blog Title */

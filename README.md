@@ -5,8 +5,8 @@
 
   <body>
 
-<div id="ear">
-    <img src="pcp_images/wheelchairIcon.jpg"/>
+<div id="backHeader">
+    <!-- <img src="pcp_images/wheelchairIcon.jpg"/> -->
 </div>
 
      <div class="header">
