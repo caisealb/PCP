@@ -181,21 +181,12 @@
                   <br>
             </p>
 
-<!-- step 4  -->
-<p class="title"> Mega to Pi (serial) </p>
+<!-- step 5  -->
+<p class="title"> Step 5: Read GPS data from serial, process in thread  </p>
             <p>
-                  Read GPS on arduino mega<br>
-                  An Adafruit Ultimate GPS is connected to Arduino Mega. It collects GPS data of its location automatically once it is turned on.
-                  <br><br>
-                  Connection of Mega to GPS:<br>
-                	5V 	----- 	VIN<br>
-                	GND	----- 	GND<br>
-                  RX	----- 	TX1<br>
-                  TX 	----- 	RX1
-                  <br><br>
-                  With an empty script running on Mega, the GPS sends raw NMEA data including connected satellite, current time, latitude, longitude, attitude to the serial port. Since only the latitude and longitude is needed to make a location in Google Map, Mega needs to run a script that can parse the raw data and only output the latitude and longitude data. To run the whole script, Adafruit GPS library needs to be added. Below shows the loop function of script, after parsing the NMEA data, the latitude (latdeg) and longitude (longdeg) needs to be printed and thus sent to the serial port. Here Serial.print(latdeg, 8) means in the serial port it prints out the latitude in a float with 8 decimals. If this is not specified, by default only 2 decimal float will be printed and sent by serial port. Google Map does require an 8 decimal float as its latitude and longitude input, so here it is needed to serial print 8 decimal.
+                  In python, we create a serial communication function that opens a connection with the serial port.
                   <br>
-                  <br>For detailed information, go to https://datacentricdesign.org/docs/2019/04/30/sensors-gps.
+                  <img src="pcp_images/GPS_setup.jpg"/>
                   <br>
             </p>
 
