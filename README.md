@@ -7,7 +7,7 @@
 
 
      <div class="header">
-       <h1>   Prototyping Conncected Products  </h1>
+       <h1>   Prototyping Connected Products  </h1>
        <h3 style="font-size:50%">   Group 3: Caiseal Beardow, Yu Zhang & Kiki Deurvorst </h3>
      </div>
 
