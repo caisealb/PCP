@@ -57,16 +57,26 @@
 
          <div class="card">
            <h2> Technical Details </h2>
+
+
           <p class="title"> Connection of Feather to BNO055: </p>
             <p> The IMU (BNO055) along with the Feather is placed on the axle of one side of the wheelchair to calculate
               the distance of the wheelchair moves, the current speed of the wheelchair based on its rotation counts.
+              <img src="pcp_images/Feather_Wheel.jpg"/>
             <br> <br>
+            Connection of Feather to BNO055:<br>
             	3V 	----- 	VIN<br>
             	GND 	----- 	GND<br>
             	SDA 	----- 	SDA<br>
             	SCL 	----- 	SCL
             <br><br>
-             BNO055 is a 9 degrees of freedom IMU contains a gyroscope, an accelerometer and a magnetometer.
+             BNO055 is a 9 degrees of freedom IMU contains a gyroscope, an accelerometer and a magnetometer. To run this sensor in Arduino, Adafruit Sensor and Adafruit BNO055 library needs to be added.
+            <br>
+            <img src="pcp_images/axisvalue.JPG"/>
+            After creating a sensor event, by calling the orientation function and specify the axis (here is x from xyz), the Euler angle of the sensor position around that axis will be calculated. In this wheelchair case, the axis of the wheel is overlapped with the x axis of the sensor, so the Euler angle of the sensor turns around its x axis is the angle of the whole wheel turns.
+            <br>
+            <img src="pcp_images/distspeed.JPG"/>
+            Based on that, we can calculate how much the wheel is rotated and multiply this to the circumference of the wheel to get the distance that the wheel moves. Then the speed can be calculated every set time interval.
             <br>
             For detailed information, go to https://datacentricdesign.org/docs/2019/04/30/sensors-orientation
             </p>
