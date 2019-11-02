@@ -138,56 +138,46 @@
           </p>
 
 <!-- step 2  -->
-  <p class="title"> Feather to Pi (BLE) </p>
-            <p>
-                  Read GPS on arduino mega
-                <br>
-                  An Adafruit Ultimate GPS is connected to Arduino Mega. It collects GPS data of its location automatically once it is turned on.
-                <br><br>
-                  Connection of Mega to GPS:<br>
-                	5V 	----- 	VIN<br>
-                	GND	----- 	GND<br>
-                	RX	----- 	TX1<br>
-                	TX 	----- 	RX1
-                  <br><br>
-                  With an empty script running on Mega, the GPS sends raw NMEA data including connected satellite, current time, latitude, longitude, attitude to the serial port. Since only the latitude and longitude is needed to make a location in Google Map, Mega needs to run a script that can parse the raw data and only output the latitude and longitude data. To run the whole script, Adafruit GPS library needs to be added. Below shows the loop function of script, after parsing the NMEA data, the latitude (latdeg) and longitude (longdeg) needs to be printed and thus sent to the serial port. Here Serial.print(latdeg, 8) means in the serial port it prints out the latitude in a float with 8 decimals. If this is not specified, by default only 2 decimal float will be printed and sent by serial port. Google Map does require an 8 decimal float as its latitude and longitude input, so here it is needed to serial print 8 decimal.
-                  <br> <br>For detailed information, go to https://datacentricdesign.org/docs/2019/04/30/sensors-gps.
-                  <br><br>
-            </p>
+  <p class="title"> Step 2: Feather to Pi (BLE) </p>
+          <p>
+                In order to send data between the feather and the pi, we need to set up GATT characteristics and a GATT service on the feather.
+                <img src="pcp_images/gatt_feather.jpg"/>
+              <br><br>
+          </p>
 
 <!-- step 3  -->
-<p class="title"> Mega to Pi (serial) </p>
-            <p>
-                  Read GPS on arduino mega<br>
-                  An Adafruit Ultimate GPS is connected to Arduino Mega. It collects GPS data of its location automatically once it is turned on.
-                <br><br>
-                  Connection of Mega to GPS:<br>
-                	5V 	----- 	VIN<br>
-                	GND	----- 	GND<br>
-                	RX	----- 	TX1<br>
-                	TX 	----- 	RX1
-                  <br><br>
-                  With an empty script running on Mega, the GPS sends raw NMEA data including connected satellite, current time, latitude, longitude, attitude to the serial port. Since only the latitude and longitude is needed to make a location in Google Map, Mega needs to run a script that can parse the raw data and only output the latitude and longitude data. To run the whole script, Adafruit GPS library needs to be added. Below shows the loop function of script, after parsing the NMEA data, the latitude (latdeg) and longitude (longdeg) needs to be printed and thus sent to the serial port. Here Serial.print(latdeg, 8) means in the serial port it prints out the latitude in a float with 8 decimals. If this is not specified, by default only 2 decimal float will be printed and sent by serial port. Google Map does require an 8 decimal float as its latitude and longitude input, so here it is needed to serial print 8 decimal.
-                  <br>
-                  <br>For detailed information, go to https://datacentricdesign.org/docs/2019/04/30/sensors-gps.
-                  <br>
-            </p>
+<p class="title"> Step 3: Subscribe to GATT service </p>
+          <p>
+                We define the characteristics in our python script using the same ID’s set in the arduino script.
+                <br>
+                <img src="pcp_images/subscribe_GATT.jpg"/>
+                <br>
+                We must then initialise the Bluetooth adapter using the pygatt library and use this library to subscribe to the characteristics.
+                <br>
+                <img src="pcp_images/import_pygatt.jpg"/>
+                <br>
+                <img src="pcp_images/gatt_subscribe.jpg"/>
+                <br>
+          </p>
 
 <!-- step 4  -->
-<p class="title"> Mega to Pi (serial) </p>
+<p class="title"> Step 4: Read GPS on arduino mega </p>
             <p>
-                  Read GPS on arduino mega<br>
-                  An Adafruit Ultimate GPS is connected to Arduino Mega. It collects GPS data of its location automatically once it is turned on.
-                  <br><br>
+                An Adafruit Ultimate GPS is connected to Arduino Mega. It collects GPS data of its location automatically once it is turned on.
+                <br>
+                <img src="pcp_images/GPS_setup.jpg"/>
+                <br>
                   Connection of Mega to GPS:<br>
                 	5V 	----- 	VIN<br>
                 	GND	----- 	GND<br>
                   RX	----- 	TX1<br>
                   TX 	----- 	RX1
                   <br><br>
-                  With an empty script running on Mega, the GPS sends raw NMEA data including connected satellite, current time, latitude, longitude, attitude to the serial port. Since only the latitude and longitude is needed to make a location in Google Map, Mega needs to run a script that can parse the raw data and only output the latitude and longitude data. To run the whole script, Adafruit GPS library needs to be added. Below shows the loop function of script, after parsing the NMEA data, the latitude (latdeg) and longitude (longdeg) needs to be printed and thus sent to the serial port. Here Serial.print(latdeg, 8) means in the serial port it prints out the latitude in a float with 8 decimals. If this is not specified, by default only 2 decimal float will be printed and sent by serial port. Google Map does require an 8 decimal float as its latitude and longitude input, so here it is needed to serial print 8 decimal.
+                With an empty script running on the Mega, the GPS sends raw NMEA data including connected satellite, current time, latitude, longitude and altitude to the serial port. Since only the latitude and longitude is needed to define a location in the Google Maps API, the Mega needs to run a script that can parse the raw data and then output the latitude and longitude data. To run the whole script, the Adafruit GPS library needs to be included. The image below shows the loop function of the script. After parsing the NMEA data, the latitude (latdeg) and longitude (longdeg) needs to be printed and thus sent to the serial port. Here Serial.print(latdeg, 8) formats the latitude data as a float value with 8 decimals. If this is not specified, by default only 2 decimal places will be printed. Google Maps requires an 8 decimal float as its latitude and longitude input, so here it is needed to serial print 8 decimal places.
                   <br>
-                  <br>For detailed information, go to https://datacentricdesign.org/docs/2019/04/30/sensors-gps.
+                  <img src="pcp_images/GPScode.jpg"/>
+                  <br>
+                  For detailed information, go to https://datacentricdesign.org/docs/2019/04/30/sensors-gps.
                   <br>
             </p>
 
