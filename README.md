@@ -5,6 +5,9 @@
 
   <body>
 
+<div id="ear">
+    <img src="pcp_images/wheelchairIcon.jpg"/>
+</div>
 
      <div class="header">
        <h1>   Prototyping Connected Products  </h1>
