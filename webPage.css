@@ -69,7 +69,10 @@ p{
   line-height: 1.55;
 }
 
-
+.title{
+  font-style: oblique;
+  font-size: 20px;
+}
 /* Create two unequal columns that floats next to each other */
 /* Left column */
 .leftcolumn {
