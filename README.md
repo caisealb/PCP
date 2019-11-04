@@ -274,7 +274,7 @@
                 </p>
 
 <!-- step 9  -->
-<p class="title"> Step 9: Google Maps API </p>
+<p class="title"> Step 9: Workout summary </p>
                 <p>
                 When users press the stop button, all session data must be gathered in the summary page. We created a JS script that uses localStorage to keep track of accumulated user data in a session, then passes it to the summary page HTML.
                 <br><br>
