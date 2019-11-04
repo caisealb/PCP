@@ -12,11 +12,25 @@
 
   <body onload="draw(120);">
 
+      <h1> My Workout </h1>
 
-        <div id="map">
+      <div id="options">
+
+        <div id="pauseCircle" onmouseover="hoverPause()" onmouseout="hoverOutPause()" onclick="pauseFunction()">
+          <div id="pauseStripe">
+          </div>
+          <div id="pauseStripe">
+          </div>
         </div>
 
-        <h1> My Workout </h1>
+        <div id="stopCircle" onmouseover="hoverFunction()" onmouseout="hoverOutFunction()" onclick="saveMsg()">
+          <div id="stopTriangle">
+          </div>
+        </div>
+      </div>
+      
+        <div id="map">
+        </div>
 
         <div id="container">
 
@@ -77,20 +91,7 @@
                   </div>
 
 
-  <div id="options">
 
-    <div id="pauseCircle" onmouseover="hoverPause()" onmouseout="hoverOutPause()" onclick="pauseFunction()">
-      <div id="pauseStripe">
-      </div>
-      <div id="pauseStripe">
-      </div>
-    </div>
-
-    <div id="stopCircle" onmouseover="hoverFunction()" onmouseout="hoverOutFunction()" onclick="saveMsg()">
-      <div id="stopTriangle">
-      </div>
-    </div>
-  </div>
 
     <div id="overlay", onclick="continueFunction()">
     </div>
