@@ -28,7 +28,7 @@
           </div>
         </div>
       </div>
-      
+
         <div id="map">
         </div>
 
@@ -46,8 +46,8 @@
                 <canvas class="canvas" id="myCanvas" width="250" height="250">
               Your browser does not support the HTML5 canvas tag.
                 </canvas>
-                    <div id="needle">
-                    </div>
+                    <!-- <div id="needle">
+                    </div> -->
                     </div>
               </div>
 
@@ -188,7 +188,7 @@
             function initMap() {
                 center = {lat:currentLat, lng:currentLong};
                 var map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 15,
+                zoom: 30,
                 center: center,
                 styles: [
                     {elementType: 'geometry', stylers: [{color: '#242f3e'}]},
