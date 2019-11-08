@@ -32,7 +32,7 @@
          <div class="card">
            <h2> System Architecture </h2>
            <h5> A sytematic overview of the architecture used for the prototype </h5>
-           <img src="pcp_images/systemArchitecture_100.jpg"/>
+           <img src="pcp_images/systemdiagram2.png"/>
          </div>
 
          <div class="card">
@@ -281,8 +281,14 @@
                 <img src="pcp_images/localStorage.jpg"/>
                 <br><br>
                 </p>
-
          </div>
+         
+        <div class="card">
+       <h2> Videos of the prototype </h2>
+<video>
+  <source src="IMG_4695.mov" type="video/mp4">
+</video>
+        </div>     
      </div>
 
        <div class="rightcolumn">
