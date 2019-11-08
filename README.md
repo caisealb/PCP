@@ -235,10 +235,13 @@
                 <p>
                       In order to display the data in the browser, we designed three HTML pages that correspond with each other. The “Start” page includes a countdown, directing the user to the workout overview in which a route is plotted using a Google Maps API (next section). It also shows the current speed, distance and time of the workout. Users can stop the workout which directs them to a summary page, containing an overview of their workout. Refer to workout/summary/start.html/js/css for details.
                       <br><br>
+  <p> The start page </p>
                       <img src="pcp_images/interfaceStart.jpg"/>
                       <br><br>
+   <p> During the workout </p>
                       <img src="pcp_images/webapplive.jpg"/>
                       <br><br>
+   <p> The Summary page </p>
                       <img src="pcp_images/webappnew.png"/>
                       <br><br>
                       We created a JS script that uses socket.io.js (JS file hosted online by socket.io developers) to receive JSON objects from the Python script, parse these JSON objects and assign the resulting data to variables. We make use of HTML DOM element objects to insert these variables into the webpage structure (getElementByID).
