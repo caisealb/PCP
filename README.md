@@ -287,11 +287,7 @@
        <h2> Videos of the prototype </h2>
   <video id="sampleMovie" src="IMG_4695.mov"></video>
         </div>     
-     </div>
      
-     
-     
-    
     
         <div class="card">
        <h2>  Improvements and future developments </h2>
@@ -303,7 +299,9 @@ More nuanced actuation:<br>
 Our current web application serves its purpose but could be developed further, both in terms of UI/UX and functionality over time<br>
 Other forms of actuation could be explored, such as integration with mobile voice assistants (e.g. Siri or Google Assistant) for non-visual feedback<br>
 
-        </div>     
+   </div>
+ 
+    </div>     
      </div>
 
        <div class="rightcolumn">
