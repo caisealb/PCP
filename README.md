@@ -288,22 +288,22 @@
                 <p>
                Use the DCD hub library in server script to assign distance and speed data to properties that can be monitored and analysed over longer periods of time. 
                 <br><br>
+  <p> We include the credentials of our Wheelchair 'thing' from the DCD Hub, a cloud service that allows us to store and visualise data over longer periods of time. We need to include our thing's ID and token, which we first specify in our dotenv file, then refer to. </p>
                 <img src="pcp_images/dcdhub1.png"/>
                 <br><br>
+                
+                  <p> We create a Thing object in our script with the credentials we declared above. We then read the thing's properties continuously and write a function that allows us to create properties if they do not exist already. </p>
                 <img src="pcp_images/dcdhub2.png"/>
-                <br><br>                
+                <br><br>    
+                
+                  <p> In each of our data handler functions, we add a line that either finds or creates a property with an appropriate name (here, "Distance") and assigns our incoming data to it. Here, the property is one-dimensional. We update this property as new data is received. </p>
                 <img src="pcp_images/dcdhub3.png"/>
                 <br><br>
                 </p>
-         </div>
-         
-        <div class="card">
-       <h2> Videos of the prototype </h2>
-  <video id="videoMaps" src="IMG_4525.mov" preload></video>
-        </div>     
+         </div>    
      
         <div class="card">
-       <h2>  Improvements and future developments </h2> <br>
+       <h2>  Improvements and future developments </h2> 
         <h5> Further analysis of collected data using DCD Hub and Jupyter notebook: </h5>
 We could implement a script for Jupyter notebook that allows us to label and classify data, potentially for the implementation of a machine learning algorithm (e.g. for route suggestions) 
           <h5> Improved prototype fidelity and materials: </h5>
