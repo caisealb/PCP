@@ -14,18 +14,18 @@
      <div class="row">
 
        <div class="leftcolumn">
+       
          <div class="card" height="300">
            <h2> Our Project </h2>
            <h5>A connected wheelchair to track live workout data</h5>
            <p> Our project aims to support manual wheelchair users in maintaining an active lifestyle. We envision our project as a workout tracker, similar to existing commercial examples, such as NikeRun or FitBit, but adapted specifically to the physical properties of a manual wheelchair and the practicalities of its use. Using sensors, microprocessors and a Raspberry Pi, we connect the physical components of our system to a visual interface that shows users their workout progress and statistics in real-time. </p>
            <img src="pcp_images/wheelchair.jpg"/>
          </div>
+         
          <div class="card">
            <h2> Design Brief </h2>
            <h5>Connecting a wheelchair</h5>
-           <p> “While the population of wheelchair users is growing worldwide, it becomes urgent to design supportive technologies that fit their needs. We aim to develop products for improvement of the wheelchair users’ wellbeing. This design is a connected product that collects data from sensors and processes it in order to actuate user interactions embedded in the wheelchair.”
-              <br>
-                Building upon this brief, we envision our target user group as (either full- or part-time) manual wheelchair users aiming to work towards or maintain a healthier, more active lifestyle. Features of our connected product include location, distance and activity tracking (via GPS and accelerometer sensors), visualised through a UX interface, with the intention of developing a mobile app-based product.
+           <p> “While the population of wheelchair users is growing worldwide, it becomes urgent to design supportive technologies that fit their needs. We aim to develop products for improvement of the wheelchair users’ wellbeing. This design is a connected product that collects data from sensors and processes it in order to actuate user interactions embedded in the wheelchair." <br> Building upon this brief, we envision our target user group as (either full- or part-time) manual wheelchair users aiming to work towards or maintain a healthier, more active lifestyle. Features of our connected product include location, distance and activity tracking (via GPS and accelerometer sensors), visualised through a UX interface, with the intention of developing a mobile app-based product.
            </p>
          </div>
 
@@ -80,7 +80,6 @@
                 Use PYGATT library to subscribe to characteristics set in arduino script<br>
               </p><br>
 
-
             <p class="title"> 4. Read and print GPS data over serial  </p>
               <p class="tab">
                 Read longitude and latitude from gps sensor    <br>
@@ -123,14 +122,8 @@
 
             </div>
 
-
-
-
-
          <div class="card">
            <h2> Technical Details of the Process </h2>
-
-
 <!-- step1 -->
   <p class="title"> Step 1: Read IMU data on feather </p>
           <p> The IMU (BNO055) along with the Feather is placed on the axle of one side of the wheelchair. It calculates the cumulative number of rotations made by the wheel, which is then processed to calculate cumulative distance travelled and current speed.
@@ -222,7 +215,6 @@
                   <br><br>
             </p>
 
-
 <!-- step 6  -->
 <p class="title"> Step 6: Websocket  </p>
             <p>
@@ -238,7 +230,6 @@
                   <br><br>
             </p>
 
-
 <!-- step 7  -->
 <p class="title"> Step 7: WebApp </p>
                 <p>
@@ -253,7 +244,6 @@
                       <img src="pcp_images/json_html.jpg"/>
                       <br><br>
                 </p>
-
 
 <!-- step 8  -->
 <p class="title"> Step 8: Google Maps API </p>
@@ -297,9 +287,12 @@
               More nuanced actuation:<br>
               Our current web application serves its purpose but could be developed further, both in terms of UI/UX and functionality over time<br>
               Other forms of actuation could be explored, such as integration with mobile voice assistants (e.g. Siri or Google Assistant) for non-visual feedback<br>
+             </p>
         </div>
-        
      </div>
+
+
+<!-- right column -->
 
        <div class="rightcolumn">
          <div class="card" height="300">
