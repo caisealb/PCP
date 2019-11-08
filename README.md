@@ -32,7 +32,7 @@
          <div class="card">
            <h2> System Architecture </h2>
            <h5> A sytematic overview of the architecture used for the prototype </h5>
-           <img src="pcp_images/systemdiagram2.png"/>
+           <img src="pcp_images/systemdiagram3.png"/>
          </div>
 
          <div class="card">
@@ -237,6 +237,8 @@
                       <br><br>
                       <img src="pcp_images/interfaceStart.jpg"/>
                       <br><br>
+                      <img src="pcp_images/webapplive.jpg"/>
+                      <br><br>
                       <img src="pcp_images/webappnew.png"/>
                       <br><br>
                       We created a JS script that uses socket.io.js (JS file hosted online by socket.io developers) to receive JSON objects from the Python script, parse these JSON objects and assign the resulting data to variables. We make use of HTML DOM element objects to insert these variables into the webpage structure (getElementByID).
@@ -275,12 +277,12 @@
          
         <div class="card">
        <h2> Videos of the prototype </h2>
-  <video id="sampleMovie" src="IMG_4695.mov"></video>
+  <video id="videoMaps" src="HTML5Sample.mov" preload></video>
         </div>     
      
         <div class="card">
-       <h2>  Improvements and future developments </h2>
-              <p> Further analysis of collected data using DCD Hub and Jupyter notebook: <br><br>
+       <h2>  Improvements and future developments </h2> <br>
+              <p> Further analysis of collected data using DCD Hub and Jupyter notebook: <br>
               We could implement a script for Jupyter notebook that allows us to label and classify data, potentially for the implementation of a machine learning algorithm (e.g. for route suggestions) <br>
               Improved prototype fidelity and materials:<br>
               Given time, we would like to have created proper casing and wiring support for our prototype so that it sat more neatly on the wheel<br>
