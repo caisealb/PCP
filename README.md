@@ -273,11 +273,25 @@
                 <img src="pcp_images/localStorage.jpg"/>
                 <br><br>
                 </p>
+                
+   
+         <!-- step 10  -->
+<p class="title"> Step 10: DCD Hub (optional) </p>
+                <p>
+               Use the DCD hub library in server script to assign distance and speed data to properties that can be monitored and analysed over longer periods of time. 
+                <br><br>
+                <img src="pcp_images/dcdhub1.png"/>
+                <br><br>
+                <img src="pcp_images/dcdhub2.png"/>
+                <br><br>                
+                <img src="pcp_images/dcdhub3.png"/>
+                <br><br>
+                </p>
          </div>
          
         <div class="card">
        <h2> Videos of the prototype </h2>
-  <video id="videoMaps" src="HTML5Sample.mov" preload></video>
+  <video id="videoMaps" src="IMG_4525.mov" preload></video>
         </div>     
      
         <div class="card">
