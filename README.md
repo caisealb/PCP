@@ -285,9 +285,7 @@
          
         <div class="card">
        <h2> Videos of the prototype </h2>
-<video>
-  <source src="IMG_4695.mov" type="video/mp4">
-</video>
+  <video id="sampleMovie" src="IMG_4695.mov"></video>
         </div>     
      </div>
 
