@@ -120,6 +120,11 @@
                 Create JS script that uses localStorage to keep track of accumulated user data in a session, then passes it to summary page HTML <br>
               </p> <br>
 
+              <p class="title"> 10. DCD Hub </p>
+              <p class="tab">
+               Use the DCD hub library in server script to assign distance and speed data to properties that can be monitored and analysed over longer periods of time. <br>
+              </p> <br>
+              
             </div>
 
          <div class="card">
@@ -304,8 +309,7 @@ We could implement a script for Jupyter notebook that allows us to label and cla
           <h5> Improved prototype fidelity and materials: </h5>
           Given time, we would like to have created proper casing and wiring support for our prototype so that it sat more neatly on the wheel
             <h5>  More nuanced actuation: </h5>
-              Our current web application serves its purpose but could be developed further, both in terms of UI/UX and functionality over time. Other forms of actuation could be explored, such as integration with mobile voice assistants (e.g. Siri or Google Assistant) for non-visual feedback<br>
-             </p>
+              Our current web application serves its purpose but could be developed further, both in terms of UI/UX and functionality over time. Other forms of actuation could be explored, such as integration with mobile voice assistants (e.g. Siri or Google Assistant) for non-visual feedback <br>
         </div>
      </div>
 
