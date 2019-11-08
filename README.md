@@ -288,20 +288,17 @@
   <video id="sampleMovie" src="IMG_4695.mov"></video>
         </div>     
      
-    
         <div class="card">
        <h2>  Improvements and future developments </h2>
-<p> Further analysis of collected data using DCD Hub and Jupyter notebook: <br><br>
-We could implement a script for Jupyter notebook that allows us to label and classify data, potentially for the implementation of a machine learning algorithm (e.g. for route suggestions) <br>
-Improved prototype fidelity and materials:<br>
-Given time, we would like to have created proper casing and wiring support for our prototype so that it sat more neatly on the wheel<br>
-More nuanced actuation:<br>
-Our current web application serves its purpose but could be developed further, both in terms of UI/UX and functionality over time<br>
-Other forms of actuation could be explored, such as integration with mobile voice assistants (e.g. Siri or Google Assistant) for non-visual feedback<br>
-
-   </div>
- 
-    </div>     
+              <p> Further analysis of collected data using DCD Hub and Jupyter notebook: <br><br>
+              We could implement a script for Jupyter notebook that allows us to label and classify data, potentially for the implementation of a machine learning algorithm (e.g. for route suggestions) <br>
+              Improved prototype fidelity and materials:<br>
+              Given time, we would like to have created proper casing and wiring support for our prototype so that it sat more neatly on the wheel<br>
+              More nuanced actuation:<br>
+              Our current web application serves its purpose but could be developed further, both in terms of UI/UX and functionality over time<br>
+              Other forms of actuation could be explored, such as integration with mobile voice assistants (e.g. Siri or Google Assistant) for non-visual feedback<br>
+        </div>
+        
      </div>
 
        <div class="rightcolumn">
